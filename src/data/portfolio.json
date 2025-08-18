@@ -1,9 +1,9 @@
 {
   "intro": {
     "paragraphs": [
-      "Hi, I'm Shakirul Hasan Khan and I love to build cool stuff.",
-      "Currently, I'm working at Re:cruit, building an AI sidekick with the help of React, NextJS, Python and of course LLMs.",
-      "I'm also trying to simplify businesses through my unborn (yet) startup."
+      "Hi, I'm Shakirul Hasan Khan, a software engineer with over four years of experience in full-stack development.",
+      "Currently working at Re:cruit, building an AI sidekick with React, NextJS, Python and LLMs. I specialize in ReactJS, NextJS, and TypeScript.",
+      "I create scalable, user-focused applications with a strong ability to deliver solutions meeting complex design and performance needs."
     ]
   },
   "socialLinks": [
@@ -25,138 +25,138 @@
   ],
   "projects": [
     {
-      "title": "Ponno",
-      "badge": "STARTUP",
-      "description": "AI-powered conversational commerce platform"
-    },
-    {
       "title": "Coterm",
       "badge": "CLI TOOL",
-      "description": "Rust-based terminal application for developer productivity"
+      "description": "Copilot for terminal built using Rust, Vercel edge function and OpenAI API with natural language command generation"
     },
     {
       "title": "Ramble",
-      "badge": "APP",
-      "description": "Transcription and meeting management platform"
+      "badge": "AI APP",
+      "description": "Application to transcribe meetings, get overheard, commitment, and follow up from meetings using AI"
     },
     {
       "title": "Re:sume",
       "badge": "AI TOOL",
-      "description": "AI-powered resume builder and optimization"
+      "description": "Web application to create and enhance resumes using AI with PDF generation and OpenAI GPT3 integration"
     },
     {
-      "title": "BnPC Dataset",
-      "badge": "RESEARCH",
-      "description": "Bangla paraphrase detection dataset for NLP research"
+      "title": "Bochon",
+      "badge": "WEB APP",
+      "description": "Performance dashboard for various Bengali Speech to Text models developed for Bengali.ai"
     },
     {
-      "title": "Portfolio Projects",
-      "badge": "SHOWCASE",
-      "description": "Collection of full-stack applications"
+      "title": "SUST GHMS",
+      "badge": "MANAGEMENT",
+      "description": "Guest house management system with room booking, authentication, and profile management"
+    },
+    {
+      "title": "Instatweet",
+      "badge": "SOCIAL APP",
+      "description": "Twitter clone with Instagram-like interface featuring authentication, posts, comments, and follows"
     }
   ],
   "openSource": [
     {
       "name": "coterm",
       "stars": 12,
-      "description": "Rust CLI tool for enhanced terminal experience",
-      "href": "https://github.com/shakirulhkhan/coterm"
+      "description": "Rust CLI tool for enhanced terminal experience with OpenAI integration",
+      "href": "https://github.com/KhanShaheb34/coterm"
     },
     {
-      "name": "ramble-transcription",
+      "name": "ramble",
       "stars": 8,
-      "description": "Open-source transcription platform",
-      "href": "https://github.com/shakirulhkhan/ramble-transcription"
+      "description": "AI-powered meeting transcription and management platform",
+      "href": "https://github.com/KhanShaheb34/ramble"
     },
     {
-      "name": "bnpc-dataset",
-      "stars": 15,
-      "description": "Bangla paraphrase detection research dataset",
-      "href": "https://github.com/shakirulhkhan/bnpc-dataset"
-    },
-    {
-      "name": "resume-ai",
+      "name": "resume",
       "stars": 6,
-      "description": "AI-powered resume optimization tool",
-      "href": "https://github.com/shakirulhkhan/resume-ai"
+      "description": "AI-powered resume builder and optimization tool",
+      "href": "https://github.com/KhanShaheb34/resume"
+    },
+    {
+      "name": "bochon",
+      "stars": 4,
+      "description": "Bengali Speech to Text model performance dashboard",
+      "href": "https://github.com/KhanShaheb34/bochon"
     }
   ],
   "posts": [
     {
-      "title": "The Future of AI in Commerce",
-      "date": "Aug 15, 2025",
-      "href": "/posts/ai-conversational-commerce"
+      "title": "Building AI-Powered Terminal Tools with Rust",
+      "date": "May 2023",
+      "href": "/posts/coterm-development"
     },
     {
-      "title": "Rust for High-Performance Applications",
-      "date": "Jul 28, 2025",
-      "href": "/posts/rust-performance"
+      "title": "Creating Scalable React Applications",
+      "date": "Mar 2023",
+      "href": "/posts/react-scalability"
     },
     {
-      "title": "Advanced TypeScript Patterns",
-      "date": "Jun 10, 2025",
-      "href": "/posts/typescript-advanced"
+      "title": "Working with Bengali NLP and TensorFlow",
+      "date": "Jul 2020",
+      "href": "/posts/bengali-nlp"
     },
     {
-      "title": "Bangla NLP Research Insights",
-      "date": "May 22, 2025",
-      "href": "/posts/ai-research"
+      "title": "Full-Stack Development Best Practices",
+      "date": "Jan 2022",
+      "href": "/posts/fullstack-practices"
     }
   ],
   "interests": [
     {
       "title": "AI & Machine Learning",
-      "description": "Natural Language Processing, Computer Vision"
+      "description": "TensorFlow, Natural Language Processing, Deep Learning"
+    },
+    {
+      "title": "Full-Stack Development",
+      "description": "React, Next.js, TypeScript, Node.js"
     },
     {
       "title": "Systems Programming",
-      "description": "Rust, Performance Optimization"
-    },
-    {
-      "title": "Web Technologies",
-      "description": "TypeScript, React, Next.js"
+      "description": "Rust, CLI Tools, Performance Optimization"
     }
   ],
   "academic": {
     "education": {
-      "degree": "B.Sc. Software Engineering",
+      "degree": "B.Sc. (Engg.) Software Engineering",
       "institution": "Shahjalal University of Science & Technology",
-      "details": "CGPA: 3.66 | 2018-2023"
+      "details": "CGPA: 3.67/4.00 | 2018-2022"
     },
     "research": [
       {
         "title": "BnPC Dataset",
-        "description": "Bangla paraphrase detection dataset for NLP research"
+        "description": "Gold Standard Corpus for Paraphrase Detection in Bangla - published in ELRA and ICCL, May 2024"
       },
       {
-        "title": "Thesis",
-        "description": "Software Engineering methodologies and practices"
+        "title": "Publications Secretary",
+        "description": "SUST ACM Student Chapter & SWE Society - managed publications and research activities"
       }
     ],
     "certifications": [
-      "Deep Learning Specialization (Coursera)",
-      "TensorFlow Developer Certificate",
-      "Neural Networks and Deep Learning"
+      "TensorFlow in Practice Specialization (Coursera)",
+      "Deep Learning Specialization (Coursera)", 
+      "International English Language Testing System (IELTS)",
+      "Java (Basic & Intermediate) - HackerRank",
+      "C++ (Basic) - HackerRank"
     ]
   },
   "hobbies": [
     {
-      "title": "Photography",
-      "description": "Capturing moments and stories through lens",
-      "href": "https://instagram.com/shakirulhkhan"
+      "title": "Open Source Development",
+      "description": "Contributing to and maintaining open source projects"
     },
     {
-      "title": "Reading Books",
-      "description": "Always learning from great minds",
-      "href": "https://goodreads.com/shakirulhkhan"
+      "title": "Competitive Programming",
+      "description": "Problem solving and algorithm optimization"
     },
     {
-      "title": "Traveling",
-      "description": "Exploring new cultures and places"
+      "title": "Game Development",
+      "description": "Created platformer games using LibGDX, Unity3D, and C++/SFML"
     },
     {
-      "title": "Chess",
-      "description": "Strategic thinking and problem solving"
+      "title": "Mentoring",
+      "description": "Guiding students in SUST ACM Student Chapter"
     }
   ]
 }
