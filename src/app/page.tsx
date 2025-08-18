@@ -11,7 +11,7 @@ import portfolioData from '@/data/portfolio.json' with { type: 'json' };
 
 export default function Home() {
   return (
-    <main className="h-screen bg-background p-6 text-foreground md:p-8">
+    <main className="h-screen bg-background text-foreground">
       {/* Desktop: Horizontal scrolling container, Mobile: Vertical scrolling */}
       <div className="md:scrollbar-hide scrollbar-hide block h-full overflow-hidden overflow-y-auto md:flex md:h-full md:snap-x md:snap-mandatory md:overflow-x-auto">
         {/* Column 1: INTRO */}
