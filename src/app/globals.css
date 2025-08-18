@@ -74,11 +74,12 @@ a:hover {
 }
 
 .wavy-line {
-  --s: 4px; /* size of the wave */
+  --s: 8px; /* size of the wave */
   --b: 1px; /* thickness of the line */
-  --m: 0.8; /* curvature of the wave [0 2] */
+  --m: 1; /* curvature of the wave [0 2] */
 
-  background: #808080aa;
+  background: var(--foreground);
+  opacity: 0.3;
   --R: calc(var(--s) * sqrt(var(--m) * var(--m) + 1) + var(--b) / 2);
   height: calc(2 * var(--R));
   width: 100%;
@@ -96,4 +97,25 @@ a:hover {
     )
     50% calc(50% + var(--s) / 2 + var(--b) / 2) / calc(4 * var(--s))
     calc(var(--s) + var(--b)) repeat-x;
+}
+
+.zig-zag-line {
+  --a: 90deg; /* control the angle */
+  --s: 20px; /* size of the zig-zag */
+  --b: 1px; /* control the thickness */
+
+  background: var(--foreground);
+  opacity: 0.3;
+  height: calc(var(--b) + var(--s) / (2 * tan(var(--a) / 2)));
+  width: 100%;
+  --_g: var(--s) repeat-x
+    conic-gradient(
+      from calc(var(--a) / -2) at bottom,
+      #0000,
+      #000 1deg calc(var(--a) - 1deg),
+      #0000 var(--a)
+    );
+  mask:
+    50% calc(-1 * var(--b)) / var(--_g) exclude,
+    50% / var(--_g);
 }

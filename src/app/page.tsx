@@ -17,11 +17,9 @@ export default function Home() {
         {/* Column 1: INTRO */}
         <Column>
           <Section title="INTRO">
-            <div className="space-y-4 text-lg">
+            <div className="space-y-4 text-md">
               {portfolioData.intro.paragraphs.map((paragraph, index) => (
-                <p className={index === 2 ? 'text-muted' : ''} key={index}>
-                  {paragraph}
-                </p>
+                <p key={index}>{paragraph}</p>
               ))}
             </div>
           </Section>
@@ -99,7 +97,7 @@ export default function Home() {
             <div className="space-y-4">
               {portfolioData.interests.map((interest, index) => (
                 <div key={index}>
-                  <h3 className="text-lg">{interest.title}</h3>
+                  <h3 className="text-md">{interest.title}</h3>
                   <p className="text-muted text-sm">{interest.description}</p>
                 </div>
               ))}
@@ -114,7 +112,7 @@ export default function Home() {
           <Section title="ACADEMIC">
             <div className="space-y-6">
               <div>
-                <h3 className="mb-2 text-lg">Education</h3>
+                <h3 className="mb-2 text-md">Education</h3>
                 <div className="space-y-2">
                   <p className="font-medium">
                     {portfolioData.academic.education.degree}
@@ -129,7 +127,7 @@ export default function Home() {
               </div>
 
               <div>
-                <h3 className="mb-2 text-lg">Research</h3>
+                <h3 className="mb-2 text-md">Research</h3>
                 <div className="space-y-4">
                   {portfolioData.academic.research.map((item, index) => (
                     <div key={index}>
@@ -141,7 +139,7 @@ export default function Home() {
               </div>
 
               <div>
-                <h3 className="mb-2 text-lg">Certifications</h3>
+                <h3 className="mb-2 text-md">Certifications</h3>
                 <div className="space-y-2">
                   {portfolioData.academic.certifications.map((cert, index) => (
                     <p className="text-muted text-sm" key={index}>

@@ -11,7 +11,7 @@ export default function Section({
   children,
   titleSize = 'xl',
 }: SectionProps) {
-  const titleClass = titleSize === 'xl' ? 'text-3xl' : 'text-2xl';
+  const titleClass = titleSize === 'xl' ? 'text-2xl' : 'text-xl';
 
   return (
     <div className="flex-1 p-8">

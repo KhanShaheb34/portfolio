@@ -8,7 +8,7 @@ export default function PostCard({ title, date, href }: PostCardProps) {
   return (
     <div>
       <a
-        className="block text-lg transition-colors hover:text-muted"
+        className="block text-md transition-colors hover:text-muted"
         href={href}
       >
         {title}

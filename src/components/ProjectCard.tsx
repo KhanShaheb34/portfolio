@@ -12,7 +12,7 @@ export default function ProjectCard({
   return (
     <div>
       <div className="mb-2 flex items-center space-x-2">
-        <h3 className="text-xl">{title}</h3>
+        <h3 className="text-md">{title}</h3>
         <span className="rounded bg-muted px-2 py-1 text-background text-xs">
           {badge}
         </span>

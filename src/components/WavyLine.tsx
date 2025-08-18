@@ -1,3 +1,3 @@
 export default function WavyLine() {
-  return <div className="wavy-line" />;
+  return <div className="zig-zag-line" />;
 }

@@ -14,7 +14,7 @@ export default function OpenSourceCard({
   return (
     <div>
       <div className="mb-1 flex items-center justify-between">
-        <a className="text-lg transition-colors hover:text-muted" href={href}>
+        <a className="text-md transition-colors hover:text-muted" href={href}>
           {name}
         </a>
         <span className="text-muted">⭐ {stars}</span>

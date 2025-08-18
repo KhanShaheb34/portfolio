@@ -4,12 +4,16 @@ type InterestCardProps = {
   href?: string;
 };
 
-export default function InterestCard({ title, description, href }: InterestCardProps) {
+export default function InterestCard({
+  title,
+  description,
+  href,
+}: InterestCardProps) {
   if (href) {
     return (
       <div>
         <a
-          className="block text-lg transition-colors hover:text-muted"
+          className="block text-md transition-colors hover:text-muted"
           href={href}
         >
           {title}
@@ -21,7 +25,7 @@ export default function InterestCard({ title, description, href }: InterestCardP
 
   return (
     <div>
-      <h3 className="text-lg">{title}</h3>
+      <h3 className="text-md">{title}</h3>
       <p className="text-muted text-sm">{description}</p>
     </div>
   );
