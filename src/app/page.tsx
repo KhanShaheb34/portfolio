@@ -26,7 +26,7 @@ export default function Home() {
 
           <WavyLine />
 
-          <Section title="LINKS" titleSize="lg">
+          <Section title="LINKS">
             <div className="space-y-2">
               {portfolioData.socialLinks.map((link, index) => (
                 <SocialLink
@@ -38,6 +38,7 @@ export default function Home() {
               ))}
             </div>
           </Section>
+          <WavyLine hideOnDesktop />
         </Column>
 
         <VerticalSeparator />
@@ -59,7 +60,7 @@ export default function Home() {
 
           <WavyLine />
 
-          <Section title="OPEN SOURCE" titleSize="lg">
+          <Section title="OPEN SOURCE">
             <div className="space-y-6">
               {portfolioData.openSource.map((repo, index) => (
                 <OpenSourceCard
@@ -72,6 +73,7 @@ export default function Home() {
               ))}
             </div>
           </Section>
+          <WavyLine hideOnDesktop />
         </Column>
 
         <VerticalSeparator />
@@ -93,7 +95,7 @@ export default function Home() {
 
           <WavyLine />
 
-          <Section title="INTERESTS" titleSize="lg">
+          <Section title="INTERESTS">
             <div className="space-y-4">
               {portfolioData.interests.map((interest, index) => (
                 <div key={index}>
@@ -103,6 +105,7 @@ export default function Home() {
               ))}
             </div>
           </Section>
+          <WavyLine hideOnDesktop />
         </Column>
 
         <VerticalSeparator />
@@ -153,7 +156,7 @@ export default function Home() {
 
           <WavyLine />
 
-          <Section title="HOBBIES" titleSize="lg">
+          <Section title="HOBBIES">
             <div className="space-y-4">
               {portfolioData.hobbies.map((hobby, index) => (
                 <InterestCard
@@ -165,6 +168,7 @@ export default function Home() {
               ))}
             </div>
           </Section>
+          <WavyLine hideOnDesktop />
         </Column>
       </div>
     </main>

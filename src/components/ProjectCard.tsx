@@ -10,14 +10,14 @@ export default function ProjectCard({
   description,
 }: ProjectCardProps) {
   return (
-    <div>
-      <div className="mb-2 flex items-center space-x-2">
+    <div className="space-y-1">
+      <div className="flex items-center space-x-2">
         <h3 className="text-md">{title}</h3>
-        <span className="rounded bg-muted px-2 py-1 text-background text-xs">
+        <span className="rounded bg-muted px-2 py-0.5 text-background text-xs">
           {badge}
         </span>
       </div>
-      <p className="text-muted">{description}</p>
+      <p className="text-muted text-sm">{description}</p>
     </div>
   );
 }

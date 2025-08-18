@@ -6,7 +6,7 @@ type PostCardProps = {
 
 export default function PostCard({ title, date, href }: PostCardProps) {
   return (
-    <div>
+    <div className="space-y-1">
       <a
         className="block text-md transition-colors hover:text-muted"
         href={href}

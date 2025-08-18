@@ -11,7 +11,7 @@ export default function InterestCard({
 }: InterestCardProps) {
   if (href) {
     return (
-      <div>
+      <div className="space-y-1">
         <a
           className="block text-md transition-colors hover:text-muted"
           href={href}
@@ -24,7 +24,7 @@ export default function InterestCard({
   }
 
   return (
-    <div>
+    <div className="space-y-1">
       <h3 className="text-md">{title}</h3>
       <p className="text-muted text-sm">{description}</p>
     </div>
