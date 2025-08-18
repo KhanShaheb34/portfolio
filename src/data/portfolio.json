@@ -1,25 +1,26 @@
 {
   "intro": {
     "paragraphs": [
-      "Hi, I'm Shakirul Hasan Khan, and this is my website. I have written a lot of code.",
-      "I'm the Founder & Lead Engineer of Ponno, building AI-powered conversational commerce. Lately, I've been working on Rust, TypeScript, and AI research."
+      "Hi, I'm Shakirul Hasan Khan and I love to build cool stuff.",
+      "Currently, I'm working at Re:cruit, building an AI sidekick with the help of React, NextJS, Python and of course LLMs.",
+      "I'm also trying to simplify businesses through my unborn (yet) startup."
     ]
   },
   "socialLinks": [
     {
       "icon": "🔗",
       "text": "GitHub",
-      "href": "https://github.com/shakirulhkhan"
+      "href": "https://github.com/KhanShaheb34"
     },
     {
       "icon": "💼",
       "text": "LinkedIn",
-      "href": "https://linkedin.com/in/shakirulhkhan"
+      "href": "https://linkedin.com/in/shakirulhasan"
     },
     {
-      "icon": "🐦",
-      "text": "Twitter",
-      "href": "https://twitter.com/shakirulhkhan"
+      "icon": "𝕏",
+      "text": "@_khanshaheb",
+      "href": "https://x.com/_khanshaheb"
     }
   ],
   "projects": [
