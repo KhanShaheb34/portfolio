@@ -1,34 +1,24 @@
-import { ReactNode } from 'react';
-import SquigglyLine from './SquigglyLine';
+import type { ReactNode } from 'react';
 
-interface SectionProps {
-  leftContent?: ReactNode;
-  rightContent?: ReactNode;
-  className?: string;
-  id?: string;
-}
+type SectionProps = {
+  title: string;
+  children: ReactNode;
+  titleSize?: 'lg' | 'xl';
+};
 
-export default function Section({ leftContent, rightContent, className = '', id }: SectionProps) {
+export default function Section({
+  title,
+  children,
+  titleSize = 'xl',
+}: SectionProps) {
+  const titleClass = titleSize === 'xl' ? 'text-3xl' : 'text-2xl';
+
   return (
-    <section id={id} className={`min-h-screen py-16 px-8 ${className}`}>
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 items-start">
-          {/* Left Column */}
-          <div className="lg:col-span-1">
-            {leftContent}
-          </div>
-          
-          {/* Center Column - Squiggly Line */}
-          <div className="hidden lg:flex lg:col-span-1 justify-center">
-            <SquigglyLine height={600} />
-          </div>
-          
-          {/* Right Column */}
-          <div className="lg:col-span-1">
-            {rightContent}
-          </div>
-        </div>
+    <div className="flex-1 p-8">
+      <div className="space-y-6">
+        <h1 className={`font-normal ${titleClass}`}>{title}</h1>
+        {children}
       </div>
-    </section>
+    </div>
   );
 }

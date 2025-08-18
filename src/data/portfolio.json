@@ -1,0 +1,162 @@
+{
+  "intro": {
+    "paragraphs": [
+      "Hi, I'm Shakirul Hasan Khan, and this is my website. I have written a lot of code.",
+      "I'm the Founder & Lead Engineer of Ponno, building AI-powered conversational commerce. Lately, I've been working on Rust, TypeScript, and AI research.",
+      "Software Engineer with 4+ years experience, B.Sc. in Software Engineering (3.66 CGPA)"
+    ]
+  },
+  "socialLinks": [
+    {
+      "icon": "🔗",
+      "text": "GitHub",
+      "href": "https://github.com/shakirulhkhan"
+    },
+    {
+      "icon": "💼",
+      "text": "LinkedIn",
+      "href": "https://linkedin.com/in/shakirulhkhan"
+    },
+    {
+      "icon": "🐦",
+      "text": "Twitter",
+      "href": "https://twitter.com/shakirulhkhan"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Ponno",
+      "badge": "STARTUP",
+      "description": "AI-powered conversational commerce platform"
+    },
+    {
+      "title": "Coterm",
+      "badge": "CLI TOOL",
+      "description": "Rust-based terminal application for developer productivity"
+    },
+    {
+      "title": "Ramble",
+      "badge": "APP",
+      "description": "Transcription and meeting management platform"
+    },
+    {
+      "title": "Re:sume",
+      "badge": "AI TOOL",
+      "description": "AI-powered resume builder and optimization"
+    },
+    {
+      "title": "BnPC Dataset",
+      "badge": "RESEARCH",
+      "description": "Bangla paraphrase detection dataset for NLP research"
+    },
+    {
+      "title": "Portfolio Projects",
+      "badge": "SHOWCASE",
+      "description": "Collection of full-stack applications"
+    }
+  ],
+  "openSource": [
+    {
+      "name": "coterm",
+      "stars": 12,
+      "description": "Rust CLI tool for enhanced terminal experience",
+      "href": "https://github.com/shakirulhkhan/coterm"
+    },
+    {
+      "name": "ramble-transcription",
+      "stars": 8,
+      "description": "Open-source transcription platform",
+      "href": "https://github.com/shakirulhkhan/ramble-transcription"
+    },
+    {
+      "name": "bnpc-dataset",
+      "stars": 15,
+      "description": "Bangla paraphrase detection research dataset",
+      "href": "https://github.com/shakirulhkhan/bnpc-dataset"
+    },
+    {
+      "name": "resume-ai",
+      "stars": 6,
+      "description": "AI-powered resume optimization tool",
+      "href": "https://github.com/shakirulhkhan/resume-ai"
+    }
+  ],
+  "posts": [
+    {
+      "title": "The Future of AI in Commerce",
+      "date": "Aug 15, 2025",
+      "href": "/posts/ai-conversational-commerce"
+    },
+    {
+      "title": "Rust for High-Performance Applications",
+      "date": "Jul 28, 2025",
+      "href": "/posts/rust-performance"
+    },
+    {
+      "title": "Advanced TypeScript Patterns",
+      "date": "Jun 10, 2025",
+      "href": "/posts/typescript-advanced"
+    },
+    {
+      "title": "Bangla NLP Research Insights",
+      "date": "May 22, 2025",
+      "href": "/posts/ai-research"
+    }
+  ],
+  "interests": [
+    {
+      "title": "AI & Machine Learning",
+      "description": "Natural Language Processing, Computer Vision"
+    },
+    {
+      "title": "Systems Programming",
+      "description": "Rust, Performance Optimization"
+    },
+    {
+      "title": "Web Technologies",
+      "description": "TypeScript, React, Next.js"
+    }
+  ],
+  "academic": {
+    "education": {
+      "degree": "B.Sc. Software Engineering",
+      "institution": "Shahjalal University of Science & Technology",
+      "details": "CGPA: 3.66 | 2018-2023"
+    },
+    "research": [
+      {
+        "title": "BnPC Dataset",
+        "description": "Bangla paraphrase detection dataset for NLP research"
+      },
+      {
+        "title": "Thesis",
+        "description": "Software Engineering methodologies and practices"
+      }
+    ],
+    "certifications": [
+      "Deep Learning Specialization (Coursera)",
+      "TensorFlow Developer Certificate",
+      "Neural Networks and Deep Learning"
+    ]
+  },
+  "hobbies": [
+    {
+      "title": "Photography",
+      "description": "Capturing moments and stories through lens",
+      "href": "https://instagram.com/shakirulhkhan"
+    },
+    {
+      "title": "Reading Books",
+      "description": "Always learning from great minds",
+      "href": "https://goodreads.com/shakirulhkhan"
+    },
+    {
+      "title": "Traveling",
+      "description": "Exploring new cultures and places"
+    },
+    {
+      "title": "Chess",
+      "description": "Strategic thinking and problem solving"
+    }
+  ]
+}
