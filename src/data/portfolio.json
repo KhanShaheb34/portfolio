@@ -8,17 +8,17 @@
   },
   "socialLinks": [
     {
-      "icon": "🔗",
+      "icon": "github",
       "text": "GitHub",
       "href": "https://github.com/KhanShaheb34"
     },
     {
-      "icon": "💼",
+      "icon": "linkedin",
       "text": "LinkedIn",
       "href": "https://linkedin.com/in/shakirulhasan"
     },
     {
-      "icon": "𝕏",
+      "icon": "twitter",
       "text": "@_khanshaheb",
       "href": "https://x.com/_khanshaheb"
     }
