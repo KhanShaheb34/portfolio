@@ -1,11 +1,9 @@
 'use client';
 
-import {
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-  UserIcon,
-  XLogoIcon,
-} from '@phosphor-icons/react';
+import { GithubLogoIcon } from '@phosphor-icons/react/GithubLogo';
+import { LinkedinLogoIcon } from '@phosphor-icons/react/LinkedinLogo';
+import { UserIcon } from '@phosphor-icons/react/User';
+import { XLogoIcon } from '@phosphor-icons/react/XLogo';
 import Link from 'next/link';
 
 type SocialLinkProps = {
