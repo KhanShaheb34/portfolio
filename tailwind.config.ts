@@ -14,9 +14,7 @@ const config: Config = {
         muted: 'var(--muted)',
       },
       fontFamily: {
-        mono: ['var(--font-roboto-mono)', 'monospace'],
-        sans: ['var(--font-inter)', 'sans-serif'],
-        serif: ['var(--font-lora)', 'serif'],
+        mono: ['var(--font-fira-mono)', 'monospace'],
       },
       lineHeight: {
         relaxed: '1.7',

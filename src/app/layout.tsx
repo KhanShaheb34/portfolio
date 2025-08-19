@@ -1,23 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter, Lora, Roboto_Mono } from 'next/font/google';
+import { Fira_Mono } from 'next/font/google';
 import './globals.css';
 
-const robotoMono = Roboto_Mono({
-  variable: '--font-roboto-mono',
-  subsets: ['latin'],
+const firaMono = Fira_Mono({
+  variable: '--font-fira-mono',
+  subsets: ['latin', 'latin-ext'],
   display: 'swap',
-});
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-const lora = Lora({
-  variable: '--font-lora',
-  subsets: ['latin'],
-  display: 'swap',
+  weight: ['400', '500', '700'],
 });
 
 export const metadata: Metadata = {
@@ -76,11 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${robotoMono.variable} ${inter.variable} ${lora.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${firaMono.variable} antialiased`}>{children}</body>
     </html>
   );
 }
