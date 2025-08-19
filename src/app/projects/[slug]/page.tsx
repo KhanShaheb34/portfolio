@@ -3,13 +3,14 @@ import { notFound } from 'next/navigation';
 import { getProjectBySlug, getProjectSlugs } from '@/lib/projects';
 
 type ProjectPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -192,8 +193,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: ProjectPageProps) {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return {

@@ -25,6 +25,7 @@ export function getAllProjects(): ProjectWithSlug[] {
     .map(([slug, project]) => ({
       slug,
       ...project,
+      status: project.status as 'active' | 'completed' | 'archived',
     }))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
@@ -38,6 +39,7 @@ export function getProjectBySlug(slug: string): ProjectWithSlug | null {
   return {
     slug,
     ...project,
+    status: project.status as 'active' | 'completed' | 'archived',
   };
 }
 

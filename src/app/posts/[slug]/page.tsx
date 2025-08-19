@@ -4,13 +4,14 @@ import BlogLayout from '@/components/BlogLayout';
 import { getPostBySlug, getPostSlugs } from '@/lib/blog';
 
 type PostPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function PostPage({ params }: PostPageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }: PostPageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -30,8 +31,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: PostPageProps) {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: PostPageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return {
