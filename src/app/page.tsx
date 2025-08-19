@@ -17,7 +17,7 @@ const structuredData = {
   jobTitle: 'Software Engineer',
   description:
     'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
-  url: 'https://shakirul.dev',
+  url: 'https://shakirul-dev.vercel.app',
   sameAs: [
     'https://github.com/KhanShaheb34',
     'https://linkedin.com/in/shakirulhasan',

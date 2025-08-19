@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/blog';
 import { getProjectSlugs } from '@/lib/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://shakirul.dev';
+  const baseUrl = 'https://shakirul-dev.vercel.app';
 
   // Get all blog posts
   const posts = getAllPosts();
