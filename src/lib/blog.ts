@@ -11,14 +11,14 @@ const posts = [
     readingTime: '8 min read',
   },
   {
-    slug: 'react-scalability',
-    title: 'Creating Scalable React Applications',
-    date: '2023-03-20',
+    slug: 'why-not-px',
+    title: 'Why Should You Not Use px?',
+    date: '2024-01-10',
     excerpt:
-      'Best practices and patterns for building maintainable React applications at scale, with insights from real-world projects.',
-    tags: ['react', 'javascript', 'architecture', 'scalability'],
+      'Exploring Responsive Design: Embracing Flexible CSS Units for a Better Web Experience',
+    tags: ['css', 'ui', 'design', 'guidelines'],
     author: 'Shakirul Hasan Khan',
-    readingTime: '6 min read',
+    readingTime: '10 min read',
   },
 ];
 

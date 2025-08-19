@@ -8,6 +8,7 @@ import SocialLink from '@/components/SocialLink';
 import VerticalSeparator from '@/components/VerticalSeparator';
 import WavyLine from '@/components/WavyLine';
 import portfolioData from '@/data/portfolio.json' with { type: 'json' };
+import { getAllPosts } from '@/lib/blog';
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -44,6 +45,8 @@ const structuredData = {
 };
 
 export default function Home() {
+  const posts = getAllPosts();
+
   return (
     <>
       <script
@@ -123,10 +126,10 @@ export default function Home() {
           <Column>
             <Section title="POSTS">
               <div className="space-y-4">
-                {portfolioData.posts.map((post, index) => (
+                {posts.map((post, index) => (
                   <PostCard
                     date={post.date}
-                    href={post.href}
+                    href={`/posts/${post.slug}`}
                     key={index}
                     title={post.title}
                   />

@@ -81,28 +81,6 @@
       "href": "https://github.com/KhanShaheb34/bochon"
     }
   ],
-  "posts": [
-    {
-      "title": "Building AI-Powered Terminal Tools with Rust",
-      "date": "May 2023",
-      "href": "/posts/coterm-development"
-    },
-    {
-      "title": "Creating Scalable React Applications",
-      "date": "Mar 2023",
-      "href": "/posts/react-scalability"
-    },
-    {
-      "title": "Working with Bengali NLP and TensorFlow",
-      "date": "Jul 2020",
-      "href": "/posts/bengali-nlp"
-    },
-    {
-      "title": "Full-Stack Development Best Practices",
-      "date": "Jan 2022",
-      "href": "/posts/fullstack-practices"
-    }
-  ],
   "interests": [
     {
       "title": "AI & Machine Learning",
