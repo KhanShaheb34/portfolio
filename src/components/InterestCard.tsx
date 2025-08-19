@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 type InterestCardProps = {
   title: string;
   description: string;
@@ -10,14 +12,28 @@ export default function InterestCard({
   href,
 }: InterestCardProps) {
   if (href) {
+    const isExternal = href.startsWith('http');
+
     return (
       <div className="space-y-1">
-        <a
-          className="block text-md transition-colors hover:text-muted"
-          href={href}
-        >
-          {title}
-        </a>
+        {isExternal ? (
+          <a
+            className="block text-md transition-colors hover:text-muted"
+            href={href}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {title}
+          </a>
+        ) : (
+          <Link
+            className="block text-md transition-colors hover:text-muted"
+            href={href}
+            prefetch={true}
+          >
+            {title}
+          </Link>
+        )}
         <p className="text-muted text-sm">{description}</p>
       </div>
     );

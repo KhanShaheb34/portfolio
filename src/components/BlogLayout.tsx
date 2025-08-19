@@ -15,6 +15,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
           <Link
             className="mb-8 inline-block text-muted transition-colors hover:text-foreground"
             href="/"
+            prefetch={true}
           >
             ← Back to Portfolio
           </Link>
@@ -62,6 +63,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
             <Link
               className="text-muted transition-colors hover:text-foreground"
               href="/"
+              prefetch={true}
             >
               ← Back to Portfolio
             </Link>

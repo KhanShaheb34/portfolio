@@ -13,6 +13,7 @@ export default function ProjectsPage() {
           <Link
             className="mb-8 inline-block text-muted transition-colors hover:text-foreground"
             href="/"
+            prefetch={true}
           >
             ← Back to Portfolio
           </Link>
@@ -40,6 +41,7 @@ export default function ProjectsPage() {
                     <Link
                       className="transition-colors hover:text-muted"
                       href={`/projects/${project.slug}`}
+                      prefetch={true}
                     >
                       {project.title}
                     </Link>
@@ -93,6 +95,7 @@ export default function ProjectsPage() {
                 <Link
                   className="text-foreground transition-colors hover:text-muted"
                   href={`/projects/${project.slug}`}
+                  prefetch={true}
                 >
                   View Details →
                 </Link>

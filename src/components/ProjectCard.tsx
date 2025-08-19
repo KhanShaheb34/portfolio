@@ -30,6 +30,7 @@ export default function ProjectCard({
       <Link
         className="block transition-opacity hover:opacity-80"
         href={`/projects/${slug}`}
+        prefetch={true}
       >
         {content}
       </Link>

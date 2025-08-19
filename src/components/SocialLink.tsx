@@ -1,12 +1,12 @@
 'use client';
 
-import Link from 'next/link';
 import {
   GithubLogoIcon,
   LinkedinLogoIcon,
-  XLogoIcon,
   UserIcon,
+  XLogoIcon,
 } from '@phosphor-icons/react';
+import Link from 'next/link';
 
 type SocialLinkProps = {
   icon: string;
@@ -29,18 +29,19 @@ export default function SocialLink({ icon, text, href }: SocialLinkProps) {
     <div className="flex items-center space-x-2">
       {IconComponent && <IconComponent size={18} weight="fill" />}
       {isExternal ? (
-        <a 
-          className="transition-colors hover:text-muted" 
+        <a
+          className="transition-colors hover:text-muted"
           href={href}
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
         >
           {text}
         </a>
       ) : (
-        <Link 
-          className="transition-colors hover:text-muted" 
+        <Link
+          className="transition-colors hover:text-muted"
           href={href}
+          prefetch={true}
         >
           {text}
         </Link>

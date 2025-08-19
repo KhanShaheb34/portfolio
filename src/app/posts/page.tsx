@@ -12,6 +12,7 @@ export default function PostsPage() {
           <Link
             className="mb-8 inline-block text-muted transition-colors hover:text-foreground"
             href="/"
+            prefetch={true}
           >
             ← Back to Portfolio
           </Link>
@@ -34,6 +35,7 @@ export default function PostsPage() {
                   <Link
                     className="transition-colors hover:text-muted"
                     href={`/posts/${post.slug}`}
+                    prefetch={true}
                   >
                     {post.title}
                   </Link>
@@ -70,6 +72,7 @@ export default function PostsPage() {
               <Link
                 className="inline-block text-foreground transition-colors hover:text-muted"
                 href={`/posts/${post.slug}`}
+                prefetch={true}
               >
                 Read more →
               </Link>

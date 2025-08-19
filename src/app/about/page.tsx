@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import portfolioData from '@/data/portfolio.json';
+import portfolioData from '@/data/portfolio.json' with { type: 'json' };
 
 export default function AboutPage() {
   const { intro, academic, socialLinks, hobbies } = portfolioData;
@@ -12,6 +12,7 @@ export default function AboutPage() {
           <Link
             className="mb-8 inline-block text-muted transition-colors hover:text-foreground"
             href="/"
+            prefetch={true}
           >
             ← Back to Portfolio
           </Link>
@@ -39,9 +40,7 @@ export default function AboutPage() {
                   <h3 className="font-normal text-xl">
                     {academic.education.degree}
                   </h3>
-                  <p className="text-muted">
-                    {academic.education.institution}
-                  </p>
+                  <p className="text-muted">{academic.education.institution}</p>
                   <p className="text-muted text-sm">
                     {academic.education.details}
                   </p>
@@ -52,7 +51,9 @@ export default function AboutPage() {
 
           {/* Experience */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">Professional Experience</h2>
+            <h2 className="mb-6 font-normal text-2xl">
+              Professional Experience
+            </h2>
             <div className="space-y-6">
               <div className="space-y-4 rounded-lg border border-foreground/20 p-6">
                 <div className="flex items-start justify-between">
@@ -66,13 +67,20 @@ export default function AboutPage() {
                   </span>
                 </div>
                 <p className="text-muted leading-relaxed">
-                  Building an AI sidekick with React, NextJS, Python and LLMs. 
-                  Specializing in ReactJS, NextJS, and TypeScript to create 
-                  scalable, user-focused applications with complex design and 
+                  Building an AI sidekick with React, NextJS, Python and LLMs.
+                  Specializing in ReactJS, NextJS, and TypeScript to create
+                  scalable, user-focused applications with complex design and
                   performance requirements.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'NextJS', 'TypeScript', 'Python', 'LLMs', 'AI'].map((tech) => (
+                  {[
+                    'React',
+                    'NextJS',
+                    'TypeScript',
+                    'Python',
+                    'LLMs',
+                    'AI',
+                  ].map((tech) => (
                     <span
                       className="rounded bg-foreground/10 px-2 py-1 text-foreground text-xs"
                       key={tech}
@@ -86,19 +94,28 @@ export default function AboutPage() {
               <div className="space-y-4 rounded-lg border border-foreground/20 p-6">
                 <div className="flex items-start justify-between">
                   <div className="space-y-2">
-                    <h3 className="font-normal text-xl">Full-Stack Developer</h3>
+                    <h3 className="font-normal text-xl">
+                      Full-Stack Developer
+                    </h3>
                     <p className="text-muted">Freelance & Personal Projects</p>
                     <p className="text-muted text-sm">2019 - Present</p>
                   </div>
                 </div>
                 <p className="text-muted leading-relaxed">
-                  Developed multiple AI-powered applications including Coterm (Rust CLI tool), 
-                  Ramble (meeting transcription), and Re:sume (AI resume builder). 
-                  Over 4 years of experience in full-stack development with focus on 
-                  performance and user experience.
+                  Developed multiple AI-powered applications including Coterm
+                  (Rust CLI tool), Ramble (meeting transcription), and Re:sume
+                  (AI resume builder). Over 4 years of experience in full-stack
+                  development with focus on performance and user experience.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['Rust', 'React', 'Node.js', 'TypeScript', 'OpenAI API', 'Vercel'].map((tech) => (
+                  {[
+                    'Rust',
+                    'React',
+                    'Node.js',
+                    'TypeScript',
+                    'OpenAI API',
+                    'Vercel',
+                  ].map((tech) => (
                     <span
                       className="rounded bg-foreground/10 px-2 py-1 text-foreground text-xs"
                       key={tech}
@@ -113,10 +130,15 @@ export default function AboutPage() {
 
           {/* Research & Publications */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">Research & Publications</h2>
+            <h2 className="mb-6 font-normal text-2xl">
+              Research & Publications
+            </h2>
             <div className="space-y-4">
               {academic.research.map((research, index) => (
-                <div className="space-y-4 rounded-lg border border-foreground/20 p-6" key={index}>
+                <div
+                  className="space-y-4 rounded-lg border border-foreground/20 p-6"
+                  key={index}
+                >
                   <div className="space-y-2">
                     <h3 className="font-normal text-lg">{research.title}</h3>
                     <p className="text-muted leading-relaxed">
@@ -133,7 +155,10 @@ export default function AboutPage() {
             <h2 className="mb-6 font-normal text-2xl">Certifications</h2>
             <div className="grid gap-4 md:grid-cols-2">
               {academic.certifications.map((cert, index) => (
-                <div className="space-y-2 rounded-lg border border-foreground/20 p-4" key={index}>
+                <div
+                  className="space-y-2 rounded-lg border border-foreground/20 p-4"
+                  key={index}
+                >
                   <p className="text-muted text-sm">{cert}</p>
                 </div>
               ))}
@@ -160,9 +185,9 @@ export default function AboutPage() {
             <h2 className="mb-6 font-normal text-2xl">Get In Touch</h2>
             <div className="space-y-4">
               <p className="text-lg text-muted leading-relaxed">
-                I'm always interested in new opportunities and collaborations. 
-                Feel free to reach out if you'd like to discuss a project, 
-                share ideas, or just connect.
+                I'm always interested in new opportunities and collaborations.
+                Feel free to reach out if you'd like to discuss a project, share
+                ideas, or just connect.
               </p>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
@@ -188,6 +213,7 @@ export default function AboutPage() {
             <Link
               className="text-muted transition-colors hover:text-foreground"
               href="/"
+              prefetch={true}
             >
               ← Back to Portfolio
             </Link>
@@ -196,12 +222,14 @@ export default function AboutPage() {
               <Link
                 className="text-muted transition-colors hover:text-foreground"
                 href="/posts"
+                prefetch={true}
               >
                 Read My Blog
               </Link>
               <Link
                 className="text-muted transition-colors hover:text-foreground"
                 href="/projects"
+                prefetch={true}
               >
                 View Projects
               </Link>
@@ -216,16 +244,19 @@ export default function AboutPage() {
 export function generateMetadata() {
   return {
     title: 'About Shakirul Hasan Khan | Software Engineer & AI Developer',
-    description: 'Learn more about Shakirul Hasan Khan - Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
+    description:
+      'Learn more about Shakirul Hasan Khan - Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
     openGraph: {
       title: 'About Shakirul Hasan Khan',
-      description: 'Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
+      description:
+        'Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
       type: 'profile',
     },
     twitter: {
       card: 'summary_large_image',
       title: 'About Shakirul Hasan Khan',
-      description: 'Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
+      description:
+        'Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
     },
   };
 }

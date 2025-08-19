@@ -23,6 +23,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <Link
             className="mb-8 inline-block text-muted transition-colors hover:text-foreground"
             href="/"
+            prefetch={true}
           >
             ← Back to Portfolio
           </Link>
@@ -165,6 +166,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <Link
               className="text-muted transition-colors hover:text-foreground"
               href="/"
+              prefetch={true}
             >
               ← Back to Portfolio
             </Link>
@@ -172,6 +174,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <Link
               className="text-muted transition-colors hover:text-foreground"
               href="/projects"
+              prefetch={true}
             >
               View All Projects →
             </Link>
