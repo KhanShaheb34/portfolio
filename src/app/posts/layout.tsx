@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import BlogLayout from '@/components/BlogLayout';
+import CodeHighlight from '@/components/CodeHighlight';
 import { getPostBySlug } from '@/lib/blog';
 
 type PostLayoutProps = {
@@ -28,6 +29,7 @@ export default function PostLayout({ children }: PostLayoutProps) {
 
   return (
     <BlogLayout post={post}>
+      <CodeHighlight />
       <div className="prose prose-invert prose-lg max-w-none">{children}</div>
     </BlogLayout>
   );

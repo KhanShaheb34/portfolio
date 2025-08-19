@@ -4,7 +4,7 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   experimental: {
-    mdxRs: true,
+    mdxRs: false,
   },
   webpack: (config, { dev, isServer }) => {
     // Disable caching to resolve snapshot dependencies issue
