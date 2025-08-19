@@ -1,0 +1,176 @@
+{
+  "coterm": {
+    "title": "Coterm",
+    "badge": "CLI TOOL",
+    "description": "Copilot for terminal built using Rust, Vercel edge function and OpenAI API with natural language command generation",
+    "longDescription": "Coterm is a revolutionary terminal copilot that bridges the gap between natural language and command-line interfaces. Built with Rust for performance and integrated with OpenAI's API, it allows developers to describe what they want to do in plain English and receive the exact command they need.",
+    "technologies": ["Rust", "OpenAI API", "Vercel Edge Functions", "CLI", "Natural Language Processing"],
+    "features": [
+      "Natural language to CLI command generation",
+      "Command revision and refinement",
+      "Safety measures and dangerous command detection",
+      "One-key execution with confirmation prompts",
+      "Cross-platform compatibility"
+    ],
+    "github": "https://github.com/KhanShaheb34/coterm",
+    "demo": null,
+    "images": [],
+    "challenges": [
+      "Context awareness for different operating systems",
+      "Robust error handling for network requests",
+      "Performance optimization with connection pooling"
+    ],
+    "impact": [
+      "12+ GitHub stars and growing community",
+      "10-15 minutes daily time savings for users",
+      "Learning tool for junior developers"
+    ],
+    "date": "2023-05-01",
+    "status": "active"
+  },
+  "ramble": {
+    "title": "Ramble",
+    "badge": "AI APP",
+    "description": "Application to transcribe meetings, get overheard, commitment, and follow up from meetings using AI",
+    "longDescription": "Ramble is an AI-powered meeting management platform that transforms how teams handle meeting transcription, action items, and follow-ups. It automatically captures, transcribes, and analyzes meetings to extract key insights and commitments.",
+    "technologies": ["React", "Next.js", "TypeScript", "AI/ML", "Speech-to-Text", "NLP"],
+    "features": [
+      "Real-time meeting transcription",
+      "Automatic action item extraction",
+      "Commitment tracking and follow-ups",
+      "Voice note taking with AI assistance",
+      "Meeting summaries and insights"
+    ],
+    "github": "https://github.com/KhanShaheb34/ramble",
+    "demo": null,
+    "images": [],
+    "challenges": [
+      "Real-time audio processing and transcription",
+      "Accurate speaker identification",
+      "Context understanding for action items"
+    ],
+    "impact": [
+      "Improved meeting productivity for teams",
+      "Reduced manual note-taking overhead",
+      "Better follow-up on commitments"
+    ],
+    "date": "2023-03-01",
+    "status": "active"
+  },
+  "resume": {
+    "title": "Re:sume",
+    "badge": "AI TOOL",
+    "description": "Web application to create and enhance resumes using AI with PDF generation and OpenAI GPT3 integration",
+    "longDescription": "Re:sume is an AI-powered resume builder that helps professionals create compelling resumes. It uses advanced AI to enhance content, suggest improvements, and generate polished PDF outputs tailored for specific job applications.",
+    "technologies": ["Next.js", "React", "PostgreSQL", "Prisma", "OpenAI GPT-3", "PDF Generation"],
+    "features": [
+      "AI-powered content enhancement",
+      "Multiple resume templates",
+      "PDF generation and export",
+      "Database storage and versioning",
+      "Job-specific optimization suggestions"
+    ],
+    "github": "https://github.com/KhanShaheb34/resume",
+    "demo": null,
+    "images": [],
+    "challenges": [
+      "AI prompt engineering for resume content",
+      "PDF layout and formatting",
+      "User experience optimization"
+    ],
+    "impact": [
+      "Helped users create professional resumes",
+      "Reduced time spent on resume formatting",
+      "Improved job application success rates"
+    ],
+    "date": "2022-11-01",
+    "status": "completed"
+  },
+  "bochon": {
+    "title": "Bochon",
+    "badge": "WEB APP",
+    "description": "Performance dashboard for various Bengali Speech to Text models developed for Bengali.ai",
+    "longDescription": "Bochon is a comprehensive performance dashboard developed for Bengali.ai to showcase and compare various Bengali Speech-to-Text models. It provides detailed analytics, benchmarks, and interactive demonstrations of different ASR models.",
+    "technologies": ["TypeScript", "React", "Chakra UI", "Python", "Docker", "Nginx"],
+    "features": [
+      "Model performance comparison",
+      "Interactive speech recognition demos",
+      "Detailed accuracy metrics",
+      "Real-time inference testing",
+      "Responsive dashboard interface"
+    ],
+    "github": "https://github.com/KhanShaheb34/bochon",
+    "demo": null,
+    "images": [],
+    "challenges": [
+      "Real-time audio processing",
+      "Model performance visualization",
+      "Responsive design for complex data"
+    ],
+    "impact": [
+      "Showcased Bengali ASR model capabilities",
+      "Facilitated model comparison and selection",
+      "Contributed to Bengali.ai research efforts"
+    ],
+    "date": "2022-10-01",
+    "status": "completed"
+  },
+  "sust-ghms": {
+    "title": "SUST GHMS",
+    "badge": "MANAGEMENT",
+    "description": "Guest house management system with room booking, authentication, and profile management",
+    "longDescription": "SUST Guest House Management System is a comprehensive web application designed to streamline the booking and management of guest house facilities at Shahjalal University of Science and Technology.",
+    "technologies": ["React", "TypeScript", "Chakra UI", "Node.js", "Express", "MongoDB"],
+    "features": [
+      "Room availability search and booking",
+      "User authentication and profiles",
+      "Booking history and status tracking",
+      "Admin panel for room management",
+      "Responsive design for all devices"
+    ],
+    "github": null,
+    "demo": null,
+    "images": [],
+    "challenges": [
+      "Complex booking state management",
+      "Real-time availability updates",
+      "User role and permission management"
+    ],
+    "impact": [
+      "Digitized guest house booking process",
+      "Reduced manual booking overhead",
+      "Improved resource utilization"
+    ],
+    "date": "2022-01-01",
+    "status": "completed"
+  },
+  "instatweet": {
+    "title": "Instatweet",
+    "badge": "SOCIAL APP",
+    "description": "Twitter clone with Instagram-like interface featuring authentication, posts, comments, and follows",
+    "longDescription": "Instatweet is a unique social media platform that combines the visual appeal of Instagram with the microblogging functionality of Twitter. Built as a full-stack web application with modern technologies.",
+    "technologies": ["TypeScript", "React", "Redux Toolkit", "Chakra UI", "Express.js", "PostgreSQL", "JWT"],
+    "features": [
+      "User authentication and profiles",
+      "Post creation, editing, and deletion",
+      "Like and comment system",
+      "Follow/unfollow functionality",
+      "Real-time updates and notifications"
+    ],
+    "github": null,
+    "demo": null,
+    "images": [],
+    "challenges": [
+      "Real-time social interactions",
+      "Scalable backend architecture",
+      "Responsive UI/UX design"
+    ],
+    "impact": [
+      "Demonstrated full-stack development skills",
+      "Showcased modern web technologies",
+      "Learning project for social media features"
+    ],
+    "date": "2021-09-01",
+    "status": "completed"
+  }
+}
