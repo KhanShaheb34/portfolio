@@ -7,12 +7,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Get all blog posts
   const posts = getAllPosts();
-  const postSitemapEntries = posts.map((post) => ({
-    url: `${baseUrl}/posts/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  const postSitemapEntries = posts.map((post) => {
+    // Ensure valid date or use fallback
+    const postDate = post.date ? new Date(post.date) : new Date();
+    const validDate = Number.isNaN(postDate.getTime()) ? new Date() : postDate;
+
+    return {
+      url: `${baseUrl}/posts/${post.slug}`,
+      lastModified: validDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    };
+  });
 
   // Get all projects
   const projectSlugs = getProjectSlugs();

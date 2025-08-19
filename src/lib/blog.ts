@@ -1,9 +1,26 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import matter from 'gray-matter';
-import readingTime from 'reading-time';
-
-const postsDirectory = path.join(process.cwd(), 'src/content/posts');
+// Blog utilities for MDX posts in app directory
+const posts = [
+  {
+    slug: 'coterm-development',
+    title: 'Building AI-Powered Terminal Tools with Rust',
+    date: '2023-05-15',
+    excerpt:
+      "How I built Coterm, a Rust-based terminal copilot that uses OpenAI's API to generate CLI commands from natural language descriptions.",
+    tags: ['rust', 'ai', 'cli', 'openai'],
+    author: 'Shakirul Hasan Khan',
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'react-scalability',
+    title: 'Creating Scalable React Applications',
+    date: '2023-03-20',
+    excerpt:
+      'Best practices and patterns for building maintainable React applications at scale, with insights from real-world projects.',
+    tags: ['react', 'javascript', 'architecture', 'scalability'],
+    author: 'Shakirul Hasan Khan',
+    readingTime: '6 min read',
+  },
+];
 
 export type BlogPost = {
   slug: string;
@@ -27,60 +44,36 @@ export type BlogPostMeta = {
 };
 
 export function getAllPosts(): BlogPostMeta[] {
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames
-    .filter((fileName) => fileName.endsWith('.mdx'))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.mdx$/, '');
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
-      const readingTimeResult = readingTime(content);
-
-      return {
-        slug,
-        title: data.title,
-        date: data.date,
-        excerpt: data.excerpt,
-        tags: data.tags || [],
-        author: data.author,
-        readingTime: readingTimeResult.text,
-      };
+  return posts
+    .map((post) => ({
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      excerpt: post.excerpt,
+      tags: post.tags,
+      author: post.author,
+      readingTime: post.readingTime,
+    }))
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      }
+      return -1;
     });
-
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    }
-    return -1;
-  });
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {
-  try {
-    const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-    const readingTimeResult = readingTime(content);
-
-    return {
-      slug,
-      title: data.title,
-      date: data.date,
-      excerpt: data.excerpt,
-      tags: data.tags || [],
-      author: data.author,
-      content,
-      readingTime: readingTimeResult.text,
-    };
-  } catch {
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) {
     return null;
   }
+
+  return {
+    ...post,
+    content: '', // Content is now in MDX files
+  };
 }
 
 export function getPostSlugs(): string[] {
-  const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames
-    .filter((fileName) => fileName.endsWith('.mdx'))
-    .map((fileName) => fileName.replace(/\.mdx$/, ''));
+  return posts.map((post) => post.slug);
 }

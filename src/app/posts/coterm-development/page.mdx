@@ -1,18 +1,34 @@
----
-title: "Building AI-Powered Terminal Tools with Rust"
-date: "2023-05-15"
-excerpt: "How I built Coterm, a Rust-based terminal copilot that uses OpenAI's API to generate CLI commands from natural language descriptions."
-tags: ["rust", "ai", "cli", "openai"]
-author: "Shakirul Hasan Khan"
----
+import DemoComponent from "@/components/DemoComponent";
 
-# Building AI-Powered Terminal Tools with Rust
+export const metadata = {
+  title: "Building AI-Powered Terminal Tools with Rust | Shakirul Hasan Khan",
+  description:
+    "How I built Coterm, a Rust-based terminal copilot that uses OpenAI's API to generate CLI commands from natural language descriptions.",
+  openGraph: {
+    title: "Building AI-Powered Terminal Tools with Rust",
+    description:
+      "How I built Coterm, a Rust-based terminal copilot that uses OpenAI's API to generate CLI commands from natural language descriptions.",
+    type: "article",
+    publishedTime: "2023-05-15",
+    authors: ["Shakirul Hasan Khan"],
+    tags: ["rust", "ai", "cli", "openai"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Building AI-Powered Terminal Tools with Rust",
+    description:
+      "How I built Coterm, a Rust-based terminal copilot that uses OpenAI's API to generate CLI commands from natural language descriptions.",
+  },
+};
 
 As developers, we spend countless hours in the terminal, often struggling to remember complex command syntax or discovering the right flags for specific tasks. This frustration led me to create **Coterm** - a terminal copilot that bridges the gap between natural language and command-line interfaces.
+
+<DemoComponent />
 
 ## The Problem
 
 Have you ever found yourself:
+
 - Googling "how to find files modified in the last 24 hours"
 - Struggling to remember tar extraction flags
 - Wishing you could just describe what you want instead of memorizing syntax
@@ -76,26 +92,29 @@ Rather than hosting our own models, I integrated with OpenAI's API through Verce
 // Vercel Edge Function
 export default async function handler(req: NextRequest) {
   const { prompt, context } = await req.json();
-  
+
   const completion = await openai.chat.completions.create({
     model: "gpt-4",
     messages: [
       {
         role: "system",
-        content: "You are a command-line expert. Generate precise, safe commands based on user descriptions."
+        content:
+          "You are a command-line expert. Generate precise, safe commands based on user descriptions.",
       },
       {
-        role: "user", 
-        content: prompt
-      }
+        role: "user",
+        content: prompt,
+      },
     ],
     max_tokens: 150,
-    temperature: 0.1
+    temperature: 0.1,
   });
-  
-  return new Response(JSON.stringify({
-    command: completion.choices[0].message.content
-  }));
+
+  return new Response(
+    JSON.stringify({
+      command: completion.choices[0].message.content,
+    })
+  );
 }
 ```
 
@@ -167,15 +186,15 @@ pub async fn generate_command(&self, prompt: &str) -> Result<String, CoTermError
         .send()
         .await
         .map_err(|e| CoTermError::NetworkError(e.to_string()))?;
-        
+
     if !response.status().is_success() {
         return Err(CoTermError::ApiError(response.status()));
     }
-    
+
     // Parse and validate response
     let command = self.parse_response(response).await?;
     self.validate_command(&command)?;
-    
+
     Ok(command)
 }
 ```
@@ -202,6 +221,7 @@ Since launching Coterm:
 ### 1. User Experience is Everything
 
 Initially, I focused too much on technical features. User feedback taught me that:
+
 - Simple, intuitive commands matter more than complex features
 - Clear error messages are crucial
 - Safety features build trust
@@ -209,6 +229,7 @@ Initially, I focused too much on technical features. User feedback taught me tha
 ### 2. AI Integration Best Practices
 
 Working with AI APIs taught me:
+
 - **Prompt engineering is critical** - small changes dramatically affect output quality
 - **Temperature settings matter** - lower values for consistent, predictable commands
 - **Fallback strategies** are essential when APIs are unavailable
@@ -216,6 +237,7 @@ Working with AI APIs taught me:
 ### 3. Community-Driven Development
 
 Open-sourcing Coterm led to:
+
 - Bug reports that improved reliability
 - Feature requests that shaped the roadmap
 - Contributions that accelerated development
@@ -227,6 +249,7 @@ I'm actively working on several enhancements:
 ### 1. Local Model Support
 
 Integrating with local LLMs for:
+
 - **Privacy**: Sensitive commands stay on your machine
 - **Offline Usage**: No internet dependency
 - **Customization**: Fine-tuned models for specific workflows
@@ -234,6 +257,7 @@ Integrating with local LLMs for:
 ### 2. Shell Integration
 
 Deeper integration with popular shells:
+
 - **Zsh/Bash plugins** for seamless experience
 - **Tab completion** for Coterm commands
 - **History integration** with existing shell history
@@ -241,6 +265,7 @@ Deeper integration with popular shells:
 ### 3. Learning System
 
 A feedback mechanism to improve suggestions:
+
 - **Usage tracking** to understand common patterns
 - **Correction learning** when users modify generated commands
 - **Personal adaptation** to individual workflow preferences
@@ -272,4 +297,4 @@ The intersection of natural language processing and system administration opens 
 
 ---
 
-*Have questions about Coterm or want to contribute? Check out the [GitHub repository](https://github.com/KhanShaheb34/coterm) or reach out on [Twitter](https://x.com/_khanshaheb).*
+_Have questions about Coterm or want to contribute? Check out the [GitHub repository](https://github.com/KhanShaheb34/coterm) or reach out on [Twitter](https://x.com/_khanshaheb)._
