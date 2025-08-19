@@ -2,10 +2,12 @@
 @import "highlight.js/styles/atom-one-dark.min.css";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --muted: #808080;
-  --border: #333333;
+  --white: #fff;
+  --background: #111111;
+  --foreground: #efefef;
+  --muted: #b4b4b4;
+  --border: #201e18;
+  --accent: #ffe0c2;
 }
 
 @theme inline {
@@ -44,18 +46,17 @@ h6 {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: var(--white);
 }
 
 /* Links */
 a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--muted);
-  transition: all 0.2s ease;
+  color: var(--white);
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  text-decoration-color: var(--foreground);
+  color: var(--accent);
 }
 
 /* Focus states for accessibility */
@@ -133,7 +134,7 @@ a:hover {
 .prose h4,
 .prose h5,
 .prose h6 {
-  color: var(--foreground);
+  color: var(--white);
   font-weight: 400;
   text-transform: none;
   letter-spacing: normal;
@@ -172,7 +173,7 @@ a:hover {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   line-height: 1.7;
-  color: var(--muted);
+  color: var(--foreground);
 }
 
 .prose strong {
@@ -195,7 +196,7 @@ a:hover {
 }
 
 .prose pre {
-  background: #111111;
+  background: #151515;
   border: 1px solid var(--muted);
   border-radius: 0.5rem;
   padding: 1.5rem;

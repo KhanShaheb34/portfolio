@@ -21,7 +21,7 @@ export default function ProjectCard({
           {badge}
         </span>
       </div>
-      <p className="text-muted">{description}</p>
+      <p className="text-muted text-sm">{description}</p>
     </div>
   );
 
