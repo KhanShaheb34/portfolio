@@ -135,7 +135,7 @@
     ],
     "certifications": [
       "TensorFlow in Practice Specialization (Coursera)",
-      "Deep Learning Specialization (Coursera)", 
+      "Deep Learning Specialization (Coursera)",
       "International English Language Testing System (IELTS)",
       "Java (Basic & Intermediate) - HackerRank",
       "C++ (Basic) - HackerRank"
@@ -144,7 +144,8 @@
   "hobbies": [
     {
       "title": "Open Source Development",
-      "description": "Contributing to and maintaining open source projects"
+      "description": "Contributing to and maintaining open source projects",
+      "href": "https://github.com/KhanShaheb34"
     },
     {
       "title": "Competitive Programming",

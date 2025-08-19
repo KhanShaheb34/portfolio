@@ -9,168 +9,212 @@ import VerticalSeparator from '@/components/VerticalSeparator';
 import WavyLine from '@/components/WavyLine';
 import portfolioData from '@/data/portfolio.json' with { type: 'json' };
 
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Shakirul Hasan Khan',
+  jobTitle: 'Software Engineer',
+  description:
+    'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
+  url: 'https://shakirul.dev',
+  sameAs: [
+    'https://github.com/KhanShaheb34',
+    'https://linkedin.com/in/shakirulhasan',
+    'https://x.com/_khanshaheb',
+  ],
+  knowsAbout: [
+    'Software Engineering',
+    'Artificial Intelligence',
+    'React',
+    'NextJS',
+    'TypeScript',
+    'Rust',
+    'Python',
+    'Full-Stack Development',
+  ],
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'Shahjalal University of Science & Technology',
+    degree: 'B.Sc. (Engg.) Software Engineering',
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Re:cruit',
+  },
+};
+
 export default function Home() {
   return (
-    <main className="h-screen bg-background text-foreground">
-      {/* Desktop: Horizontal scrolling container, Mobile: Vertical scrolling */}
-      <div className="md:scrollbar-hide scrollbar-hide block h-full overflow-hidden overflow-y-auto md:flex md:h-full md:snap-x md:snap-mandatory md:overflow-x-auto">
-        {/* Column 1: INTRO */}
-        <Column>
-          <Section title="INTRO">
-            <div className="space-y-4 text-md">
-              {portfolioData.intro.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
-          </Section>
-
-          <WavyLine />
-
-          <Section title="LINKS">
-            <div className="space-y-2">
-              {portfolioData.socialLinks.map((link, index) => (
-                <SocialLink
-                  href={link.href}
-                  icon={link.icon}
-                  key={index}
-                  text={link.text}
-                />
-              ))}
-            </div>
-          </Section>
-          <WavyLine hideOnDesktop />
-        </Column>
-
-        <VerticalSeparator />
-
-        {/* Column 2: ASSORTED PROJECTS */}
-        <Column>
-          <Section title="ASSORTED PROJECTS">
-            <div className="space-y-8">
-              {portfolioData.projects.map((project, index) => (
-                <ProjectCard
-                  badge={project.badge}
-                  description={project.description}
-                  key={index}
-                  title={project.title}
-                />
-              ))}
-            </div>
-          </Section>
-
-          <WavyLine />
-
-          <Section title="OPEN SOURCE">
-            <div className="space-y-6">
-              {portfolioData.openSource.map((repo, index) => (
-                <OpenSourceCard
-                  description={repo.description}
-                  href={repo.href}
-                  key={index}
-                  name={repo.name}
-                  stars={repo.stars}
-                />
-              ))}
-            </div>
-          </Section>
-          <WavyLine hideOnDesktop />
-        </Column>
-
-        <VerticalSeparator />
-
-        {/* Column 3: POSTS */}
-        <Column>
-          <Section title="POSTS">
-            <div className="space-y-4">
-              {portfolioData.posts.map((post, index) => (
-                <PostCard
-                  date={post.date}
-                  href={post.href}
-                  key={index}
-                  title={post.title}
-                />
-              ))}
-            </div>
-          </Section>
-
-          <WavyLine />
-
-          <Section title="INTERESTS">
-            <div className="space-y-4">
-              {portfolioData.interests.map((interest, index) => (
-                <div key={index}>
-                  <h3 className="text-md">{interest.title}</h3>
-                  <p className="text-muted text-sm">{interest.description}</p>
-                </div>
-              ))}
-            </div>
-          </Section>
-          <WavyLine hideOnDesktop />
-        </Column>
-
-        <VerticalSeparator />
-
-        {/* Column 4: ACADEMIC */}
-        <Column>
-          <Section title="ACADEMIC">
-            <div className="space-y-6">
-              <div>
-                <h3 className="mb-2 text-md">Education</h3>
-                <div className="space-y-2">
-                  <p className="font-medium">
-                    {portfolioData.academic.education.degree}
-                  </p>
-                  <p className="text-muted text-sm">
-                    {portfolioData.academic.education.institution}
-                  </p>
-                  <p className="text-muted text-sm">
-                    {portfolioData.academic.education.details}
-                  </p>
-                </div>
+    <>
+      <script
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: <Setting data for search engine>
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        type="application/ld+json"
+      />
+      <main className="h-screen bg-background text-foreground">
+        {/* Desktop: Horizontal scrolling container, Mobile: Vertical scrolling */}
+        <div className="md:scrollbar-hide scrollbar-hide block h-full overflow-hidden overflow-y-auto md:flex md:h-full md:snap-x md:snap-mandatory md:overflow-x-auto">
+          {/* Column 1: INTRO */}
+          <Column>
+            <Section title="INTRO">
+              <div className="space-y-4 text-md">
+                {portfolioData.intro.paragraphs.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
               </div>
+            </Section>
 
-              <div>
-                <h3 className="mb-2 text-md">Research</h3>
-                <div className="space-y-4">
-                  {portfolioData.academic.research.map((item, index) => (
-                    <div key={index}>
-                      <p className="font-medium">{item.title}</p>
-                      <p className="text-muted text-sm">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
+            <WavyLine />
+
+            <Section title="LINKS">
+              <div className="space-y-2">
+                <SocialLink href="/about" icon="user" text="About / Resume" />
+                {portfolioData.socialLinks.map((link, index) => (
+                  <SocialLink
+                    href={link.href}
+                    icon={link.icon}
+                    key={index}
+                    text={link.text}
+                  />
+                ))}
               </div>
+            </Section>
+            <WavyLine hideOnDesktop />
+          </Column>
 
-              <div>
-                <h3 className="mb-2 text-md">Certifications</h3>
-                <div className="space-y-2">
-                  {portfolioData.academic.certifications.map((cert, index) => (
-                    <p className="text-muted text-sm" key={index}>
-                      • {cert}
+          <VerticalSeparator />
+
+          {/* Column 2: ASSORTED PROJECTS */}
+          <Column>
+            <Section title="ASSORTED PROJECTS">
+              <div className="space-y-8">
+                {portfolioData.projects.map((project, index) => (
+                  <ProjectCard
+                    badge={project.badge}
+                    description={project.description}
+                    key={index}
+                    title={project.title}
+                  />
+                ))}
+              </div>
+            </Section>
+
+            <WavyLine />
+
+            <Section title="OPEN SOURCE">
+              <div className="space-y-6">
+                {portfolioData.openSource.map((repo, index) => (
+                  <OpenSourceCard
+                    description={repo.description}
+                    href={repo.href}
+                    key={index}
+                    name={repo.name}
+                    stars={repo.stars}
+                  />
+                ))}
+              </div>
+            </Section>
+            <WavyLine hideOnDesktop />
+          </Column>
+
+          <VerticalSeparator />
+
+          {/* Column 3: POSTS */}
+          <Column>
+            <Section title="POSTS">
+              <div className="space-y-4">
+                {portfolioData.posts.map((post, index) => (
+                  <PostCard
+                    date={post.date}
+                    href={post.href}
+                    key={index}
+                    title={post.title}
+                  />
+                ))}
+              </div>
+            </Section>
+
+            <WavyLine />
+
+            <Section title="INTERESTS">
+              <div className="space-y-4">
+                {portfolioData.interests.map((interest, index) => (
+                  <div key={index}>
+                    <h3 className="text-md">{interest.title}</h3>
+                    <p className="text-muted text-sm">{interest.description}</p>
+                  </div>
+                ))}
+              </div>
+            </Section>
+            <WavyLine hideOnDesktop />
+          </Column>
+
+          <VerticalSeparator />
+
+          {/* Column 4: ACADEMIC */}
+          <Column>
+            <Section title="ACADEMIC">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="mb-2 text-md">Education</h3>
+                  <div className="space-y-2">
+                    <p className="font-medium">
+                      {portfolioData.academic.education.degree}
                     </p>
-                  ))}
+                    <p className="text-muted text-sm">
+                      {portfolioData.academic.education.institution}
+                    </p>
+                    <p className="text-muted text-sm">
+                      {portfolioData.academic.education.details}
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 text-md">Research</h3>
+                  <div className="space-y-4">
+                    {portfolioData.academic.research.map((item, index) => (
+                      <div key={index}>
+                        <p className="font-medium">{item.title}</p>
+                        <p className="text-muted text-sm">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 text-md">Certifications</h3>
+                  <div className="space-y-2">
+                    {portfolioData.academic.certifications.map(
+                      (cert, index) => (
+                        <p className="text-muted text-sm" key={index}>
+                          • {cert}
+                        </p>
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </Section>
+            </Section>
 
-          <WavyLine />
+            <WavyLine />
 
-          <Section title="HOBBIES">
-            <div className="space-y-4">
-              {portfolioData.hobbies.map((hobby, index) => (
-                <InterestCard
-                  description={hobby.description}
-                  href={hobby.href}
-                  key={index}
-                  title={hobby.title}
-                />
-              ))}
-            </div>
-          </Section>
-          <WavyLine hideOnDesktop />
-        </Column>
-      </div>
-    </main>
+            <Section title="HOBBIES">
+              <div className="space-y-4">
+                {portfolioData.hobbies.map((hobby, index) => (
+                  <InterestCard
+                    description={hobby.description}
+                    href={hobby.href}
+                    key={index}
+                    title={hobby.title}
+                  />
+                ))}
+              </div>
+            </Section>
+            <WavyLine hideOnDesktop />
+          </Column>
+        </div>
+      </main>
+    </>
   );
 }
