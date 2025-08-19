@@ -9,13 +9,13 @@ export default function Section({ title, children }: SectionProps) {
   return (
     <div className="flex-1 p-8">
       <div className="space-y-6">
-        <h1
+        <p
           className={
-            'font-bold text-muted text-xs uppercase underline decoration-1 underline-offset-2'
+            'border-accent/60 border-l-8 pl-2 font-bold text-accent/60 text-xs uppercase'
           }
         >
           {title}
-        </h1>
+        </p>
         {children}
       </div>
     </div>

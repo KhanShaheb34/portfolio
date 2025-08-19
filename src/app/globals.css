@@ -3,7 +3,7 @@
 
 :root {
   --white: #fff;
-  --background: #111111;
+  --background: #141210;
   --foreground: #efefef;
   --muted: #b4b4b4;
   --border: #201e18;
@@ -15,6 +15,7 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-accent: var(--accent);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 }
@@ -53,6 +54,12 @@ h6 {
 a {
   color: var(--white);
   transition: color 0.2s ease;
+  text-decoration: underline;
+  /* wavy underline */
+  text-decoration-style: wavy;
+  /* text-decoration-color: var(--accent); */
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 2px;
 }
 
 a:hover {
