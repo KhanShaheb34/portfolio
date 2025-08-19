@@ -9,7 +9,7 @@ type BlogLayoutProps = {
 export default function BlogLayout({ post, children }: BlogLayoutProps) {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-4xl px-8 py-16">
+      <div className="mx-auto max-w-3xl px-8 py-16">
         {/* Header */}
         <header className="mb-12">
           <Link
