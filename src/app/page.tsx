@@ -67,7 +67,7 @@ export default function Home() {
           data-scroll-container
         >
           {/* Column 1: INTRO */}
-          <Column index={0}>
+          <Column>
             <Section title="INTRO">
               <div className="space-y-4 text-md">
                 {portfolioData.intro.paragraphs.map((paragraph, index) => (
@@ -97,7 +97,7 @@ export default function Home() {
           <VerticalSeparator />
 
           {/* Column 2: ASSORTED PROJECTS */}
-          <Column index={1}>
+          <Column>
             <Section title="ASSORTED PROJECTS">
               <div className="space-y-8">
                 {projectsArray.map((project, index) => (
@@ -137,7 +137,7 @@ export default function Home() {
           <VerticalSeparator />
 
           {/* Column 4: ACADEMIC */}
-          <Column index={2}>
+          <Column>
             <Section title="ACADEMIC">
               <div className="space-y-6">
                 <div>
@@ -201,7 +201,7 @@ export default function Home() {
           <VerticalSeparator />
 
           {/* Column 3: POSTS */}
-          <Column index={3}>
+          <Column>
             <Section title="POSTS">
               <div className="space-y-4">
                 {posts.map((post, index) => (

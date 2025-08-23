@@ -51,7 +51,7 @@ export default function ScrollArrows() {
       {showLeftArrow && (
         <button
           aria-label="Scroll left"
-          className="-translate-y-1/2 fixed top-1/2 left-4 z-40 hidden transform cursor-pointer rounded-full bg-accent/15 p-2 backdrop-blur-sm transition-all duration-300 hover:bg-accent/30 md:block"
+          className="-translate-y-1/2 fixed top-1/2 left-4 z-40 hidden transform cursor-pointer rounded-full border border-accent/15 bg-accent/10 p-2 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-accent/20 hover:bg-accent/20 active:scale-90 md:block"
           onClick={() => scrollTo('left')}
           type="button"
         >
@@ -63,7 +63,7 @@ export default function ScrollArrows() {
       {showRightArrow && (
         <button
           aria-label="Scroll right"
-          className="-translate-y-1/2 fixed top-1/2 right-4 z-40 hidden transform cursor-pointer rounded-full bg-accent/15 p-2 backdrop-blur-sm transition-all duration-300 hover:bg-accent/30 md:block"
+          className="-translate-y-1/2 fixed top-1/2 right-4 z-40 hidden transform cursor-pointer rounded-full border border-accent/15 bg-accent/10 p-2 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-accent/20 hover:bg-accent/20 active:scale-90 md:block"
           onClick={() => scrollTo('right')}
           type="button"
         >
