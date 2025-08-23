@@ -3,6 +3,7 @@ import ExperienceCard from '@/components/ExperienceCard';
 import InterestCard from '@/components/InterestCard';
 import PostCard from '@/components/PostCard';
 import ProjectCard from '@/components/ProjectCard';
+import ScrollArrows from '@/components/ScrollArrows';
 import Section from '@/components/Section';
 import SocialLink from '@/components/SocialLink';
 import VerticalSeparator from '@/components/VerticalSeparator';
@@ -59,11 +60,14 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         type="application/ld+json"
       />
-      <main className="h-screen bg-background text-foreground">
+      <main className="relative h-screen bg-background text-foreground">
         {/* Desktop: Horizontal scrolling container, Mobile: Vertical scrolling */}
-        <div className="md:scrollbar-hide scrollbar-hide block h-full overflow-hidden overflow-y-auto md:flex md:h-full md:snap-x md:snap-mandatory md:overflow-x-auto">
+        <div
+          className="md:scrollbar-hide scrollbar-hide block h-full overflow-hidden overflow-y-auto md:flex md:h-full md:snap-x md:snap-mandatory md:overflow-x-auto"
+          data-scroll-container
+        >
           {/* Column 1: INTRO */}
-          <Column>
+          <Column index={0}>
             <Section title="INTRO">
               <div className="space-y-4 text-md">
                 {portfolioData.intro.paragraphs.map((paragraph, index) => (
@@ -93,7 +97,7 @@ export default function Home() {
           <VerticalSeparator />
 
           {/* Column 2: ASSORTED PROJECTS */}
-          <Column>
+          <Column index={1}>
             <Section title="ASSORTED PROJECTS">
               <div className="space-y-8">
                 {projectsArray.map((project, index) => (
@@ -133,7 +137,7 @@ export default function Home() {
           <VerticalSeparator />
 
           {/* Column 3: POSTS */}
-          <Column>
+          <Column index={2}>
             <Section title="POSTS">
               <div className="space-y-4">
                 {posts.map((post, index) => (
@@ -165,7 +169,7 @@ export default function Home() {
           <VerticalSeparator />
 
           {/* Column 4: ACADEMIC */}
-          <Column>
+          <Column index={3}>
             <Section title="ACADEMIC">
               <div className="space-y-6">
                 <div>
@@ -227,6 +231,11 @@ export default function Home() {
             <WavyLine hideOnDesktop />
           </Column>
         </div>
+
+        {/* Fade gradient to suggest more content (desktop only) */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-16 bg-gradient-to-l from-background to-transparent md:block" />
+
+        <ScrollArrows />
       </main>
     </>
   );
