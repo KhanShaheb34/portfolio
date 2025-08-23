@@ -20,7 +20,7 @@ const structuredData = {
   jobTitle: 'Software Engineer',
   description:
     'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
-  url: 'https://shakirul-dev.vercel.app',
+  url: 'https://shakirul.dev',
   sameAs: [
     'https://github.com/KhanShaheb34',
     'https://linkedin.com/in/shakirulhasan',
@@ -80,7 +80,6 @@ export default function Home() {
 
             <Section title="LINKS">
               <div className="space-y-2">
-                <SocialLink href="/about" icon="user" text="About / Resume" />
                 {portfolioData.socialLinks.map((link, index) => (
                   <SocialLink
                     href={link.href}
@@ -89,6 +88,7 @@ export default function Home() {
                     text={link.text}
                   />
                 ))}
+                <SocialLink href="/about" icon="user" text="About" />
               </div>
             </Section>
             <WavyLine hideOnDesktop />

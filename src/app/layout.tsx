@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://shakirul-dev.vercel.app',
+    url: 'https://shakirul.dev',
     title: 'Shakirul Hasan Khan | Software Engineer & AI Developer',
     description:
       'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
