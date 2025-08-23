@@ -1,5 +1,6 @@
 'use client';
 
+import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { useEffect, useState } from 'react';
 
 export default function ScrollArrows() {
@@ -50,23 +51,11 @@ export default function ScrollArrows() {
       {showLeftArrow && (
         <button
           aria-label="Scroll left"
-          className="-translate-y-1/2 fixed top-1/2 left-4 z-40 hidden transform rounded-full bg-foreground/10 p-2 backdrop-blur-sm transition-opacity duration-300 hover:bg-foreground/20 md:block"
+          className="-translate-y-1/2 fixed top-1/2 left-4 z-40 hidden transform cursor-pointer rounded-full bg-accent/15 p-2 backdrop-blur-sm transition-all duration-300 hover:bg-accent/30 md:block"
           onClick={() => scrollTo('left')}
           type="button"
         >
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="24"
-          >
-            <path d="m15 18-6-6 6-6" />
-          </svg>
+          <CaretLeftIcon size={20} />
         </button>
       )}
 
@@ -74,23 +63,11 @@ export default function ScrollArrows() {
       {showRightArrow && (
         <button
           aria-label="Scroll right"
-          className="-translate-y-1/2 fixed top-1/2 right-4 z-40 hidden transform rounded-full bg-foreground/10 p-2 backdrop-blur-sm transition-opacity duration-300 hover:bg-foreground/20 md:block"
+          className="-translate-y-1/2 fixed top-1/2 right-4 z-40 hidden transform cursor-pointer rounded-full bg-accent/15 p-2 backdrop-blur-sm transition-all duration-300 hover:bg-accent/30 md:block"
           onClick={() => scrollTo('right')}
           type="button"
         >
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="24"
-          >
-            <path d="m9 18 6-6-6-6" />
-          </svg>
+          <CaretRightIcon size={20} />
         </button>
       )}
     </>
