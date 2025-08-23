@@ -21,32 +21,11 @@
       "icon": "twitter",
       "text": "@_khanshaheb",
       "href": "https://x.com/_khanshaheb"
-    }
-  ],
-  "openSource": [
-    {
-      "name": "coterm",
-      "stars": 12,
-      "description": "Rust CLI tool for enhanced terminal experience with OpenAI integration",
-      "href": "https://github.com/KhanShaheb34/coterm"
     },
     {
-      "name": "ramble",
-      "stars": 8,
-      "description": "AI-powered meeting transcription and management platform",
-      "href": "https://github.com/KhanShaheb34/ramble"
-    },
-    {
-      "name": "resume",
-      "stars": 6,
-      "description": "AI-powered resume builder and optimization tool",
-      "href": "https://github.com/KhanShaheb34/resume"
-    },
-    {
-      "name": "bochon",
-      "stars": 4,
-      "description": "Bengali Speech to Text model performance dashboard",
-      "href": "https://github.com/KhanShaheb34/bochon"
+      "icon": "scholar",
+      "text": "Google Scholar",
+      "href": "https://scholar.google.com/citations?user=0UpikxcAAAAJ"
     }
   ],
   "interests": [
@@ -73,25 +52,14 @@
       {
         "title": "BnPC Dataset - Gold Standard Corpus for Paraphrase Detection in Bangla",
         "description": "Research paper published in ELRA (European Language Resources Association) and ICCL, May 2024. Dataset contains 15,000+ paraphrase pairs for Bengali language processing."
-      },
-      {
-        "title": "Publications Secretary - SUST ACM Student Chapter",
-        "description": "Managed research publications and technical documentation. Organized workshops on competitive programming and software development (2019-2021)."
-      },
-      {
-        "title": "Executive Member - SUST SWE Society",
-        "description": "Coordinated software engineering seminars and industry collaboration events. Mentored junior students in programming and career development."
       }
     ],
     "certifications": [
-      "TensorFlow in Practice Specialization (Coursera)",
+      "International English Language Testing System (IELTS) - Band 7.5",
       "Deep Learning Specialization (Coursera)",
       "Natural Language Processing Specialization (Coursera)",
-      "International English Language Testing System (IELTS) - Band 7.5",
-      "Java (Basic & Intermediate) - HackerRank",
-      "C++ (Basic) - HackerRank",
-      "Python (Basic & Intermediate) - HackerRank",
-      "Problem Solving (Intermediate) - HackerRank"
+      "First Runner Up at BUP Hackathon 2019",
+      "Honorable Mention at SUST LICT TECH FEST 2019"
     ]
   },
   "hobbies": [
@@ -101,16 +69,13 @@
       "href": "https://github.com/KhanShaheb34"
     },
     {
-      "title": "Competitive Programming",
-      "description": "Problem solving and algorithm optimization"
+      "title": "Vibe Coding",
+      "description": "Newly gained hobby, building cool stuff every day"
     },
     {
-      "title": "Game Development",
-      "description": "Created platformer games using LibGDX, Unity3D, and C++/SFML"
-    },
-    {
-      "title": "Mentoring",
-      "description": "Guiding students in SUST ACM Student Chapter"
+      "title": "Photography",
+      "description": "Capturing moments and emotions",
+      "href": "https://www.instagram.com/_khanshaheb/"
     }
   ]
 }

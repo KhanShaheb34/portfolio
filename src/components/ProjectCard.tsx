@@ -18,14 +18,14 @@ export default function ProjectCard({
       <div className="flex items-center space-x-2">
         {slug ? (
           <Link
-            className="block transition-opacity hover:opacity-80"
+            className="block text-md transition-colors hover:text-muted"
             href={`/projects/${slug}`}
             prefetch={true}
           >
-            <h3 className="text-md">{title}</h3>
+            {title}
           </Link>
         ) : (
-          <h3 className="text-md">{title}</h3>
+          <p className="text-md">{title}</p>
         )}
 
         <span className="rounded bg-muted px-2 py-0.5 text-background text-xs">

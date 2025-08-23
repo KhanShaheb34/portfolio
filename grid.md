@@ -8,7 +8,7 @@ Intro   | Assorted Projects | Posts     | Academic  |
 ------  |                   | --------- |           |
         | ----------------- |           | --------- |
 Links   |                   | Interests |           |
-        | Open Source       |           | Hobbies   |
+        | Work Experience   |           | Hobbies   |
         |                   |           |           |
 ```
 

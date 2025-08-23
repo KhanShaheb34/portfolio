@@ -1,9 +1,10 @@
-'use client';
-
-import { GithubLogoIcon } from '@phosphor-icons/react/GithubLogo';
-import { LinkedinLogoIcon } from '@phosphor-icons/react/LinkedinLogo';
-import { UserIcon } from '@phosphor-icons/react/User';
-import { XLogoIcon } from '@phosphor-icons/react/XLogo';
+import {
+  GithubLogoIcon,
+  GraduationCapIcon,
+  LinkedinLogoIcon,
+  UserIcon,
+  XLogoIcon,
+} from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 
 type SocialLinkProps = {
@@ -17,6 +18,7 @@ const iconMap: Record<string, typeof GithubLogoIcon> = {
   linkedin: LinkedinLogoIcon,
   twitter: XLogoIcon,
   user: UserIcon,
+  scholar: GraduationCapIcon,
 };
 
 export default function SocialLink({ icon, text, href }: SocialLinkProps) {

@@ -1,12 +1,13 @@
 import Column from '@/components/Column';
+import ExperienceCard from '@/components/ExperienceCard';
 import InterestCard from '@/components/InterestCard';
-import OpenSourceCard from '@/components/OpenSourceCard';
 import PostCard from '@/components/PostCard';
 import ProjectCard from '@/components/ProjectCard';
 import Section from '@/components/Section';
 import SocialLink from '@/components/SocialLink';
 import VerticalSeparator from '@/components/VerticalSeparator';
 import WavyLine from '@/components/WavyLine';
+import experiencesData from '@/data/experiences.json' with { type: 'json' };
 import portfolioData from '@/data/portfolio.json' with { type: 'json' };
 import projectsData from '@/data/projects.json' with { type: 'json' };
 import { getAllPosts } from '@/lib/blog';
@@ -49,6 +50,7 @@ export default function Home() {
   const posts = getAllPosts();
 
   const projectsArray = Object.values(projectsData);
+  const experiencesArray = Object.values(experiencesData);
 
   return (
     <>
@@ -108,17 +110,21 @@ export default function Home() {
 
             <WavyLine />
 
-            <Section title="OPEN SOURCE">
+            <Section title="WORK EXPERIENCE">
               <div className="space-y-6">
-                {portfolioData.openSource.map((repo, index) => (
-                  <OpenSourceCard
-                    description={repo.description}
-                    href={repo.href}
-                    key={index}
-                    name={repo.name}
-                    stars={repo.stars}
-                  />
-                ))}
+                {experiencesArray.map((experience, index) => {
+                  const slug = Object.keys(experiencesData)[index];
+                  return (
+                    <ExperienceCard
+                      company={experience.company}
+                      description={experience.description}
+                      duration={experience.duration}
+                      key={index}
+                      position={experience.position}
+                      slug={slug}
+                    />
+                  );
+                })}
               </div>
             </Section>
             <WavyLine hideOnDesktop />
@@ -190,7 +196,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="mb-2 text-md">Certifications</h3>
+                  <h3 className="mb-2 text-md">Certifications & Awards</h3>
                   <div className="space-y-2">
                     {portfolioData.academic.certifications.map(
                       (cert, index) => (
