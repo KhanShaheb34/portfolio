@@ -1,15 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
 import experiencesData from '@/data/experiences.json' with { type: 'json' };
 
-interface WorkPageProps {
+type WorkPageProps = {
   params: { slug: string };
-}
+};
 
-export async function generateMetadata({ params }: WorkPageProps): Promise<Metadata> {
-  const experience = experiencesData[params.slug as keyof typeof experiencesData];
-  
+export function generateMetadata({ params }: WorkPageProps): Promise<Metadata> {
+  const experience =
+    experiencesData[params.slug as keyof typeof experiencesData];
+
   if (!experience) {
     return {
       title: 'Work Experience Not Found',
@@ -30,7 +31,8 @@ export function generateStaticParams() {
 }
 
 export default function WorkExperiencePage({ params }: WorkPageProps) {
-  const experience = experiencesData[params.slug as keyof typeof experiencesData];
+  const experience =
+    experiencesData[params.slug as keyof typeof experiencesData];
 
   if (!experience) {
     notFound();
@@ -39,12 +41,12 @@ export default function WorkExperiencePage({ params }: WorkPageProps) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto max-w-4xl">
           {/* Navigation */}
           <div className="mb-8">
-            <Link 
+            <Link
+              className="text-muted-foreground text-sm transition-colors hover:text-foreground"
               href="/work"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               ← Back to Work Experience
             </Link>
@@ -52,13 +54,15 @@ export default function WorkExperiencePage({ params }: WorkPageProps) {
 
           {/* Header */}
           <div className="mb-12">
-            <div className="flex items-start justify-between mb-6">
+            <div className="mb-6 flex items-start justify-between">
               <div>
-                <h1 className="text-3xl font-bold mb-2">{experience.position}</h1>
-                <p className="text-xl text-muted-foreground mb-2">
+                <h1 className="mb-2 font-bold text-3xl">
+                  {experience.position}
+                </h1>
+                <p className="mb-2 text-muted-foreground text-xl">
                   {experience.company}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-4 text-muted-foreground text-sm">
                   <span>{experience.duration}</span>
                   <span>•</span>
                   <span>{experience.type}</span>
@@ -67,16 +71,18 @@ export default function WorkExperiencePage({ params }: WorkPageProps) {
                 </div>
               </div>
               <div className="text-sm">
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${
-                  experience.status === 'active' 
-                    ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400'
-                    : 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400'
-                }`}>
+                <span
+                  className={`inline-block rounded-full px-3 py-1 font-medium text-xs ${
+                    experience.status === 'active'
+                      ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400'
+                      : 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400'
+                  }`}
+                >
                   {experience.status === 'active' ? 'Current' : 'Completed'}
                 </span>
               </div>
             </div>
-            
+
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p>{experience.longDescription}</p>
             </div>
@@ -86,10 +92,15 @@ export default function WorkExperiencePage({ params }: WorkPageProps) {
           <div className="grid gap-12">
             {/* Responsibilities */}
             <section>
-              <h2 className="text-2xl font-semibold mb-6">Key Responsibilities</h2>
+              <h2 className="mb-6 font-semibold text-2xl">
+                Key Responsibilities
+              </h2>
               <ul className="space-y-3">
                 {experience.responsibilities.map((responsibility, index) => (
-                  <li key={index} className="text-muted-foreground leading-relaxed">
+                  <li
+                    className="text-muted-foreground leading-relaxed"
+                    key={index}
+                  >
                     <span className="text-accent">•</span> {responsibility}
                   </li>
                 ))}
@@ -98,12 +109,14 @@ export default function WorkExperiencePage({ params }: WorkPageProps) {
 
             {/* Technologies */}
             <section>
-              <h2 className="text-2xl font-semibold mb-6">Technologies & Tools</h2>
+              <h2 className="mb-6 font-semibold text-2xl">
+                Technologies & Tools
+              </h2>
               <div className="flex flex-wrap gap-2">
                 {experience.technologies.map((tech, index) => (
                   <span
+                    className="rounded-full border border-border bg-muted/40 px-3 py-1 text-sm"
                     key={index}
-                    className="px-3 py-1 bg-muted text-sm rounded-full border border-border"
                   >
                     {tech}
                   </span>
@@ -113,10 +126,13 @@ export default function WorkExperiencePage({ params }: WorkPageProps) {
 
             {/* Achievements */}
             <section>
-              <h2 className="text-2xl font-semibold mb-6">Key Achievements</h2>
+              <h2 className="mb-6 font-semibold text-2xl">Key Achievements</h2>
               <ul className="space-y-3">
                 {experience.achievements.map((achievement, index) => (
-                  <li key={index} className="text-muted-foreground leading-relaxed">
+                  <li
+                    className="text-muted-foreground leading-relaxed"
+                    key={index}
+                  >
                     <span className="text-accent">✓</span> {achievement}
                   </li>
                 ))}
@@ -125,17 +141,18 @@ export default function WorkExperiencePage({ params }: WorkPageProps) {
           </div>
 
           {/* Footer Navigation */}
-          <div className="mt-16 pt-8 border-t border-border">
-            <div className="flex justify-between items-center">
-              <Link 
+          <div className="mt-16 border-border border-t pt-8">
+            <div className="flex items-center justify-between">
+              <Link
+                className="text-muted-foreground text-sm transition-colors hover:text-foreground"
                 href="/work"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 ← Back to All Experiences
               </Link>
-              <Link 
+              <Link
+                className="text-muted-foreground text-sm transition-colors hover:text-foreground"
                 href="/"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                prefetch
               >
                 Back to Portfolio →
               </Link>

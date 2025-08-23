@@ -52,13 +52,6 @@ export default function ProjectsPage() {
                 </div>
 
                 <div className="flex items-center space-x-4 text-muted text-sm">
-                  <time dateTime={project.date}>
-                    {new Date(project.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                    })}
-                  </time>
-                  <span>•</span>
                   <span
                     className={
                       project.status === 'active'
@@ -91,7 +84,7 @@ export default function ProjectsPage() {
                 )}
               </div>
 
-              <div className="flex items-center space-x-4 pt-2">
+              <div className="flex items-center space-x-4 pt-2 align-bottom">
                 <Link
                   className="text-foreground transition-colors hover:text-muted"
                   href={`/projects/${project.slug}`}
@@ -101,25 +94,36 @@ export default function ProjectsPage() {
                 </Link>
 
                 {project.github && (
-                  <a
+                  <Link
                     className="text-muted transition-colors hover:text-foreground"
                     href={project.github}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     GitHub
-                  </a>
+                  </Link>
                 )}
 
                 {project.demo && (
-                  <a
+                  <Link
                     className="text-muted transition-colors hover:text-foreground"
                     href={project.demo}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    Live Demo
-                  </a>
+                    Demo
+                  </Link>
+                )}
+
+                {project.live && (
+                  <Link
+                    className="text-muted transition-colors hover:text-foreground"
+                    href={project.live}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Live
+                  </Link>
                 )}
               </div>
             </article>

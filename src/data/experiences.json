@@ -1,6 +1,7 @@
 {
   "recruit": {
     "company": "Re:cruit",
+    "link": "https://recruit.so/",
     "position": "Software Engineer",
     "location": "United States (Remote)",
     "duration": "2022 - Present",
@@ -50,6 +51,7 @@
 
   "edgep-instructor": {
     "company": "Enhancing Digital Government & Economy Project",
+    "link": "https://edge.gov.bd/",
     "position": "Guest Instructor",
     "location": "Bangladesh",
     "duration": "2024 - 2025",
@@ -80,6 +82,7 @@
 
   "traders-connect": {
     "company": "Traders Connect",
+    "link": "https://tradersconnect.com/",
     "position": "Contract Software Engineer",
     "location": "United Kingdom (Remote)",
     "duration": "2023 - 2024",
@@ -113,6 +116,7 @@
 
   "kaz-software": {
     "company": "Kaz Software",
+    "link": "https://kaz.com.bd/",
     "position": "Associate Software Engineer",
     "location": "Dhaka, Bangladesh",
     "duration": "2021 - 2022",
@@ -150,6 +154,7 @@
 
   "bengali-ai": {
     "company": "Bengali.AI",
+    "link": "https://www.bengali.ai/",
     "position": "Contract Software Engineer",
     "location": "Dhaka, Bangladesh",
     "duration": "2020 - 2021",
