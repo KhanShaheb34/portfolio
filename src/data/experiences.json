@@ -1,0 +1,178 @@
+{
+  "recruit": {
+    "company": "Re:cruit",
+    "position": "Software Engineer",
+    "location": "United States (Remote)",
+    "duration": "2022 - Present",
+    "type": "Full-time",
+    "description": "Building innovative AI-powered recruitment solutions using modern web technologies and machine learning.",
+    "longDescription": "At Re:cruit, I develop comprehensive web applications and AI-powered features for recruitment platform. Working with cutting-edge technologies including LLMs, real-time collaboration tools, and advanced text processing systems.",
+    "responsibilities": [
+      "Developed a feature enabling summary generation and conversation with documents, leveraging Instructor and Pydantic across various LLMs",
+      "Implemented CRUD-based functionalities on a Flask server",
+      "Built a comprehensive web application adhering to Figma designs, using NextJS and TypeScript",
+      "Written end-to-end tests employing Playwright for a NextJS application",
+      "Engineered a sophisticated rich text editor, featuring commenting, mentioning, and highlighting capabilities, utilizing PlateJS, enhanced by real-time multi-user editing synchronization through PubNub",
+      "Crafted a native-like web application interface with ReactJS for integration into a Mac application via web view",
+      "Developed comprehensive test suites for NextJS applications utilizing Jest and Playwright",
+      "Spearheaded the creation of a full-stack resume-building application with NextJS, TypeScript, Prisma, and Stitches, integrating PostgreSQL for data storage and OpenAI API for content enhancement",
+      "Engineered a large-scale language corpus testing tool using Python, enabling extensive data analysis and system optimization",
+      "Implemented an authentication system using MagicLink and contributed to the design of several web pages for a DAO, leveraging NextJS"
+    ],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Python",
+      "Flask",
+      "PostgreSQL",
+      "Prisma",
+      "Stitches",
+      "PlateJS",
+      "PubNub",
+      "OpenAI API",
+      "Playwright",
+      "Jest",
+      "LLMs",
+      "Instructor",
+      "Pydantic",
+      "MagicLink"
+    ],
+    "achievements": [
+      "Built advanced AI-powered document processing features using multiple LLMs",
+      "Implemented real-time collaborative text editing with multi-user synchronization",
+      "Developed comprehensive resume-building application with AI enhancement capabilities",
+      "Created large-scale language corpus testing tools for data analysis"
+    ],
+    "date": "2022-01-01",
+    "status": "active"
+  },
+
+  "edgep-instructor": {
+    "company": "Enhancing Digital Government & Economy Project",
+    "position": "Guest Instructor",
+    "location": "Bangladesh",
+    "duration": "2024 - 2025",
+    "type": "Contract",
+    "description": "Provided expert lectures on Python and machine learning to university students as part of a World Bank backed government initiative.",
+    "longDescription": "As an industry expert, delivered comprehensive training on Python programming and machine learning concepts to students from top universities in Bangladesh. This project is managed by ICT Division of Bangladesh government and backed by World Bank.",
+    "responsibilities": [
+      "Delivered lectures on Python fundamentals including pandas, numpy, and scikit-learn libraries",
+      "Taught machine learning concepts including regression, clustering, and classification algorithms",
+      "Demonstrated construction of user interfaces using Flask framework",
+      "Provided training to students from Shahjalal University of Science and Technology, Jagannath University, and Stamford University Bangladesh"
+    ],
+    "technologies": [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Flask",
+      "Machine Learning"
+    ],
+    "achievements": [
+      "Successfully trained students from 3 major universities in Bangladesh",
+      "Contributed to government-backed digital skills development initiative",
+      "Delivered comprehensive curriculum covering both programming fundamentals and advanced ML concepts"
+    ],
+    "status": "completed"
+  },
+
+  "traders-connect": {
+    "company": "Traders Connect",
+    "position": "Contract Software Engineer",
+    "location": "United Kingdom (Remote)",
+    "duration": "2023 - 2024",
+    "type": "Contract",
+    "description": "Developed foundational infrastructure and mobile applications for a large-scale trading platform using React Native and modern web technologies.",
+    "longDescription": "Led the development of foundational front-end infrastructure and cross-platform mobile applications for an upcoming large-scale trading platform, focusing on performance, security, and user experience.",
+    "responsibilities": [
+      "Developed the foundational front-end infrastructure for an upcoming large-scale web application",
+      "Written native modules in Swift to seamlessly connect a React Native app with a gRPC server",
+      "Crafted a customized and reusable component library in React Native, utilizing styled-components for cross-platform mobile application",
+      "Engineered a cross-platform mobile application featuring over 20 distinct screens using React Native",
+      "Implemented OAuth to secure authentication processes within a React Native application"
+    ],
+    "technologies": [
+      "React Native",
+      "Swift",
+      "gRPC",
+      "Styled-components",
+      "OAuth",
+      "TypeScript",
+      "JavaScript"
+    ],
+    "achievements": [
+      "Built comprehensive mobile application with 20+ screens",
+      "Created reusable component library for cross-platform development",
+      "Successfully integrated native Swift modules with React Native",
+      "Implemented secure OAuth authentication system"
+    ],
+    "status": "completed"
+  },
+
+  "kaz-software": {
+    "company": "Kaz Software",
+    "position": "Associate Software Engineer",
+    "location": "Dhaka, Bangladesh",
+    "duration": "2021 - 2022",
+    "type": "Full-time",
+    "description": "Led design and development of complex web applications, specializing in ReactJS, TypeScript, and modern frontend architectures.",
+    "longDescription": "At Kaz Software, I led the design and development of large-scale web applications, focusing on performance optimization, micro-frontend architecture, and automated testing. Worked extensively with modern React ecosystems and deployment technologies.",
+    "responsibilities": [
+      "Led the design of over 40 pages for a complex web application, catering to two distinct user interfaces with ReactJS, TypeScript, SWR, Redux-Toolkit, RSuite, and SCSS",
+      "Successfully upgraded two web applications from ReactJS version 16 to version 18, enhancing performance and compatibility",
+      "Merged four separate ReactJS applications into a unified micro-frontend platform using Single-SPA",
+      "Improved deployment efficiency by containerizing applications with Docker",
+      "Authored end-to-end automated tests for a ReactJS web application utilizing Cypress",
+      "Engineered and implemented a range of features across two ReactJS web applications, employing TypeScript for development"
+    ],
+    "technologies": [
+      "React",
+      "TypeScript",
+      "SWR",
+      "Redux Toolkit",
+      "RSuite",
+      "SCSS",
+      "Single-SPA",
+      "Docker",
+      "Cypress",
+      "REST API"
+    ],
+    "achievements": [
+      "Successfully designed and implemented 40+ complex web application pages",
+      "Led React 16 to 18 migration for multiple applications, improving performance",
+      "Architected micro-frontend platform consolidating 4 separate applications",
+      "Implemented comprehensive end-to-end testing with Cypress"
+    ],
+    "status": "completed"
+  },
+
+  "bengali-ai": {
+    "company": "Bengali.AI",
+    "position": "Contract Software Engineer",
+    "location": "Dhaka, Bangladesh",
+    "duration": "2020 - 2021",
+    "type": "Contract",
+    "description": "Developed web applications for Bengali language processing and machine learning model benchmarking using React and Python.",
+    "longDescription": "At Bengali.AI, I contributed to advancing Bengali language technology by developing web applications for benchmarking text-to-speech models and creating integration layers between machine learning models and web interfaces.",
+    "responsibilities": [
+      "Developed a web application with ReactJS, designed for benchmarking various Bengali text-to-speech models",
+      "Created a Python-based Flask wrapper server to integrate machine-learning models with the ReactJS application via web-socket"
+    ],
+    "technologies": [
+      "React",
+      "Python",
+      "Flask",
+      "WebSocket",
+      "Machine Learning",
+      "Bengali NLP"
+    ],
+    "achievements": [
+      "Built comprehensive benchmarking platform for Bengali text-to-speech models",
+      "Successfully integrated ML models with web interface using WebSocket communication",
+      "Contributed to Bengali language processing research and development"
+    ],
+    "status": "completed"
+  }
+}

@@ -1,9 +1,9 @@
 {
   "intro": {
     "paragraphs": [
-      "Hi, I'm Shakirul Hasan Khan, a software engineer with over four years of experience in full-stack development.",
-      "Currently working at Re:cruit, building an AI sidekick with React, NextJS, Python and LLMs. I specialize in ReactJS, NextJS, and TypeScript.",
-      "I create scalable, user-focused applications with a strong ability to deliver solutions meeting complex design and performance needs."
+      "Hi, I'm Shakirul Hasan Khan, a Software Engineer with 4+ years of experience building scalable web applications and AI-powered solutions.",
+      "Currently working as a Frontend Engineer at Re:cruit, developing an AI-powered recruitment platform using React, Next.js, TypeScript, and LLMs.",
+      "I specialize in full-stack development with expertise in React, Next.js, TypeScript, Python, and Rust. Passionate about creating user-centric applications with cutting-edge technology."
     ]
   },
   "socialLinks": [
@@ -21,38 +21,6 @@
       "icon": "twitter",
       "text": "@_khanshaheb",
       "href": "https://x.com/_khanshaheb"
-    }
-  ],
-  "projects": [
-    {
-      "title": "Coterm",
-      "badge": "CLI TOOL",
-      "description": "Copilot for terminal built using Rust, Vercel edge function and OpenAI API with natural language command generation"
-    },
-    {
-      "title": "Ramble",
-      "badge": "AI APP",
-      "description": "Application to transcribe meetings, get overheard, commitment, and follow up from meetings using AI"
-    },
-    {
-      "title": "Re:sume",
-      "badge": "AI TOOL",
-      "description": "Web application to create and enhance resumes using AI with PDF generation and OpenAI GPT3 integration"
-    },
-    {
-      "title": "Bochon",
-      "badge": "WEB APP",
-      "description": "Performance dashboard for various Bengali Speech to Text models developed for Bengali.ai"
-    },
-    {
-      "title": "SUST GHMS",
-      "badge": "MANAGEMENT",
-      "description": "Guest house management system with room booking, authentication, and profile management"
-    },
-    {
-      "title": "Instatweet",
-      "badge": "SOCIAL APP",
-      "description": "Twitter clone with Instagram-like interface featuring authentication, posts, comments, and follows"
     }
   ],
   "openSource": [
@@ -103,20 +71,27 @@
     },
     "research": [
       {
-        "title": "BnPC Dataset",
-        "description": "Gold Standard Corpus for Paraphrase Detection in Bangla - published in ELRA and ICCL, May 2024"
+        "title": "BnPC Dataset - Gold Standard Corpus for Paraphrase Detection in Bangla",
+        "description": "Research paper published in ELRA (European Language Resources Association) and ICCL, May 2024. Dataset contains 15,000+ paraphrase pairs for Bengali language processing."
       },
       {
-        "title": "Publications Secretary",
-        "description": "SUST ACM Student Chapter & SWE Society - managed publications and research activities"
+        "title": "Publications Secretary - SUST ACM Student Chapter",
+        "description": "Managed research publications and technical documentation. Organized workshops on competitive programming and software development (2019-2021)."
+      },
+      {
+        "title": "Executive Member - SUST SWE Society",
+        "description": "Coordinated software engineering seminars and industry collaboration events. Mentored junior students in programming and career development."
       }
     ],
     "certifications": [
       "TensorFlow in Practice Specialization (Coursera)",
       "Deep Learning Specialization (Coursera)",
-      "International English Language Testing System (IELTS)",
+      "Natural Language Processing Specialization (Coursera)",
+      "International English Language Testing System (IELTS) - Band 7.5",
       "Java (Basic & Intermediate) - HackerRank",
-      "C++ (Basic) - HackerRank"
+      "C++ (Basic) - HackerRank",
+      "Python (Basic & Intermediate) - HackerRank",
+      "Problem Solving (Intermediate) - HackerRank"
     ]
   },
   "hobbies": [
