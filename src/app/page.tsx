@@ -136,40 +136,8 @@ export default function Home() {
 
           <VerticalSeparator />
 
-          {/* Column 3: POSTS */}
-          <Column index={2}>
-            <Section title="POSTS">
-              <div className="space-y-4">
-                {posts.map((post, index) => (
-                  <PostCard
-                    date={post.date}
-                    href={`/posts/${post.slug}`}
-                    key={index}
-                    title={post.title}
-                  />
-                ))}
-              </div>
-            </Section>
-
-            <WavyLine />
-
-            <Section title="INTERESTS">
-              <div className="space-y-4">
-                {portfolioData.interests.map((interest, index) => (
-                  <div key={index}>
-                    <h3 className="text-md">{interest.title}</h3>
-                    <p className="text-muted text-sm">{interest.description}</p>
-                  </div>
-                ))}
-              </div>
-            </Section>
-            <WavyLine hideOnDesktop />
-          </Column>
-
-          <VerticalSeparator />
-
           {/* Column 4: ACADEMIC */}
-          <Column index={3}>
+          <Column index={2}>
             <Section title="ACADEMIC">
               <div className="space-y-6">
                 <div>
@@ -211,6 +179,39 @@ export default function Home() {
                     )}
                   </div>
                 </div>
+              </div>
+            </Section>
+
+            <WavyLine />
+
+            <Section title="INTERESTS">
+              <div className="space-y-4">
+                {portfolioData.interests.map((interest, index) => (
+                  <div key={index}>
+                    <h3 className="text-md">{interest.title}</h3>
+                    <p className="text-muted text-sm">{interest.description}</p>
+                  </div>
+                ))}
+              </div>
+            </Section>
+
+            <WavyLine hideOnDesktop />
+          </Column>
+
+          <VerticalSeparator />
+
+          {/* Column 3: POSTS */}
+          <Column index={3}>
+            <Section title="POSTS">
+              <div className="space-y-4">
+                {posts.map((post, index) => (
+                  <PostCard
+                    date={post.date}
+                    href={`/posts/${post.slug}`}
+                    key={index}
+                    title={post.title}
+                  />
+                ))}
               </div>
             </Section>
 
