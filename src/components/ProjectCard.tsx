@@ -13,10 +13,21 @@ export default function ProjectCard({
   description,
   slug,
 }: ProjectCardProps) {
-  const content = (
+  return (
     <div className="space-y-1">
       <div className="flex items-center space-x-2">
-        <h3 className="text-md">{title}</h3>
+        {slug ? (
+          <Link
+            className="block transition-opacity hover:opacity-80"
+            href={`/projects/${slug}`}
+            prefetch={true}
+          >
+            <h3 className="text-md">{title}</h3>
+          </Link>
+        ) : (
+          <h3 className="text-md">{title}</h3>
+        )}
+
         <span className="rounded bg-muted px-2 py-0.5 text-background text-xs">
           {badge}
         </span>
@@ -24,18 +35,4 @@ export default function ProjectCard({
       <p className="text-muted text-sm">{description}</p>
     </div>
   );
-
-  if (slug) {
-    return (
-      <Link
-        className="block transition-opacity hover:opacity-80"
-        href={`/projects/${slug}`}
-        prefetch={true}
-      >
-        {content}
-      </Link>
-    );
-  }
-
-  return content;
 }

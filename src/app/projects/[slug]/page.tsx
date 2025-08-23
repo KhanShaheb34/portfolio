@@ -46,15 +46,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </span>
             </div>
 
-            <div className="flex items-center space-x-4 text-muted text-sm">
-              <time dateTime={project.date}>
-                {new Date(project.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                })}
-              </time>
-            </div>
-
             <p className="text-lg text-muted leading-relaxed">
               {project.description}
             </p>
@@ -81,6 +72,18 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   target="_blank"
                 >
                   <span>Live Demo</span>
+                  <span>↗</span>
+                </a>
+              )}
+
+              {project.live && (
+                <a
+                  className="flex items-center space-x-2 text-foreground transition-colors hover:text-muted"
+                  href={project.live}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span>Live</span>
                   <span>↗</span>
                 </a>
               )}

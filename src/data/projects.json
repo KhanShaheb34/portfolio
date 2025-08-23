@@ -1,6 +1,7 @@
 {
   "ramble": {
     "title": "Ramble",
+    "slug": "ramble",
     "badge": "AI TOOL",
     "description": "AI-powered meeting transcription and contact management platform",
     "longDescription": "Ramble is an AI-powered meeting management platform that transforms how teams handle meeting transcription, action items, and follow-ups. It automatically captures, transcribes, and analyzes meetings to extract key insights and commitments. And also helps you manage your contacts and meetings.",
@@ -20,7 +21,8 @@
       "Meeting management"
     ],
     "github": null,
-    "demo": "https://ramble.ai/",
+    "demo": null,
+    "live": "https://ramble.ai/",
     "images": [],
     "challenges": [
       "Built a conversational platform enabling users to search and engage with contacts using RAG and LLM technologies.",
@@ -37,8 +39,9 @@
     "status": "active"
   },
 
-  "Ponno": {
+  "ponno": {
     "title": "Ponno",
+    "slug": "ponno",
     "badge": "Startup",
     "description": "An AI driven e-commerce business growing platform.",
     "longDescription": "Ponno is an AI-driven e-commerce business growth platform that helps businesses grow their sales and revenue using AI-powered tools and strategies.",
@@ -67,6 +70,7 @@
 
   "coterm": {
     "title": "Coterm",
+    "slug": "coterm",
     "badge": "CLI TOOL",
     "description": "Copilot for terminal built using Rust, Vercel edge function and OpenAI API with natural language command generation",
     "longDescription": "Coterm is a revolutionary terminal copilot that bridges the gap between natural language and command-line interfaces. Built with Rust for performance and integrated with OpenAI's API, it allows developers to describe what they want to do in plain English and receive the exact command they need.",
@@ -85,7 +89,8 @@
       "Cross-platform compatibility"
     ],
     "github": "https://github.com/KhanShaheb34/coterm",
-    "demo": "https://github.com/KhanShaheb34/Coterm/releases/tag/v0.2.2",
+    "live": "https://github.com/KhanShaheb34/Coterm/releases/tag/v0.2.2",
+    "demo": null,
     "images": [],
     "challenges": [
       "Generate CLI commands using natural language",
@@ -102,6 +107,7 @@
 
   "resume": {
     "title": "Re:sume",
+    "slug": "resume",
     "badge": "AI TOOL",
     "description": "Web application to create and enhance resumes using AI with PDF generation and OpenAI integration",
     "longDescription": "Re:sume is an AI-powered resume builder that helps professionals create compelling resumes. It uses advanced AI to enhance content, suggest improvements, and generate polished PDF outputs tailored for specific job applications.",
@@ -122,6 +128,7 @@
     ],
     "github": null,
     "demo": "https://www.loom.com/share/da6ef34193a84352962d7cd0f70b0dce",
+    "live": null,
     "images": [],
     "challenges": [
       "AI prompt engineering for resume content",
@@ -133,6 +140,7 @@
   },
   "bochon": {
     "title": "Bochon",
+    "slug": "bochon",
     "badge": "WEB APP",
     "description": "Performance dashboard for various Bengali Speech to Text models developed for Bengali.ai",
     "longDescription": "Bochon is a comprehensive performance dashboard developed for Bengali.ai to showcase and compare various Bengali Speech-to-Text models. It provides detailed analytics, benchmarks, and interactive demonstrations of different ASR models.",
@@ -146,6 +154,7 @@
     ],
     "github": "https://github.com/BengaliAI/bochon",
     "demo": null,
+    "live": null,
     "images": [],
     "challenges": [
       "Real-time audio processing",
@@ -162,6 +171,7 @@
 
   "sust-ghms": {
     "title": "SUST GHMS",
+    "slug": "sust-ghms",
     "badge": "WEB APP",
     "description": "Guest house management system with room booking, authentication, and profile management",
     "longDescription": "SUST Guest House Management System is a comprehensive web application designed to streamline the booking and management of guest house facilities at Shahjalal University of Science and Technology.",
@@ -174,7 +184,8 @@
       "Responsive design for all devices"
     ],
     "github": null,
-    "demo": "https://guesthouse.sust.edu.bd/",
+    "live": "http://guesthouse.sust.edu.bd/",
+    "demo": null,
     "images": [],
     "challenges": [
       "Complex booking state management",

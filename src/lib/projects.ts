@@ -9,10 +9,10 @@ export type Project = {
   features: string[];
   github?: string | null;
   demo?: string | null;
+  live?: string | null;
   images: string[];
   challenges: string[];
   impact: string[];
-  date: string;
   status: 'active' | 'completed' | 'archived';
 };
 

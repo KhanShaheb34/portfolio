@@ -8,6 +8,7 @@ import SocialLink from '@/components/SocialLink';
 import VerticalSeparator from '@/components/VerticalSeparator';
 import WavyLine from '@/components/WavyLine';
 import portfolioData from '@/data/portfolio.json' with { type: 'json' };
+import projectsData from '@/data/projects.json' with { type: 'json' };
 import { getAllPosts } from '@/lib/blog';
 
 const structuredData = {
@@ -46,6 +47,8 @@ const structuredData = {
 
 export default function Home() {
   const posts = getAllPosts();
+
+  const projectsArray = Object.values(projectsData);
 
   return (
     <>
@@ -91,11 +94,12 @@ export default function Home() {
           <Column>
             <Section title="ASSORTED PROJECTS">
               <div className="space-y-8">
-                {portfolioData.projects.map((project, index) => (
+                {projectsArray.map((project, index) => (
                   <ProjectCard
                     badge={project.badge}
                     description={project.description}
                     key={index}
+                    slug={project.slug}
                     title={project.title}
                   />
                 ))}
