@@ -71,7 +71,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <span>Live Demo</span>
+                  <span>Demo</span>
                   <span>↗</span>
                 </a>
               )}

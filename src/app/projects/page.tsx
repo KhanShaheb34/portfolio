@@ -100,7 +100,7 @@ export default function ProjectsPage() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    GitHub
+                    GitHub ↗
                   </Link>
                 )}
 
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    Demo
+                    Demo ↗
                   </Link>
                 )}
 
@@ -122,7 +122,7 @@ export default function ProjectsPage() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    Live
+                    Live ↗
                   </Link>
                 )}
               </div>

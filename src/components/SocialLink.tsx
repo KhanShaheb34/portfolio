@@ -29,14 +29,14 @@ export default function SocialLink({ icon, text, href }: SocialLinkProps) {
     <div className="flex items-center space-x-2">
       {IconComponent && <IconComponent size={18} weight="fill" />}
       {isExternal ? (
-        <a
+        <Link
           className="transition-colors hover:text-muted"
           href={href}
           rel="noopener noreferrer"
           target="_blank"
         >
           {text}
-        </a>
+        </Link>
       ) : (
         <Link
           className="transition-colors hover:text-muted"
