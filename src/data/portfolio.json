@@ -2,8 +2,9 @@
   "intro": {
     "paragraphs": [
       "Hi, I'm Shakirul Hasan Khan, a Software Engineer with 4+ years of experience building scalable web applications and AI-powered solutions.",
-      "Currently working as a Frontend Engineer at Re:cruit, developing an AI-powered recruitment platform using React, Next.js, TypeScript, and LLMs.",
-      "I specialize in full-stack development with expertise in React, Next.js, TypeScript, Python, and Rust. Passionate about creating user-centric applications with cutting-edge technology."
+      "Currently working as a Software Engineer at Re:cruit, developing an AI-powered meeting transcription and contact management sidekick.",
+      "I specialize in full-stack development with expertise in React, Next.js, TypeScript, Python, and Rust. Passionate about creating user-centric applications with cutting-edge technology.",
+      "Besides I'm always building something cool."
     ]
   },
   "socialLinks": [
