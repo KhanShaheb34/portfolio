@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Fira_Mono } from 'next/font/google';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 const firaMono = Fira_Mono({
   variable: '--font-fira-mono',
@@ -87,6 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${firaMono.variable} antialiased`}>{children}</body>
+      <Analytics />
     </html>
   );
 }
