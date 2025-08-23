@@ -21,13 +21,11 @@ export interface ProjectWithSlug extends Project {
 }
 
 export function getAllProjects(): ProjectWithSlug[] {
-  return Object.entries(projectsData)
-    .map(([slug, project]) => ({
-      slug,
-      ...project,
-      status: project.status as 'active' | 'completed' | 'archived',
-    }))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return Object.entries(projectsData).map(([slug, project]) => ({
+    ...project,
+    slug,
+    status: project.status as 'active' | 'completed' | 'archived',
+  }));
 }
 
 export function getProjectBySlug(slug: string): ProjectWithSlug | null {
@@ -37,8 +35,8 @@ export function getProjectBySlug(slug: string): ProjectWithSlug | null {
   }
 
   return {
-    slug,
     ...project,
+    slug,
     status: project.status as 'active' | 'completed' | 'archived',
   };
 }
