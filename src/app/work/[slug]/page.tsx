@@ -4,12 +4,12 @@ import { notFound } from 'next/navigation';
 import experiencesData from '@/data/experiences.json' with { type: 'json' };
 
 type WorkPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export function generateMetadata({ params }: WorkPageProps): Promise<Metadata> {
-  const experience =
-    experiencesData[params.slug as keyof typeof experiencesData];
+export async function generateMetadata({ params }: WorkPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const experience = experiencesData[slug as keyof typeof experiencesData];
 
   if (!experience) {
     return {
@@ -30,9 +30,10 @@ export function generateStaticParams() {
   }));
 }
 
-export default function WorkExperiencePage({ params }: WorkPageProps) {
+export default async function WorkExperiencePage({ params }: WorkPageProps) {
+  const { slug } = await params;
   const experience =
-    experiencesData[params.slug as keyof typeof experiencesData];
+    experiencesData[slug as keyof typeof experiencesData];
 
   if (!experience) {
     notFound();
