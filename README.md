@@ -51,7 +51,7 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 
 ### Prerequisites
 
-- Node.js 20+ or Bun 1.0+
+- [Bun](https://bun.sh/) 1.0+ (recommended) or Node.js 20+
 - Git
 
 ### Installation
@@ -64,28 +64,28 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 
 2. **Install dependencies**
    ```bash
-   # Using npm
-   npm install
-
-   # Using yarn
-   yarn install
-
-   # Using pnpm
-   pnpm install
-
    # Using bun (recommended)
    bun install
+
+   # Or using npm
+   npm install
+
+   # Or using yarn
+   yarn install
+
+   # Or using pnpm
+   pnpm install
    ```
 
 3. **Run the development server**
    ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   # or
    bun dev
+
+   # Or using npm
+   npm run dev
+
+   # Or using yarn/pnpm
+   yarn dev
    ```
 
 4. **Open your browser**
@@ -222,22 +222,22 @@ Create a `.env.local` file for environment-specific configuration:
 
 ```bash
 # Start development server (with Turbopack)
-npm run dev
+bun dev
 
 # Build for production
-npm run build
+bun run build
 
 # Start production server
-npm run start
+bun start
 
 # Run linter
-npm run lint
+bun run lint
 
 # Format and fix code with Ultracite
-npx ultracite format
+bunx ultracite format
 
 # Check for issues without fixing
-npx ultracite lint
+bunx ultracite lint
 ```
 
 ### Code Quality
@@ -271,7 +271,7 @@ export default function ContactPage() {
 ### Build for Production
 
 ```bash
-npm run build
+bun run build
 ```
 
 This creates an optimized production build in the `.next` directory.
@@ -292,7 +292,7 @@ This is a standard Next.js application and can be deployed to:
 - **Netlify** - Use the `next export` or Next.js Runtime
 - **AWS Amplify** - Direct GitHub integration
 - **Docker** - Use the included Dockerfile (if you add one)
-- **Self-hosted** - Use `npm run build` and `npm run start`
+- **Self-hosted** - Use `bun run build` and `bun start`
 
 ## 🎨 Customization Guide
 
