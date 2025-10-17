@@ -1,36 +1,377 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shakirul Hasan Khan - Portfolio
 
-## Getting Started
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://shakirul.dev/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.1.0-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
 
-First, run the development server:
+A modern, performant personal portfolio website showcasing my work, experience, and blog posts. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🔗 **Live Demo:** [https://shakirul.dev/](https://shakirul.dev/)
+
+## ✨ Features
+
+- **Unique Horizontal Scroll Design** - Desktop view with smooth horizontal scrolling, vertical on mobile
+- **MDX Blog** - Write blog posts with MDX for rich, interactive content
+- **Type-Safe** - Full TypeScript implementation with strict type checking
+- **SEO Optimized** - Built-in sitemap, robots.txt, and structured data
+- **Performance First** - Optimized for Core Web Vitals with Vercel Analytics
+- **Code Quality** - Enforced with Ultracite (Biome) for formatting and linting
+- **Accessibility** - WCAG compliant with semantic HTML and ARIA attributes
+- **Modern Stack** - Next.js 15 with App Router, React 19, and Tailwind CSS 4
+- **Responsive Design** - Mobile-first approach with adaptive layouts
+- **Syntax Highlighting** - Beautiful code blocks with rehype-highlight
+
+## 🛠️ Tech Stack
+
+### Core
+- **[Next.js 15.4.6](https://nextjs.org/)** - React framework with App Router
+- **[React 19.1.0](https://reactjs.org/)** - UI library
+- **[TypeScript 5](https://www.typescriptlang.org/)** - Type safety
+- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first styling
+
+### Content & Data
+- **[MDX](https://mdxjs.com/)** - Markdown with JSX support
+- **[next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)** - Load MDX content
+- **[gray-matter](https://github.com/jonschlinkert/gray-matter)** - Parse frontmatter
+- **[reading-time](https://github.com/ngryman/reading-time)** - Estimate reading time
+- **[rehype-highlight](https://github.com/rehypejs/rehype-highlight)** - Syntax highlighting
+
+### UI & Icons
+- **[@phosphor-icons/react](https://phosphoricons.com/)** - Icon library
+- **[@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)** - Prose styling
+
+### Developer Experience
+- **[Ultracite](https://github.com/biomejs/biome)** - Fast code formatter and linter
+- **[Vercel Analytics](https://vercel.com/analytics)** - Performance monitoring
+- **[Bun](https://bun.sh/)** - Fast package manager and runtime
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20+ or Bun 1.0+
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/KhanShaheb34/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   # Using npm
+   npm install
+
+   # Using yarn
+   yarn install
+
+   # Using pnpm
+   pnpm install
+
+   # Using bun (recommended)
+   bun install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+4. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📁 Project Structure
+
+```
+.
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── about/             # About page
+│   │   ├── posts/             # Blog posts
+│   │   │   ├── [slug]/        # Dynamic blog post pages (MDX)
+│   │   │   └── page.tsx       # Blog listing
+│   │   ├── projects/          # Projects showcase
+│   │   │   ├── [slug]/        # Dynamic project pages
+│   │   │   └── page.tsx       # Projects listing
+│   │   ├── work/              # Work experience
+│   │   │   ├── [slug]/        # Dynamic work experience pages
+│   │   │   └── page.tsx       # Work listing
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── page.tsx           # Home page
+│   │   ├── globals.css        # Global styles
+│   │   ├── manifest.ts        # PWA manifest
+│   │   ├── sitemap.ts         # Dynamic sitemap
+│   │   ├── robots.ts          # Robots.txt
+│   │   └── opengraph-image.tsx # OG image generator
+│   │
+│   ├── components/            # React components
+│   │   ├── BlogLayout.tsx     # Blog post layout
+│   │   ├── CodeHighlight.tsx  # Code syntax highlighting
+│   │   ├── Column.tsx         # Layout column component
+│   │   ├── ExperienceCard.tsx # Work experience card
+│   │   ├── InterestCard.tsx   # Interest/hobby card
+│   │   ├── PostCard.tsx       # Blog post card
+│   │   ├── ProjectCard.tsx    # Project card
+│   │   ├── ScrollArrows.tsx   # Navigation arrows
+│   │   ├── Section.tsx        # Content section
+│   │   └── SocialLink.tsx     # Social media link
+│   │
+│   ├── data/                  # JSON data files
+│   │   ├── experiences.json   # Work experience data
+│   │   ├── portfolio.json     # Personal info, intro, interests
+│   │   └── projects.json      # Project showcase data
+│   │
+│   ├── hooks/                 # Custom React hooks
+│   │   └── useColumnVisibility.ts
+│   │
+│   ├── lib/                   # Utility functions
+│   │   ├── blog.ts           # Blog post utilities
+│   │   └── projects.ts       # Project utilities
+│   │
+│   └── mdx-components.tsx     # Custom MDX components
+│
+├── public/                    # Static assets
+│   └── icons/                # Favicon and app icons
+│
+├── biome.jsonc               # Biome (Ultracite) configuration
+├── next.config.ts            # Next.js configuration
+├── tailwind.config.ts        # Tailwind CSS configuration
+├── tsconfig.json             # TypeScript configuration
+└── package.json              # Dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Personal Information
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Update your personal information in the JSON files located in `src/data/`:
 
-## Learn More
+- **`portfolio.json`** - Intro, social links, interests, academic info, hobbies
+- **`projects.json`** - Project showcase with descriptions, tech stack, and links
+- **`experiences.json`** - Work experience with responsibilities and achievements
 
-To learn more about Next.js, take a look at the following resources:
+### Blog Posts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create new blog posts in `src/app/posts/[slug]/` directory:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```tsx
+// src/app/posts/my-new-post/page.mdx
+import BlogLayout from '@/components/BlogLayout';
 
-## Deploy on Vercel
+export const metadata = {
+  title: 'My New Post',
+  description: 'A brief description of my post',
+  date: '2025-10-17',
+  author: 'Your Name',
+};
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# My New Post
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Your content here...
+
+export default ({ children }) => (
+  <BlogLayout metadata={metadata}>{children}</BlogLayout>
+);
+```
+
+### Styling
+
+Customize colors and fonts in `src/app/globals.css`:
+
+```css
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --muted: #737373;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --muted: #a3a3a3;
+  }
+}
+```
+
+### Environment Variables
+
+Create a `.env.local` file for environment-specific configuration:
+
+```bash
+# Add any API keys or environment-specific variables here
+# Example:
+# NEXT_PUBLIC_ANALYTICS_ID=your_analytics_id
+```
+
+## 🧪 Development
+
+### Available Scripts
+
+```bash
+# Start development server (with Turbopack)
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm run start
+
+# Run linter
+npm run lint
+
+# Format and fix code with Ultracite
+npx ultracite format
+
+# Check for issues without fixing
+npx ultracite lint
+```
+
+### Code Quality
+
+This project uses [Ultracite](https://github.com/KhanShaheb34/ultracite) (powered by Biome) for code formatting and linting. It enforces:
+
+- Strict type safety
+- Accessibility standards (WCAG compliance)
+- React and TypeScript best practices
+- Consistent code style
+
+### Adding New Pages
+
+1. Create a new directory in `src/app/`
+2. Add a `page.tsx` file
+3. Export your page component
+
+```tsx
+// src/app/contact/page.tsx
+export default function ContactPage() {
+  return (
+    <main>
+      <h1>Contact Me</h1>
+    </main>
+  );
+}
+```
+
+## 📦 Build & Deployment
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+This creates an optimized production build in the `.next` directory.
+
+### Deploy to Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/KhanShaheb34/portfolio)
+
+1. Push your code to GitHub
+2. Import your repository to [Vercel](https://vercel.com)
+3. Configure environment variables (if needed)
+4. Deploy!
+
+### Deploy to Other Platforms
+
+This is a standard Next.js application and can be deployed to:
+
+- **Netlify** - Use the `next export` or Next.js Runtime
+- **AWS Amplify** - Direct GitHub integration
+- **Docker** - Use the included Dockerfile (if you add one)
+- **Self-hosted** - Use `npm run build` and `npm run start`
+
+## 🎨 Customization Guide
+
+### Using This as a Template
+
+1. **Fork this repository**
+2. **Update personal data** in `src/data/*.json`
+3. **Modify colors** in `src/app/globals.css`
+4. **Replace blog posts** in `src/app/posts/`
+5. **Update metadata** in `src/app/layout.tsx`
+6. **Update OG image** in `src/app/opengraph-image.tsx`
+7. **Deploy** to your hosting provider
+
+### Design Customization
+
+The design uses CSS custom properties for easy theming:
+
+```css
+/* src/app/globals.css */
+:root {
+  --background: #ffffff;      /* Main background color */
+  --foreground: #171717;      /* Main text color */
+  --muted: #737373;           /* Muted text color */
+}
+```
+
+### Component Customization
+
+All components are modular and can be easily customized:
+
+- **Layout**: Modify `Column.tsx` and `Section.tsx`
+- **Cards**: Customize card components in `src/components/`
+- **Navigation**: Update `ScrollArrows.tsx` for different navigation
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Shakirul Hasan Khan**
+
+- Website: [https://shakirul.dev](https://shakirul.dev)
+- GitHub: [@KhanShaheb34](https://github.com/KhanShaheb34)
+- LinkedIn: [shakirulhasan](https://linkedin.com/in/shakirulhasan)
+- Twitter: [@_khanshaheb](https://x.com/_khanshaheb)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/KhanShaheb34/portfolio/issues).
+
+### How to Contribute
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## ⭐ Show Your Support
+
+Give a ⭐️ if this project helped you or if you like the design!
+
+## 📞 Support
+
+If you have any questions or need help with customization:
+
+- Open an [issue](https://github.com/KhanShaheb34/portfolio/issues)
+- Email: [Your email if you want to include it]
+- LinkedIn: [Message me](https://linkedin.com/in/shakirulhasan)
+
+## 🙏 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Icons by [Phosphor Icons](https://phosphoricons.com/)
+- Code quality by [Ultracite](https://github.com/KhanShaheb34/ultracite)
+- Hosted on [Vercel](https://vercel.com)
+
+---
+
+<p align="center">Made with ❤️ by <a href="https://shakirul.dev">Shakirul Hasan Khan</a></p>
