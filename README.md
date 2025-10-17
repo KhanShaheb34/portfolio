@@ -361,7 +361,6 @@ Give a ⭐️ if this project helped you or if you like the design!
 If you have any questions or need help with customization:
 
 - Open an [issue](https://github.com/KhanShaheb34/portfolio/issues)
-- Email: [Your email if you want to include it]
 - LinkedIn: [Message me](https://linkedin.com/in/shakirulhasan)
 
 ## 🙏 Acknowledgments
