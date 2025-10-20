@@ -1,16 +1,6 @@
 // Blog utilities for MDX posts in app directory
 const posts = [
   {
-    slug: 'coterm-development',
-    title: 'Building AI-Powered Terminal Tools with Rust',
-    date: '2023-05-15',
-    excerpt:
-      "How I built Coterm, a Rust-based terminal copilot that uses OpenAI's API to generate CLI commands from natural language descriptions.",
-    tags: ['rust', 'ai', 'cli', 'openai'],
-    author: 'Shakirul Hasan Khan',
-    readingTime: '8 min read',
-  },
-  {
     slug: 'why-not-px',
     title: 'Why Should You Not Use px?',
     date: '2024-01-10',
