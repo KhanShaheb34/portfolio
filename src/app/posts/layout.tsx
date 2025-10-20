@@ -12,7 +12,7 @@ type PostLayoutProps = {
 export default function PostLayout({ children }: PostLayoutProps) {
   const pathname = usePathname();
 
-  // Extract slug from pathname like /posts/coterm-development
+  // Extract slug from pathname like /posts/why-not-px
   const pathSegments = pathname.split('/');
   const slug = pathSegments[2]; // posts is pathSegments[1], slug is pathSegments[2]
 
