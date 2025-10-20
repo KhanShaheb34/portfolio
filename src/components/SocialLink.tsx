@@ -1,4 +1,5 @@
 import {
+  FileTextIcon,
   GithubLogoIcon,
   GraduationCapIcon,
   LinkedinLogoIcon,
@@ -19,6 +20,7 @@ const iconMap: Record<string, typeof GithubLogoIcon> = {
   twitter: XLogoIcon,
   user: UserIcon,
   scholar: GraduationCapIcon,
+  resume: FileTextIcon,
 };
 
 export default function SocialLink({ icon, text, href }: SocialLinkProps) {
