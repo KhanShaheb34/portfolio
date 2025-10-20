@@ -89,6 +89,7 @@ export default function Home() {
                   />
                 ))}
                 <SocialLink href="/about" icon="user" text="About" />
+                <SocialLink href="/resume" icon="resume" text="Resume" />
               </div>
             </Section>
             <WavyLine hideOnDesktop />
