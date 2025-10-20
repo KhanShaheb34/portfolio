@@ -13,6 +13,20 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: '/resume',
+        destination: '/Resume.pdf',
+        permanent: false,
+      },
+      {
+        source: '/Resume',
+        destination: '/Resume.pdf',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 const withMDX = createMDX({
