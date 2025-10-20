@@ -102,13 +102,14 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <p className="text-muted leading-relaxed">
-                  Developed multiple AI-powered applications including Ramble
-                  (meeting transcription) and Re:sume (AI resume builder). Over
-                  4 years of experience in full-stack development with focus on
-                  performance and user experience.
+                  Developed multiple AI-powered applications including Coterm
+                  (Rust CLI tool), Ramble (meeting transcription), and Re:sume
+                  (AI resume builder). Over 4 years of experience in full-stack
+                  development with focus on performance and user experience.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
+                    'Rust',
                     'React',
                     'Node.js',
                     'TypeScript',
