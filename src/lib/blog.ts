@@ -1,6 +1,16 @@
 // Blog utilities for MDX posts in app directory
 const posts = [
   {
+    slug: 'instagram-architecture',
+    title: 'How Instagram Handles 2 Billion Users',
+    date: '2025-10-25',
+    excerpt:
+      'A deep dive into Instagram\'s architecture evolution from 100 to 2 billion users, exploring load balancing, caching, sharding, microservices, and global infrastructure.',
+    tags: ['architecture', 'scalability', 'systems', 'instagram', 'distributed-systems'],
+    author: 'Shakirul Hasan Khan',
+    readingTime: '30 min read',
+  },
+  {
     slug: 'why-not-px',
     title: 'Why Should You Not Use px?',
     date: '2024-01-10',
