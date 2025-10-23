@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactFlow, Background, Controls, Node, Edge, useNodesState, useEdgesState } from 'reactflow';
+import { ReactFlow, Background, Controls, Node, Edge, useNodesState, useEdgesState } from '@xyflow/react';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { 
@@ -528,13 +528,13 @@ const CustomNode = ({ data }: { data: any }) => {
   );
 };
 
-const nodeTypes = {
+const nodeTypes: any = {
   custom: CustomNode,
 };
 
 export default function ArchitectureDiagram({ stage, title, className = '' }: ArchitectureDiagramProps) {
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState<any>([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<any>([]);
 
   useEffect(() => {
     const stageData = getStageData(stage);

@@ -43,7 +43,6 @@ But it wasn't always this way. Instagram started with a single server and $20/mo
   min={100} 
   max={2000000000} 
   value={100} 
-  onChange={(value) => console.log('Users:', value)}
   label="Scale the user base to see architecture evolution"
 />
 
@@ -439,7 +438,7 @@ Sends push notifications over next 30 seconds
     { label: "Posts per Second", value: "1,000", status: "good" },
     { label: "Writes per Shard", value: "200", status: "good" },
     { label: "Queue Depth", value: "5,000", status: "good" },
-    { label: "Queue Lag", value: "<2s", status: "good" },
+    { label: "Queue Lag", value: "&lt;2s", status: "good" },
     { label: "Response Time", value: "80ms", status: "good" },
     { label: "Daily Active Users", value: "5M", status: "good" },
     { label: "Monthly Cost", value: "$15K", status: "good" },
@@ -476,7 +475,7 @@ JOIN users ON posts.user_id = users.id
 LEFT JOIN likes ON posts.id = likes.post_id
 LEFT JOIN comments ON posts.id = comments.post_id
 WHERE posts.user_id IN (... 300 followed users ...)
-  AND posts.created_at > NOW() - INTERVAL '7 days'
+  AND posts.created_at &gt; NOW() - INTERVAL '7 days'
 GROUP BY posts.id
 ORDER BY engagement_score DESC  -- Custom ranking!
 LIMIT 50;
@@ -525,11 +524,11 @@ LIMIT 50;
 
 **Smart Decision Tree:**
 ```
-IF user has < 1,000 followers:
+IF user has &lt; 1,000 followers:
     → Use PUSH model (fan-out on write)
     → Pre-compute feeds for all followers
     
-ELSE IF user has > 1,000 followers:
+ELSE IF user has &gt; 1,000 followers:
     → Use PULL model (fan-out on read)
     → Compute feed on-demand when requested
     
@@ -601,7 +600,6 @@ User in India → Virginia Data Center
 
 <WorldMap 
   selectedRegion="us-east"
-  onRegionSelect={(region) => console.log('Selected region:', region)}
   showLatency={true}
 />
 
@@ -642,7 +640,7 @@ Global feed available everywhere
 
 ### Benefits
 
-✅ **Latency:** <150ms globally (from 800ms)  
+✅ **Latency:** &lt;150ms globally (from 800ms)  
 ✅ **Availability:** 99.99% (multi-region redundancy)  
 ✅ **Compliance:** Meets regional regulations  
 ✅ **Scalability:** Scale regions independently  
@@ -663,7 +661,7 @@ Global feed available everywhere
 />
 
 **Key Insight:**
-> "When you open Instagram in Dhaka, your request goes to Singapore - not California. That's why it feels instant. Instagram has the same infrastructure deployed in 3 major regions, serving 500 million users with <150ms latency worldwide."
+> "When you open Instagram in Dhaka, your request goes to Singapore - not California. That's why it feels instant. Instagram has the same infrastructure deployed in 3 major regions, serving 500 million users with &lt;150ms latency worldwide."
 
 ---
 
@@ -896,9 +894,7 @@ Backup Storage:    200+ Petabytes
 
 ## The Complete Journey
 
-<TimelineEvolution 
-  onStageChange={(stage) => console.log('Stage changed to:', stage)}
-/>
+<TimelineEvolution />
 
 ## Principles You Can Apply Today
 

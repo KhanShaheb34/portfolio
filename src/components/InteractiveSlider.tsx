@@ -7,7 +7,7 @@ interface InteractiveSliderProps {
   min: number;
   max: number;
   value: number;
-  onChange: (value: number) => void;
+  onChange?: (value: number) => void;
   label: string;
   formatValue?: (value: number) => string;
   className?: string;
@@ -36,7 +36,7 @@ export default function InteractiveSlider({
   const [isDragging, setIsDragging] = useState(false);
 
   const handleChange = (newValue: number) => {
-    onChange(newValue);
+    onChange?.(newValue);
   };
 
   const getStageFromValue = (val: number) => {
