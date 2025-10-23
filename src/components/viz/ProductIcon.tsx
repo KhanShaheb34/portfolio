@@ -27,8 +27,8 @@ export default function ProductIcon({ name, title, className, size = 20 }: Produ
     return toPascalKey(name);
   }, [name]);
 
-  // @ts-expect-error dynamic index access into module
-  const def = (icons as any)[key] as { path: string; title: string; hex: string } | undefined;
+  const record: Record<string, { path: string; title: string; hex: string } | undefined> = icons as unknown as Record<string, { path: string; title: string; hex: string } | undefined>;
+  const def = record[key];
 
   if (!def) {
     return (
