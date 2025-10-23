@@ -1,26 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  siAmazonaws,
-  siPostgresql,
-  siRedis,
-  siApachekafka,
-  siKubernetes,
-  siNginx,
-  siReact,
-  siPython,
-  siNodedotjs,
-  siElasticsearch,
-  siPrometheus,
-  siGrafana,
-  siDocker,
-  siTerraform,
-  siCloudflare,
-  siGooglecloud,
-  siMongodb,
-  siCassandra,
-} from "simple-icons";
+import * as SimpleIcons from "simple-icons";
 import type { ReactNode } from "react";
 
 interface TechItem {
@@ -37,24 +18,24 @@ interface TechStackCardProps {
 }
 
 const iconMap: Record<string, { path: string; hex: string }> = {
-  aws: { path: siAmazonaws.path, hex: siAmazonaws.hex },
-  postgresql: { path: siPostgresql.path, hex: siPostgresql.hex },
-  redis: { path: siRedis.path, hex: siRedis.hex },
-  kafka: { path: siApachekafka.path, hex: siApachekafka.hex },
-  kubernetes: { path: siKubernetes.path, hex: siKubernetes.hex },
-  nginx: { path: siNginx.path, hex: siNginx.hex },
-  react: { path: siReact.path, hex: siReact.hex },
-  python: { path: siPython.path, hex: siPython.hex },
-  nodejs: { path: siNodedotjs.path, hex: siNodedotjs.hex },
-  elasticsearch: { path: siElasticsearch.path, hex: siElasticsearch.hex },
-  prometheus: { path: siPrometheus.path, hex: siPrometheus.hex },
-  grafana: { path: siGrafana.path, hex: siGrafana.hex },
-  docker: { path: siDocker.path, hex: siDocker.hex },
-  terraform: { path: siTerraform.path, hex: siTerraform.hex },
-  cloudflare: { path: siCloudflare.path, hex: siCloudflare.hex },
-  gcp: { path: siGooglecloud.path, hex: siGooglecloud.hex },
-  mongodb: { path: siMongodb.path, hex: siMongodb.hex },
-  cassandra: { path: siCassandra.path, hex: siCassandra.hex },
+  aws: { path: (SimpleIcons as any).siAmazonwebservices?.path || "", hex: (SimpleIcons as any).siAmazonwebservices?.hex || "FF9900" },
+  postgresql: { path: (SimpleIcons as any).siPostgresql?.path || "", hex: (SimpleIcons as any).siPostgresql?.hex || "4169E1" },
+  redis: { path: (SimpleIcons as any).siRedis?.path || "", hex: (SimpleIcons as any).siRedis?.hex || "DC382D" },
+  kafka: { path: (SimpleIcons as any).siApachekafka?.path || "", hex: (SimpleIcons as any).siApachekafka?.hex || "231F20" },
+  kubernetes: { path: (SimpleIcons as any).siKubernetes?.path || "", hex: (SimpleIcons as any).siKubernetes?.hex || "326CE5" },
+  nginx: { path: (SimpleIcons as any).siNginx?.path || "", hex: (SimpleIcons as any).siNginx?.hex || "009639" },
+  react: { path: (SimpleIcons as any).siReact?.path || "", hex: (SimpleIcons as any).siReact?.hex || "61DAFB" },
+  python: { path: (SimpleIcons as any).siPython?.path || "", hex: (SimpleIcons as any).siPython?.hex || "3776AB" },
+  nodejs: { path: (SimpleIcons as any).siNodedotjs?.path || "", hex: (SimpleIcons as any).siNodedotjs?.hex || "339933" },
+  elasticsearch: { path: (SimpleIcons as any).siElasticsearch?.path || "", hex: (SimpleIcons as any).siElasticsearch?.hex || "005571" },
+  prometheus: { path: (SimpleIcons as any).siPrometheus?.path || "", hex: (SimpleIcons as any).siPrometheus?.hex || "E6522C" },
+  grafana: { path: (SimpleIcons as any).siGrafana?.path || "", hex: (SimpleIcons as any).siGrafana?.hex || "F46800" },
+  docker: { path: (SimpleIcons as any).siDocker?.path || "", hex: (SimpleIcons as any).siDocker?.hex || "2496ED" },
+  terraform: { path: (SimpleIcons as any).siTerraform?.path || "", hex: (SimpleIcons as any).siTerraform?.hex || "7B42BC" },
+  cloudflare: { path: (SimpleIcons as any).siCloudflare?.path || "", hex: (SimpleIcons as any).siCloudflare?.hex || "F38020" },
+  gcp: { path: (SimpleIcons as any).siGooglecloud?.path || "", hex: (SimpleIcons as any).siGooglecloud?.hex || "4285F4" },
+  mongodb: { path: (SimpleIcons as any).siMongodb?.path || "", hex: (SimpleIcons as any).siMongodb?.hex || "47A248" },
+  cassandra: { path: (SimpleIcons as any).siApachecassandra?.path || "", hex: (SimpleIcons as any).siApachecassandra?.hex || "1287B1" },
 };
 
 export default function TechStackCard({ title, items, color = "blue", children }: TechStackCardProps) {
