@@ -1,0 +1,177 @@
+import BlogLayout from '@/components/BlogLayout';
+import ArchitectureDiagram from '@/components/viz/ArchitectureDiagram';
+import MetricsPanel from '@/components/viz/MetricsPanel';
+import InteractiveSlider from '@/components/viz/InteractiveSlider';
+import TrafficSimulator from '@/components/viz/TrafficSimulator';
+import WorldCDNMap from '@/components/viz/WorldCDNMap';
+import MetricsChart from '@/components/viz/MetricsChart';
+import FeedStrategyToggle from '@/components/viz/FeedStrategyToggle';
+import LiveCounters from '@/components/viz/LiveCounters';
+import TimelineStage from '@/components/viz/TimelineStage';
+
+export const metadata = {
+  title: 'How Instagram Handles 2 Billion Users',
+  description: 'A stage-by-stage deep dive into Instagram\'s architecture from 100 to 2B users — with interactive visualizations.',
+  openGraph: {
+    title: 'How Instagram Handles 2 Billion Users',
+    description: 'A stage-by-stage deep dive into Instagram\'s architecture from 100 to 2B users — with interactive visualizations.',
+    type: 'article',
+    publishedTime: '2025-10-25',
+    authors: ['Shakirul Hasan Khan'],
+    tags: ['architecture', 'scalability', 'systems', 'instagram'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How Instagram Handles 2 Billion Users',
+    description: 'A stage-by-stage deep dive into Instagram\'s architecture from 100 to 2B users — with interactive visualizations.',
+  },
+};
+
+# Instagram Architecture: From 100 to 2 Billion Users
+
+Right now, 2 billion people are scrolling through Instagram. Each one expects their feed in under 0.3 seconds. Photos from friends in Tokyo. Videos from creators in Los Angeles. Stories from family in Dhaka.
+
+**How does Instagram make this magic happen?**
+
+<LiveCounters />
+
+---
+
+## Stage 0: The Dream (100 Users)
+
+**The Setup:** Single server, app + DB + disk storage. Fast and cheap.
+
+<TrafficSimulator label="Single Server Request Flow" />
+
+<MetricsPanel metrics={[
+  { label: 'Response Time', value: '50ms', status: 'ok' },
+  { label: 'Daily Active Users', value: '100', status: 'ok' },
+  { label: 'Server CPU', value: '12%', status: 'ok' },
+  { label: 'Database CPU', value: '8%', status: 'ok' },
+  { label: 'Monthly Cost', value: '$20', status: 'ok' },
+  { label: 'Uptime', value: '99.5%', status: 'ok' },
+]} />
+
+---
+
+## Stage 1: Load Balancing (10,000 Users)
+
+<InteractiveSlider min={1000} max={20000} label="Add more users" />
+
+<ArchitectureDiagram
+  stage={1}
+  nodes={[
+    { id: 'users', position: { x: 20, y: 10 }, data: { label: '10K Users' } },
+    { id: 'lb', position: { x: 200, y: 20 }, data: { label: 'Load Balancer' } },
+    { id: 's1', position: { x: 60, y: 150 }, data: { label: 'Server 1' } },
+    { id: 's2', position: { x: 200, y: 150 }, data: { label: 'Server 2' } },
+    { id: 's3', position: { x: 340, y: 150 }, data: { label: 'Server 3' } },
+    { id: 'db', position: { x: 200, y: 300 }, data: { label: 'PostgreSQL (Shared)' } },
+  ]}
+  edges={[
+    { id: 'edge-u-lb', source: 'users', target: 'lb', animated: true },
+    { id: 'edge-lb-s1', source: 'lb', target: 's1', animated: true },
+    { id: 'edge-lb-s2', source: 'lb', target: 's2', animated: true },
+    { id: 'edge-lb-s3', source: 'lb', target: 's3', animated: true },
+    { id: 'edge-s1-db', source: 's1', target: 'db' },
+    { id: 'edge-s2-db', source: 's2', target: 'db' },
+    { id: 'edge-s3-db', source: 's3', target: 'db' },
+  ]}
+  height={420}
+/>
+
+<MetricsPanel title="Stage 1 Metrics" metrics={[
+  { label: 'Response Time', value: '200ms', status: 'ok' },
+  { label: 'DAU', value: '10K', status: 'ok' },
+  { label: 'Server CPU', value: '45%', status: 'ok' },
+  { label: 'DB CPU', value: '75%', status: 'warn' },
+  { label: 'Monthly Cost', value: '$500' },
+  { label: 'Uptime', value: '99.8%', status: 'ok' },
+]} />
+
+---
+
+## Stage 2: CDN + Object Storage (100,000 Users)
+
+<WorldCDNMap />
+
+<MetricsPanel title="Stage 2 Metrics" metrics={[
+  { label: 'Image Load Time', value: '50ms', status: 'ok' },
+  { label: 'CDN Cache Hit', value: '92%', status: 'ok' },
+  { label: 'Bandwidth Cost', value: '-70%', status: 'ok' },
+  { label: 'Storage Cost', value: '$800' },
+  { label: 'DAU', value: '100K', status: 'ok' },
+  { label: 'DB CPU', value: '82%', status: 'warn' },
+]} />
+
+---
+
+## Stage 3: Redis + Read Replicas (500,000 Users)
+
+<MetricsPanel title="Stage 3 Metrics" metrics={[
+  { label: 'Response Time', value: '100ms', status: 'ok' },
+  { label: 'Cache Hit Rate', value: '85%', status: 'ok' },
+  { label: 'Primary DB CPU', value: '65%', status: 'ok' },
+  { label: 'Redis Memory', value: '45GB' },
+  { label: 'DAU', value: '500K', status: 'ok' },
+]} />
+
+---
+
+## Stage 4: Sharding + Queues (5M Users)
+
+<MetricsPanel title="Stage 4 Metrics" metrics={[
+  { label: 'Posts/sec', value: '1,000', status: 'ok' },
+  { label: 'Writes per Shard', value: '200', status: 'ok' },
+  { label: 'Queue Lag', value: '<2s', status: 'ok' },
+  { label: 'Response Time', value: '80ms', status: 'ok' },
+  { label: 'DAU', value: '5M', status: 'ok' },
+]} />
+
+---
+
+## Stage 5: Feed Generation (50M Users)
+
+<FeedStrategyToggle />
+
+<MetricsPanel title="Stage 5 Metrics" metrics={[
+  { label: 'Feed Load Time', value: '150ms', status: 'ok' },
+  { label: 'Push Latency', value: '5s', status: 'ok' },
+  { label: 'Pull Latency', value: '200ms', status: 'ok' },
+  { label: 'Uptime', value: '99.9%', status: 'ok' },
+]} />
+
+---
+
+## Stage 6: Multi-Region (500M Users)
+
+<MetricsPanel title="Stage 6 Metrics" metrics={[
+  { label: 'Global Avg Latency', value: '120ms', status: 'ok' },
+  { label: 'US', value: '50ms', status: 'ok' },
+  { label: 'EU', value: '80ms', status: 'ok' },
+  { label: 'AP', value: '100ms', status: 'ok' },
+  { label: 'Cross-region Sync', value: '1.5s', status: 'ok' },
+]} />
+
+---
+
+## Stage 7: The Billion-User Architecture (2B Users)
+
+<MetricsChart data={[
+  { x: 'Stage 0', latency: 50, users: 0.1, cost: 0.02 },
+  { x: 'Stage 1', latency: 200, users: 10, cost: 0.5 },
+  { x: 'Stage 2', latency: 120, users: 100, cost: 0.8 },
+  { x: 'Stage 3', latency: 100, users: 500, cost: 3 },
+  { x: 'Stage 4', latency: 80, users: 5000, cost: 15 },
+  { x: 'Stage 5', latency: 150, users: 50000, cost: 80 },
+  { x: 'Stage 6', latency: 120, users: 500000, cost: 500 },
+  { x: 'Stage 7', latency: 300, users: 2000000, cost: 180000 },
+]} />
+
+---
+
+## Complete Journey
+
+This post compresses a huge amount of system design knowledge into a practical, staged journey. Explore, tweak the sliders, and think about which principles to apply at your current scale.
+
+<TimelineStage />
