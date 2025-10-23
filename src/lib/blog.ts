@@ -10,6 +10,16 @@ const posts = [
     author: 'Shakirul Hasan Khan',
     readingTime: '10 min read',
   },
+  {
+    slug: 'instagram-architecture-2b-users',
+    title: 'How Instagram Handles 2 Billion Users',
+    date: '2025-10-25',
+    excerpt:
+      'From a single server to a global, multi-region, ML-powered platform—visualizing the journey.',
+    tags: ['architecture', 'scalability', 'distributed-systems', 'databases', 'caching'],
+    author: 'Shakirul Hasan Khan',
+    readingTime: '18 min read',
+  },
 ];
 
 export type BlogPost = {

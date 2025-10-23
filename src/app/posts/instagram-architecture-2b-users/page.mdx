@@ -1,0 +1,233 @@
+import ArchitectureDiagram from "@/components/visuals/ArchitectureDiagram";
+import MetricsPanel from "@/components/visuals/MetricsPanel";
+import InteractiveSlider from "@/components/visuals/InteractiveSlider";
+import LiveActivityCounter from "@/components/visuals/LiveActivityCounter";
+import LoadBalancerSimulator from "@/components/visuals/LoadBalancerSimulator";
+import CDNMap from "@/components/visuals/CDNMap";
+import FeedCacheSimulator from "@/components/visuals/FeedCacheSimulator";
+import ShardingFlow from "@/components/visuals/ShardingFlow";
+import FanOutComparison from "@/components/visuals/FanOutComparison";
+import RegionsMap from "@/components/visuals/RegionsMap";
+import EvolutionTimeline from "@/components/visuals/EvolutionTimeline";
+
+export const metadata = {
+  title: "How Instagram Handles 2 Billion Users | Shakirul Hasan Khan",
+  description: "An interactive journey from a scrappy monolith to global, multi-region, ML-powered scale.",
+  openGraph: {
+    title: "How Instagram Handles 2 Billion Users",
+    description: "An interactive journey from a scrappy monolith to global, multi-region, ML-powered scale.",
+    type: "article",
+    publishedTime: "2025-10-25",
+    authors: ["Shakirul Hasan Khan"],
+    tags: ["architecture", "scalability", "distributed-systems", "databases", "caching"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How Instagram Handles 2 Billion Users",
+    description: "From 100 users to 2B — the architecture story.",
+  },
+};
+
+# Instagram Architecture: From 100 to 2 Billion Users
+
+Right now, billions scroll. Feeds load in under 300ms. Photos from Tokyo, stories from Dhaka, videos from LA. How does this system stay fast, reliable, and global?
+
+<LiveActivityCounter />
+
+## Stage 0 — The Dream (100 Users)
+
+A tiny monolith: one server, one database, and images on disk. Blissfully simple — until success.
+
+<ArchitectureDiagram stage={0} />
+
+<MetricsPanel
+  title="Stage 0 Metrics"
+  items={[
+    { label: "Response Time", value: "50ms", status: "good" },
+    { label: "Daily Active Users", value: "100", status: "good" },
+    { label: "Server CPU", value: "12%", status: "good" },
+    { label: "Database CPU", value: "8%", status: "good" },
+    { label: "Monthly Cost", value: "$20", status: "good" },
+    { label: "Uptime", value: "99.5%", status: "good" },
+  ]}
+/>
+
+> Works great — until your app goes viral.
+
+---
+
+## Stage 1 — First Success (10,000 Users)
+
+Horizontal scaling with a load balancer. Multiple app servers, one shared database.
+
+<ArchitectureDiagram stage={1} />
+
+<LoadBalancerSimulator />
+
+<MetricsPanel
+  title="Stage 1 Metrics"
+  items={[
+    { label: "Response Time", value: "200ms", status: "good" },
+    { label: "Daily Active Users", value: "10K", status: "good" },
+    { label: "Server CPU", value: "45%", status: "good" },
+    { label: "Database CPU", value: "75%", status: "warn" },
+    { label: "Monthly Cost", value: "$500" },
+    { label: "Uptime", value: "99.8%", status: "good" },
+  ]}
+/>
+
+---
+
+## Stage 2 — The Image Problem (100,000 Users)
+
+Bandwidth explodes. Latency hurts globally. The fix: move images to object storage and front with a CDN.
+
+<ArchitectureDiagram stage={2} />
+
+<CDNMap />
+
+<MetricsPanel
+  title="Stage 2 Metrics"
+  items={[
+    { label: "Image Load Time", value: "50ms", status: "good" },
+    { label: "CDN Cache Hit", value: "92%", status: "good" },
+    { label: "Bandwidth Cost", value: "-70%", status: "good" },
+    { label: "Server CPU", value: "35%", status: "good" },
+    { label: "Database CPU", value: "82%", status: "warn" },
+    { label: "Daily Active Users", value: "100K", status: "good" },
+  ]}
+/>
+
+---
+
+## Stage 3 — Read Overload (500,000 Users)
+
+Add Redis caching and read replicas. 85% of feed requests never touch the database.
+
+<ArchitectureDiagram stage={3} />
+
+<FeedCacheSimulator />
+
+<MetricsPanel
+  title="Stage 3 Metrics"
+  items={[
+    { label: "Response Time", value: "100ms", status: "good" },
+    { label: "Cache Hit Rate", value: "85%", status: "good" },
+    { label: "Database CPU", value: "40%", status: "good" },
+    { label: "Primary DB CPU", value: "65%", status: "good" },
+    { label: "Daily Active Users", value: "500K", status: "good" },
+    { label: "Monthly Cost", value: "$3,000" },
+  ]}
+/>
+
+---
+
+## Stage 4 — Write Bottleneck (5 Million Users)
+
+Shard the database and push non-critical work to Kafka. Instant writes for users; heavy work moves to background.
+
+<ArchitectureDiagram stage={4} />
+
+<ShardingFlow />
+
+<MetricsPanel
+  title="Stage 4 Metrics"
+  items={[
+    { label: "Posts per Second", value: "1,000", status: "good" },
+    { label: "Writes per Shard", value: "200", status: "good" },
+    { label: "Queue Lag", value: "<2s", status: "good" },
+    { label: "Response Time", value: "80ms", status: "good" },
+    { label: "Daily Active Users", value: "5M", status: "good" },
+    { label: "Monthly Cost", value: "$15K" },
+  ]}
+/>
+
+---
+
+## Stage 5 — Personalized Feeds (50 Million Users)
+
+Microservices + hybrid fan-out. Push for regular users; pull for celebrities. Merge and rank.
+
+<ArchitectureDiagram stage={5} />
+
+<FanOutComparison />
+
+<MetricsPanel
+  title="Stage 5 Metrics"
+  items={[
+    { label: "Feed Load Time", value: "150ms", status: "good" },
+    { label: "Push Latency", value: "5s", status: "good" },
+    { label: "Pull Latency", value: "200ms", status: "good" },
+    { label: "Service Uptime", value: "99.9%", status: "good" },
+    { label: "Daily Active Users", value: "50M", status: "good" },
+    { label: "Monthly Cost", value: "$80K" },
+  ]}
+/>
+
+---
+
+## Stage 6 — Global Scale (500 Million Users)
+
+Deploy full stacks in regions. Route users via geo-DNS. Keep data local; replicate globally.
+
+<ArchitectureDiagram stage={6} />
+
+<RegionsMap />
+
+<MetricsPanel
+  title="Stage 6 Metrics"
+  items={[
+    { label: "Global Avg Latency", value: "120ms", status: "good" },
+    { label: "US Latency", value: "50ms", status: "good" },
+    { label: "EU Latency", value: "80ms", status: "good" },
+    { label: "AP Latency", value: "100ms", status: "good" },
+    { label: "Cross-region Sync", value: "1.5s", status: "good" },
+    { label: "Regional Uptime", value: "99.99%", status: "good" },
+  ]}
+/>
+
+---
+
+## Stage 7 — The Billion-User Stack (2B Users)
+
+Edge compute, API gateways, 20+ services, Redis clusters, Kafka at insane throughput, and petabyte-scale storage.
+
+<ArchitectureDiagram stage={7} />
+
+<MetricsPanel
+  title="Stage 7 Metrics"
+  items={[
+    { label: "Global Avg Latency", value: "300ms", status: "good" },
+    { label: "Requests/Second", value: "500K", status: "good" },
+    { label: "Posts/Day", value: "95M", status: "good" },
+    { label: "Data Stored", value: "95PB" },
+    { label: "Uptime", value: "99.99%", status: "good" },
+    { label: "Monthly Cost", value: "$180M" },
+  ]}
+/>
+
+---
+
+## The Journey — Interactive Timeline
+
+<EvolutionTimeline />
+
+---
+
+## Apply These Principles Today
+
+- Start simple; scale where metrics say so.
+- Cache everything you can.
+- Split reads/writes before you shard.
+- Use queues for non-critical paths.
+- Go multi-region when latency demands it.
+
+<InteractiveSlider
+  min={100}
+  max={2_000_000_000}
+  step={10_000}
+  label="Scale the user base"
+  format={(v) => `${Intl.NumberFormat().format(v)} users`}
+/>
+
+> Instagram’s scale took years. Your app doesn’t need Stage 7 today. But the patterns here — caching, sharding, microservices, multi-region — are timeless.
