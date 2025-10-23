@@ -1,0 +1,915 @@
+import {
+  MetricsPanel,
+  InteractiveCounter,
+  InteractiveSlider,
+  ArchitectureDiagram,
+  GlobalMap,
+  EvolutionTimeline,
+  LoadBalancerDemo,
+  TechStackCard,
+} from "@/components/instagram-arch";
+
+export const metadata = {
+  title: "How Instagram Handles 2 Billion Users | Shakirul Hasan Khan",
+  description:
+    "A deep dive into Instagram's architecture evolution from 100 to 2 billion users, exploring load balancing, caching, sharding, microservices, and global infrastructure.",
+  openGraph: {
+    title: "How Instagram Handles 2 Billion Users",
+    description:
+      "A deep dive into Instagram's architecture evolution from 100 to 2 billion users",
+    type: "article",
+    publishedTime: "2025-10-25",
+    authors: ["Shakirul Hasan Khan"],
+    tags: ["architecture", "scalability", "systems", "instagram", "distributed-systems"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How Instagram Handles 2 Billion Users",
+    description:
+      "A deep dive into Instagram's architecture evolution from 100 to 2 billion users",
+  },
+};
+
+# How Instagram Handles 2 Billion Users
+
+## The Invisible Infrastructure
+
+Right now, 2 billion people are scrolling through Instagram. Each one expects their feed in under 0.3 seconds. Photos from friends in Tokyo. Videos from creators in Los Angeles. Stories from family in Dhaka.
+
+**How does Instagram make this magic happen?**
+
+Every second:
+- 📸 1,000 photos are uploaded
+- ❤️ 4.2 million posts are liked
+- 👀 65,000 photos are shared
+- 💬 80,000 comments are posted
+
+Behind your smooth scrolling experience is one of the most sophisticated distributed systems ever built. Let's peek behind the curtain.
+
+<InteractiveCounter />
+
+---
+
+## Stage 0: The Dream (100 Users)
+
+### The Beginning
+
+Every giant system starts simple. Let's imagine Instagram in 2010 - a small app with big dreams.
+
+**The Setup:**
+- Single server running everything
+- Node.js/Python application
+- PostgreSQL database
+- All users' photos stored on the same machine
+- Basic REST API
+
+<ArchitectureDiagram stage={0} />
+
+### What Works
+
+✅ Simple to build and deploy
+✅ Easy to debug - everything in one place
+✅ Low cost
+✅ Fast for small user base
+✅ No network latency between components
+
+<MetricsPanel
+  title="Stage 0 Metrics"
+  metrics={[
+    { label: "Response Time", value: "50ms", status: "good" },
+    { label: "Daily Active Users", value: "100", status: "good" },
+    { label: "Server CPU", value: "12%", status: "good" },
+    { label: "Database CPU", value: "8%", status: "good" },
+    { label: "Monthly Cost", value: "$20", status: "good" },
+    { label: "Uptime", value: "99.5%", status: "good" },
+  ]}
+/>
+
+> **Key Insight:** This architecture can handle 100 users easily. But what happens when your app goes viral?
+
+---
+
+## Stage 1: First Success - The Breaking Point (10,000 Users)
+
+### The Problem Emerges
+
+Your app is featured on Product Hunt. Users flood in. Suddenly:
+
+- Server CPU hits 100% 🔥
+- Response time shoots to 5 seconds
+- Some requests timeout completely
+- Users complaining on Twitter
+- Database connections maxed out
+
+### The Solution: Horizontal Scaling + Load Balancer
+
+Instead of one powerful server, use multiple smaller servers. But how do users know which server to hit?
+
+**Enter: The Load Balancer**
+
+<ArchitectureDiagram stage={1} />
+
+### Load Balancing Algorithms
+
+**Three common strategies:**
+
+1. **Round Robin:** Server 1 → Server 2 → Server 3 → Server 4 → repeat
+2. **Least Connections:** Send to server with fewest active connections
+3. **IP Hash:** Same user always goes to same server (session affinity)
+
+<LoadBalancerDemo />
+
+<TechStackCard
+  title="Possible Load Balancer Solutions"
+  color="purple"
+  items={[
+    { name: "AWS Elastic Load Balancer", description: "Managed, auto-scaling", icon: "aws" },
+    { name: "NGINX", description: "Open source, highly configurable", icon: "nginx" },
+    { name: "HAProxy", description: "High performance, TCP/HTTP" },
+    { name: "Google Cloud Load Balancing", description: "Global load balancing", icon: "gcp" },
+    { name: "Cloudflare Load Balancing", description: "With DDoS protection", icon: "cloudflare" },
+  ]}
+/>
+
+### What's Improved
+
+✅ Can handle 10,000 concurrent users
+✅ Server failure doesn't kill entire app
+✅ Can scale by adding more servers
+✅ CPU load distributed
+
+### What's Still Problematic
+
+❌ Database is single point of failure
+❌ Session management across servers
+❌ Images duplicated on each server (waste)
+❌ Database becoming bottleneck
+
+<MetricsPanel
+  title="Stage 1 Metrics"
+  metrics={[
+    { label: "Response Time", value: "200ms", status: "good" },
+    { label: "Daily Active Users", value: "10K", status: "good" },
+    { label: "Server CPU", value: "45%", status: "good" },
+    { label: "Database CPU", value: "75%", status: "warning" },
+    { label: "Monthly Cost", value: "$500", status: "good" },
+    { label: "Uptime", value: "99.8%", status: "good" },
+  ]}
+/>
+
+> **Key Insight:** We can clone the application servers infinitely, but there's still one database. That's our next problem.
+
+---
+
+## Stage 2: The Image Problem (100,000 Users)
+
+### The Bandwidth Crisis
+
+With 100,000 users, new problems emerge:
+
+- Users uploading 5,000 photos per day
+- Each photo averages 2MB
+- Bandwidth bill: $5,000/month 😱
+- Images stored on application servers (inconsistent)
+- Users in Asia experience slow load times (500-800ms)
+- Servers running out of disk space
+
+### The Solution: Content Delivery Network (CDN)
+
+A CDN stores copies of your images at 200+ edge locations worldwide. When a user requests a photo:
+
+1. Request goes to nearest edge location
+2. If cached → instant delivery
+3. If not cached → fetch once from origin, cache it, deliver
+4. Next user in that region → instant (cached)
+
+<ArchitectureDiagram stage={2} />
+
+### How It Works: Step-by-Step
+
+**When a user uploads a photo:**
+1. Image uploads directly to S3
+2. S3 returns a URL: `https://cdn.instagram.com/photos/abc123.jpg`
+3. Metadata (URL, user ID, caption) saved to database
+4. CDN doesn't have image yet (not cached)
+
+**When first user in Singapore views photo:**
+1. Browser requests: `https://cdn.instagram.com/photos/abc123.jpg`
+2. Singapore edge location checks cache → MISS
+3. Edge fetches from S3 origin (200ms)
+4. Edge caches the image
+5. Edge delivers to user (250ms total)
+
+**When second user in Singapore views same photo:**
+1. Browser requests same URL
+2. Singapore edge checks cache → HIT ✅
+3. Edge delivers immediately (25ms)
+
+<TechStackCard
+  title="CDN & Object Storage Solutions"
+  color="orange"
+  items={[
+    { name: "Amazon CloudFront", description: "AWS CDN, 450+ edge locations", icon: "aws" },
+    { name: "Cloudflare CDN", description: "Fast, includes security features", icon: "cloudflare" },
+    { name: "Amazon S3", description: "Industry standard, 99.999999999% durability", icon: "aws" },
+    { name: "Google Cloud Storage", description: "Cost-effective, good integration", icon: "gcp" },
+  ]}
+/>
+
+### What's Improved
+
+✅ Image load time: 50ms (from 800ms globally)
+✅ Bandwidth cost reduced by 70%
+✅ Server disk space freed up
+✅ Servers only handle business logic
+✅ Scalable image storage (S3 = infinite)
+✅ Better user experience globally
+
+<MetricsPanel
+  title="Stage 2 Metrics"
+  metrics={[
+    { label: "Image Load Time", value: "50ms", status: "good" },
+    { label: "CDN Cache Hit Rate", value: "92%", status: "good" },
+    { label: "Bandwidth Cost", value: "-70%", status: "good" },
+    { label: "Storage Cost", value: "$800", status: "good" },
+    { label: "Daily Active Users", value: "100K", status: "good" },
+    { label: "Database CPU", value: "82%", status: "warning" },
+  ]}
+/>
+
+> **Key Insight:** CDN caches images at 200+ locations worldwide. Your Tokyo friend's photo loads from Singapore, not California. That's why Instagram feels instant everywhere.
+
+---
+
+## Stage 3: The Database Bottleneck (500,000 Users)
+
+### The Read Overload
+
+Half a million users means:
+- 10,000 requests per second
+- Each feed load = 50+ database queries
+- Database CPU constantly at 95%
+- Write operations getting slow
+- Some requests timing out
+
+**The Problem:**
+- 90% of queries are READS (viewing feeds)
+- 10% are WRITES (new posts, likes)
+- Single database handles both
+- Reads are slowing down writes
+
+### The Solution: Read Replicas + Caching Layer
+
+**Two-Pronged Approach:**
+
+1. **Database Read Replicas:** Separate read operations from writes
+2. **Redis Caching:** Cache frequently accessed data
+
+<ArchitectureDiagram stage={3} />
+
+### How Caching Works
+
+**Cache Strategy:**
+```javascript
+// When user requests feed:
+// 1. Generate cache key: "feed:user_12345"
+// 2. Check Redis: GET feed:user_12345
+// 3. If EXISTS → Return cached feed (5ms)
+// 4. If NOT EXISTS:
+//    - Query read replica (50ms)
+//    - Store in Redis: SET feed:user_12345 [data] EX 60
+//    - Return feed
+```
+
+**What to Cache:**
+- User feeds (60 seconds TTL)
+- User profiles (5 minutes TTL)
+- Post data (1 minute TTL)
+- Like counts (30 seconds TTL)
+
+<TechStackCard
+  title="Database & Caching Solutions"
+  color="green"
+  items={[
+    { name: "AWS Aurora PostgreSQL", description: "Multi-AZ with read replicas", icon: "aws" },
+    { name: "PostgreSQL", description: "With streaming replication", icon: "postgresql" },
+    { name: "Redis", description: "In-memory, fast, rich data structures", icon: "redis" },
+    { name: "Amazon ElastiCache", description: "Managed Redis/Memcached", icon: "aws" },
+  ]}
+/>
+
+### Cache Invalidation Strategy
+
+**The Hard Problem:** When data changes, cache must be updated
+
+**Instagram's Hybrid Approach:**
+- Short TTL (60 seconds) for feeds
+- Invalidate on critical actions (new post)
+- Accept eventual consistency for likes/comments
+
+### What's Improved
+
+✅ Database read load reduced by 85%
+✅ Response time: 100ms (from 800ms)
+✅ Primary database handles writes smoothly
+✅ Can scale reads independently of writes
+✅ Better resilience (replica failure doesn't kill app)
+
+<MetricsPanel
+  title="Stage 3 Metrics"
+  metrics={[
+    { label: "Response Time", value: "100ms", status: "good" },
+    { label: "Cache Hit Rate", value: "85%", status: "good" },
+    { label: "Database CPU", value: "40%", status: "good" },
+    { label: "Primary DB CPU", value: "65%", status: "good" },
+    { label: "Daily Active Users", value: "500K", status: "good" },
+    { label: "Monthly Cost", value: "$3K", status: "good" },
+  ]}
+/>
+
+> **Key Insight:** Redis caches your feed for 60 seconds. Most users refresh within a minute - so 85% of feed requests never hit the database. That's how Instagram serves millions of feeds per second.
+
+---
+
+## Stage 4: The Write Problem (5 Million Users)
+
+### The Write Bottleneck
+
+With 5 million users:
+- 1,000 posts per second
+- 50,000 likes per second
+- 10,000 comments per second
+- Primary database under extreme write load
+- Transactions causing locks
+- Write operations occasionally failing
+
+### The Solution: Database Sharding + Async Processing
+
+**Two-Part Solution:**
+
+1. **Database Sharding:** Split data across multiple databases
+2. **Message Queue:** Handle non-critical writes asynchronously
+
+<ArchitectureDiagram stage={4} />
+
+### Database Sharding Strategy
+
+**Sharding by User ID:**
+```
+User ID Range    → Database Shard
+0 - 999,999      → Shard 1
+1M - 1,999,999   → Shard 2
+2M - 2,999,999   → Shard 3
+3M - 3,999,999   → Shard 4
+4M - 4,999,999   → Shard 5
+```
+
+**How Routing Works:**
+```javascript
+function getShardForUser(userId) {
+  const shardId = Math.floor(userId / 1000000);
+  return shards[shardId];
+}
+
+// User 2,345,678 → Shard 2
+// User 4,567,890 → Shard 4
+```
+
+### Asynchronous Processing with Queues
+
+**What Goes in the Queue:**
+- ✅ Notifications (email, push)
+- ✅ Feed updates for followers
+- ✅ Analytics events
+- ✅ Image processing (thumbnails)
+- ✅ Content moderation checks
+
+**What Stays Synchronous:**
+- ❌ User login
+- ❌ Post creation (metadata)
+- ❌ Critical reads
+
+**Message Queue Flow:**
+```
+User posts photo
+    ↓
+1. Save to database (synchronous - 50ms)
+    ↓
+2. Return success to user ✅
+    ↓
+3. Queue 1000 notification jobs (async)
+    ↓
+Background Worker picks up jobs
+    ↓
+Sends push notifications over next 30 seconds
+```
+
+<TechStackCard
+  title="Sharding & Message Queue Solutions"
+  color="purple"
+  items={[
+    { name: "Apache Kafka", description: "High throughput, event streaming", icon: "kafka" },
+    { name: "AWS Aurora", description: "Multi-master with sharding", icon: "aws" },
+    { name: "Cassandra", description: "Distributed by design", icon: "cassandra" },
+    { name: "MongoDB", description: "Built-in sharding", icon: "mongodb" },
+  ]}
+/>
+
+### Benefits of This Architecture
+
+**Sharding Benefits:**
+✅ Writes distributed across 5 databases
+✅ Each shard handles 1M users
+✅ Easy to add more shards
+✅ Failure of one shard doesn't affect others
+
+**Queue Benefits:**
+✅ Non-critical work happens in background
+✅ User sees instant response
+✅ Can retry failed operations
+✅ Natural rate limiting
+✅ Workers can scale independently
+
+<MetricsPanel
+  title="Stage 4 Metrics"
+  metrics={[
+    { label: "Posts per Second", value: "1,000", status: "good" },
+    { label: "Writes per Shard", value: "200", status: "good" },
+    { label: "Queue Depth", value: "5,000", status: "good" },
+    { label: "Queue Lag", value: "&lt;2s", status: "good" },
+    { label: "Response Time", value: "80ms", status: "good" },
+    { label: "Daily Active Users", value: "5M", status: "good" },
+  ]}
+/>
+
+> **Key Insight:** When you post a photo on Instagram, it appears in your profile instantly. But notifying your 1,000 followers? That happens in the background over the next 30 seconds. You never wait for it.
+
+---
+
+## Stage 5: The Feed Generation Crisis (50 Million Users)
+
+### The Personalized Feed Problem
+
+50 million users means:
+- Each user follows 100-500 people
+- Some follow 5,000+ people
+- Feed must be personalized (not just chronological)
+- Generating feed in real-time is EXPENSIVE
+- Complex queries joining multiple tables
+
+### The Solution: Microservices + Pre-computed Feeds
+
+**Key Architectural Changes:**
+
+1. **Break Monolith into Services**
+2. **Pre-compute feeds (Fan-out strategies)**
+3. **Separate read and write paths**
+
+### Microservices Architecture
+
+**Service Breakdown:**
+```
+API Gateway (Single entry point)
+    ↓
+┌────┴────────────────────────────┐
+↓         ↓         ↓              ↓
+Feed    Post    User        Notification
+Service Service Service     Service
+```
+
+### Feed Generation Strategies: Fan-out
+
+**Two Approaches:**
+
+#### Strategy A: Fan-out on Read (Pull Model)
+
+**How it works:**
+- User opens app → Request feed
+- Feed service queries all followed users
+- Aggregates posts in real-time
+- Sorts and returns
+
+**Best for:**
+- Users following 1,000+ people
+- Power users with diverse interests
+
+---
+
+#### Strategy B: Fan-out on Write (Push Model)
+
+**How it works:**
+- User posts photo
+- Push to ALL followers' pre-computed feeds
+- When follower opens app → Read from their feed directly
+
+**Best for:**
+- Regular users (100-500 followers)
+- Most of the user base
+
+### The Hybrid Approach (What Instagram Actually Uses)
+
+**Smart Decision Tree:**
+```
+IF user has < 1,000 followers:
+    → Use PUSH model (fan-out on write)
+    → Pre-compute feeds for all followers
+
+ELSE IF user has > 1,000 followers:
+    → Use PULL model (fan-out on read)
+    → Compute feed on-demand when requested
+
+FOR EACH user's feed:
+    → Mix of pushed content (from small accounts)
+    → Pull content (from celebrities they follow)
+    → Rank by engagement score
+```
+
+**Example:**
+- You follow 50 friends + 10 celebrities
+- Friends' posts are pushed to your feed (instant)
+- Celebrity posts are pulled when you open app (fresh)
+- Final feed = merge + rank
+
+<TechStackCard
+  title="Microservices Technologies"
+  color="blue"
+  items={[
+    { name: "Kubernetes", description: "Container orchestration", icon: "kubernetes" },
+    { name: "Docker", description: "Containerization", icon: "docker" },
+    { name: "Redis Cluster", description: "Feed storage", icon: "redis" },
+    { name: "Cassandra", description: "Time-series data", icon: "cassandra" },
+  ]}
+/>
+
+### Benefits of Microservices
+
+✅ **Independent Scaling:** Feed service can scale separately
+✅ **Team Autonomy:** Different teams own different services
+✅ **Technology Flexibility:** Feed service can use Python, Post service uses Node.js
+✅ **Fault Isolation:** Post service down ≠ feed service down
+✅ **Easier Testing:** Test services independently
+
+<MetricsPanel
+  title="Stage 5 Metrics"
+  metrics={[
+    { label: "Feed Load Time", value: "150ms", status: "good" },
+    { label: "Feed Accuracy", value: "95%", status: "good" },
+    { label: "Push Latency", value: "5s", status: "good" },
+    { label: "Pull Latency", value: "200ms", status: "good" },
+    { label: "Daily Active Users", value: "50M", status: "good" },
+    { label: "Monthly Cost", value: "$80K", status: "good" },
+  ]}
+/>
+
+> **Key Insight:** Instagram doesn't use one strategy for everyone. Regular users get instant feeds (pushed). Celebrities' posts are pulled on-demand. Your feed is a smart mix of both, ranked by what you'll probably like.
+
+---
+
+## Stage 6: The Global Scale (500 Million Users)
+
+### The Latency Problem
+
+Half a billion users means truly global distribution:
+- Users in Tokyo, London, São Paulo, Mumbai
+- All hitting servers in Virginia, USA
+- Network latency becomes the bottleneck
+- Physics limits speed of light
+
+**The Distance Tax:**
+```
+User in India → Virginia Data Center
+- Network Distance: ~13,000 km
+- Speed of light: 300,000 km/s
+- Theoretical minimum: 43ms (one way)
+- Reality: 200-400ms round trip
+- Plus: Processing time, database queries
+- Total: 500-800ms 😢
+```
+
+### The Solution: Multi-Region Deployment
+
+**Key Strategy:**
+- Deploy entire stack in multiple geographic regions
+- Route users to nearest region
+- Partition data by user location
+
+<GlobalMap />
+
+### Regional Architecture
+
+**Three Major Regions:**
+
+1. **US East (Americas)** - Serves North & South America
+   - Data Center: Virginia + Oregon
+   - Users: 180M
+
+2. **EU West (Europe/Africa)** - Serves Europe, Middle East, Africa
+   - Data Center: Ireland + Frankfurt
+   - Users: 150M
+
+3. **AP Southeast (Asia/Pacific)** - Serves Asia, Australia, Pacific
+   - Data Center: Singapore + Mumbai + Tokyo
+   - Users: 170M
+
+### Data Partitioning Strategy
+
+**User Data Locality:**
+- User's data lives in their home region
+- Posts, likes, comments stored locally
+- Cross-region requests for global content
+
+**Challenges:**
+1. User in India follows user in USA
+2. Indian user's feed needs USA user's posts
+3. Solution: Cross-region replication (eventual consistency)
+
+**Cross-Region Data Flow:**
+```
+User posts in US
+    ↓
+Saved to US database (immediate)
+    ↓
+Replicated to EU & AP databases (async, 1-2 seconds)
+    ↓
+Global feed available everywhere
+```
+
+### Disaster Recovery & Failover
+
+**High Availability Strategy:**
+- Each region can handle 150% normal load
+- If one region fails → Traffic routes to nearest healthy region
+- Database replication ensures data availability
+- Auto-failover within 30 seconds
+
+### Benefits
+
+✅ **Latency:** &lt;150ms globally (from 800ms)
+✅ **Availability:** 99.99% (multi-region redundancy)
+✅ **Compliance:** Meets regional regulations
+✅ **Scalability:** Scale regions independently
+✅ **Disaster Recovery:** Automatic failover
+
+<MetricsPanel
+  title="Stage 6 Metrics"
+  metrics={[
+    { label: "Global Avg Latency", value: "120ms", status: "good" },
+    { label: "US Latency", value: "50ms", status: "good" },
+    { label: "EU Latency", value: "80ms", status: "good" },
+    { label: "AP Latency", value: "100ms", status: "good" },
+    { label: "Daily Active Users", value: "500M", status: "good" },
+    { label: "Regional Uptime", value: "99.99%", status: "good" },
+  ]}
+/>
+
+> **Key Insight:** When you open Instagram in Dhaka, your request goes to Singapore - not California. That's why it feels instant. Instagram has the same infrastructure deployed in 3 major regions, serving 500 million users with &lt;150ms latency worldwide.
+
+---
+
+## Stage 7: The Billion-User Architecture (2 Billion Users - Today)
+
+### The Final Form
+
+Two billion users is a different beast entirely. At this scale:
+- 500,000 requests per second
+- 95 million posts per day
+- 4.2 billion likes per day
+- 95 petabytes of data storage
+- $2 billion annual infrastructure cost
+
+**New Challenges:**
+1. Machine learning for recommendations
+2. Real-time features (Stories, Live video)
+3. Advanced fraud detection
+4. Content moderation at scale
+5. Personalization for 2B unique users
+
+### The Complete Stack
+
+**Full Instagram Architecture:**
+
+```
+┌─────────────────────────────────────────┐
+│        EDGE LAYER                       │
+│  CloudFront CDN (200+ locations)        │
+└─────────────────────────────────────────┘
+                 ↓
+┌─────────────────────────────────────────┐
+│        GLOBAL DNS                       │
+│  Route 53 - Geo-based routing           │
+└─────────────────────────────────────────┘
+                 ↓
+┌─────────────────────────────────────────┐
+│     API GATEWAY LAYER                   │
+│  Kong / Apigee                          │
+│  - Rate Limiting                        │
+│  - Authentication                       │
+└─────────────────────────────────────────┘
+                 ↓
+┌─────────────────────────────────────────┐
+│  MICROSERVICES (20+ Services)           │
+│  Feed, Post, User, Notification,        │
+│  Story, Live Video, ML, Safety          │
+└─────────────────────────────────────────┘
+                 ↓
+┌─────────────────────────────────────────┐
+│     CACHING LAYER                       │
+│  Redis Cluster (100+ nodes)             │
+└─────────────────────────────────────────┘
+                 ↓
+┌─────────────────────────────────────────┐
+│  MESSAGE QUEUE LAYER                    │
+│  Kafka (100+ brokers)                   │
+└─────────────────────────────────────────┘
+                 ↓
+┌─────────────────────────────────────────┐
+│        DATA LAYER                       │
+│  Cassandra (1000+ nodes)                │
+│  PostgreSQL (500+ shards)               │
+│  S3 (95 PB storage)                     │
+└─────────────────────────────────────────┘
+```
+
+<TechStackCard
+  title="Complete Technology Stack"
+  color="purple"
+  items={[
+    { name: "Kubernetes", description: "Container orchestration on AWS EKS", icon: "kubernetes" },
+    { name: "Redis Cluster", description: "100+ nodes, 10TB memory", icon: "redis" },
+    { name: "Apache Kafka", description: "100+ brokers, 3M msg/s", icon: "kafka" },
+    { name: "Cassandra", description: "1000+ nodes for posts & timelines", icon: "cassandra" },
+    { name: "PostgreSQL", description: "500+ shards for user data", icon: "postgresql" },
+    { name: "Elasticsearch", description: "200+ nodes for search", icon: "elasticsearch" },
+    { name: "Prometheus", description: "Metrics collection", icon: "prometheus" },
+    { name: "Grafana", description: "Visualization", icon: "grafana" },
+  ]}
+/>
+
+### Scaling Numbers
+
+**Infrastructure Scale:**
+```
+Servers:           100,000+
+Database Nodes:    2,000+
+Redis Nodes:       100+
+Kafka Brokers:     100+
+Load Balancers:    500+
+CDN Edge Locations: 200+
+```
+
+**Traffic Scale:**
+```
+Requests/second:      500,000
+Posts/day:           95,000,000
+Photos uploaded/day: 100,000,000
+Likes/day:           4,200,000,000
+Comments/day:        400,000,000
+Stories/day:         500,000,000
+```
+
+**Data Scale:**
+```
+Total Storage:     95 Petabytes
+New Data/day:      100 Terabytes
+Database Size:     10+ Petabytes
+Cache Memory:      10 Terabytes
+Backup Storage:    200+ Petabytes
+```
+
+### Advanced Features
+
+#### Machine Learning Pipeline
+
+**Models Running:**
+- Feed ranking (personalization)
+- Explore page recommendations
+- Ad targeting
+- Content moderation
+- Face recognition
+- Object detection in photos
+
+**ML Infrastructure:**
+- Training: GPU clusters (10,000+ GPUs)
+- Inference: CPU optimized instances
+- Model updates: Daily retraining
+- A/B testing framework
+
+#### Real-time Features
+
+**Stories (Ephemeral Content):**
+- 24-hour TTL
+- Separate storage layer
+- High write throughput
+- Auto-deletion after expiry
+
+**Live Video:**
+- WebRTC for streaming
+- Adaptive bitrate
+- CDN for distribution
+- Chat integration
+
+#### Content Safety
+
+**Automated Moderation:**
+- Image recognition (nudity, violence)
+- Text analysis (hate speech)
+- Pattern detection (spam, bots)
+- Human review for edge cases
+
+<InteractiveSlider min={100} max={2000000000} label="Scale Your System" />
+
+### Final Metrics
+
+<MetricsPanel
+  title="Stage 7: The Complete System"
+  metrics={[
+    { label: "Global Avg Latency", value: "300ms", status: "good" },
+    { label: "Requests/Second", value: "500K", status: "good" },
+    { label: "Posts/Day", value: "95M", status: "good" },
+    { label: "Data Stored", value: "95PB", status: "good" },
+    { label: "Uptime", value: "99.99%", status: "good" },
+    { label: "Daily Active Users", value: "2B", status: "good" },
+    { label: "Monthly Cost", value: "$180M", status: "warning" },
+    { label: "Error Rate", value: "0.01%", status: "good" },
+  ]}
+/>
+
+> **Key Insight:** Instagram's architecture didn't happen overnight. It took 15 years, thousands of engineers, and billions of dollars. But the principles - caching, sharding, microservices, regional deployment - these are patterns YOU can apply to your systems today. Start small, scale smart.
+
+---
+
+## The Complete Journey
+
+<EvolutionTimeline />
+
+---
+
+## Principles You Can Apply Today
+
+**For Your Project (100-10K users):**
+1. Start with monolith
+2. Add load balancer early
+3. Use CDN for static assets
+4. Cache aggressively with Redis
+5. Monitor everything
+
+**For Your Startup (10K-1M users):**
+1. Implement database sharding
+2. Add message queues
+3. Split into key microservices
+4. Consider multi-region if global
+
+**For Scale (1M+ users):**
+1. Full microservices architecture
+2. Advanced caching strategies
+3. Machine learning for personalization
+4. Dedicated SRE team
+
+---
+
+## What We Learned
+
+**Architecture Principles:**
+- Start simple, scale incrementally
+- Identify bottlenecks through monitoring
+- Optimize the critical path first
+- Cache everything possible
+- Design for failure
+- Automate everything
+- Measure constantly
+
+**Technology Choices:**
+- Use managed services when possible
+- Pick boring technology (proven, stable)
+- Optimize for team productivity
+- Balance cost vs. performance
+- Plan for 10x growth
+
+**Team & Organization:**
+- Conway's Law: Architecture mirrors organization
+- Small teams own services
+- DevOps culture essential
+- Invest in tooling and automation
+
+---
+
+## The Reality Check
+
+Instagram's architecture represents:
+- 15 years of evolution
+- Thousands of engineer-years
+- Billions in investment
+- Countless failures and lessons
+- Continuous iteration
+
+**Your system doesn't need to be Instagram on day one.**
+
+Start with Stage 0 or 1, and scale when you need to. Instagram served millions of users on a simple architecture before evolving to what it is today.
+
+**The most important skill? Knowing WHEN to scale, not just HOW.**
+
+---
+
+*This blog covered the journey from 100 to 2 billion users. Every stage introduced new challenges and solutions. The patterns you learned - caching, sharding, microservices, multi-region deployment - are fundamental to building any large-scale system.*
+
+*Want to design systems like this? Master these patterns, understand the trade-offs, and always optimize for your actual needs - not imagined future scale.*
