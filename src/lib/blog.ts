@@ -1,6 +1,16 @@
 // Blog utilities for MDX posts in app directory
 const posts = [
   {
+    slug: 'mermaid-diagrams-demo',
+    title: 'Visualizing Complex Concepts with Mermaid Diagrams',
+    date: '2025-01-15',
+    excerpt:
+      'Explore the power of Mermaid diagrams for creating beautiful flowcharts, sequence diagrams, and more directly in your blog posts',
+    tags: ['diagrams', 'visualization', 'documentation', 'mermaid'],
+    author: 'Shakirul Hasan Khan',
+    readingTime: '8 min read',
+  },
+  {
     slug: 'why-not-px',
     title: 'Why Should You Not Use px?',
     date: '2024-01-10',
