@@ -3,7 +3,10 @@
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { useEffect, useState } from 'react';
 
-export default function ScrollArrows() {
+const SCROLL_AMOUNT_RATIO = 0.8;
+const SCROLL_THRESHOLD = 10;
+
+const ScrollArrows = () => {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
@@ -20,8 +23,8 @@ export default function ScrollArrows() {
       const maxScrollLeft =
         scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
-      setShowLeftArrow(scrollLeft > 10);
-      setShowRightArrow(scrollLeft < maxScrollLeft - 10);
+      setShowLeftArrow(scrollLeft > SCROLL_THRESHOLD);
+      setShowRightArrow(scrollLeft < maxScrollLeft - SCROLL_THRESHOLD);
     };
 
     scrollContainer.addEventListener('scroll', handleScroll);
@@ -38,7 +41,7 @@ export default function ScrollArrows() {
       return;
     }
 
-    const scrollAmount = scrollContainer.clientWidth * 0.8;
+    const scrollAmount = scrollContainer.clientWidth * SCROLL_AMOUNT_RATIO;
     scrollContainer.scrollBy({
       left: direction === 'left' ? -scrollAmount : scrollAmount,
       behavior: 'smooth',
@@ -72,4 +75,6 @@ export default function ScrollArrows() {
       )}
     </>
   );
-}
+};
+
+export default ScrollArrows;

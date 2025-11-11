@@ -2,33 +2,44 @@
 
 import { useEffect, useState } from 'react';
 
-export function useColumnVisibility(columnIndex: number) {
+const DESKTOP_MIN_WIDTH = 768;
+const XL_BREAKPOINT = 1280;
+const LG_BREAKPOINT = 1024;
+const XL_COLUMN_WIDTH_RATIO = 0.3;
+const LG_COLUMN_WIDTH_RATIO = 0.4;
+const MD_COLUMN_WIDTH_RATIO = 0.45;
+
+export const useColumnVisibility = (columnIndex: number) => {
   const [isFullyVisible, setIsFullyVisible] = useState(false);
 
   useEffect(() => {
     const scrollContainer = document.querySelector(
       '[data-scroll-container]'
     ) as HTMLDivElement;
-    if (!scrollContainer) return;
+    if (!scrollContainer) {
+      return;
+    }
 
     const handleScroll = () => {
       // Only apply on desktop
-      if (window.innerWidth < 768) return;
+      if (window.innerWidth < DESKTOP_MIN_WIDTH) {
+        return;
+      }
 
       const scrollLeft = scrollContainer.scrollLeft;
       const containerWidth = scrollContainer.clientWidth;
 
       // Column widths based on the current breakpoint
       let columnWidth: number;
-      if (window.innerWidth >= 1280) {
+      if (window.innerWidth >= XL_BREAKPOINT) {
         // xl
-        columnWidth = window.innerWidth * 0.3;
-      } else if (window.innerWidth >= 1024) {
+        columnWidth = window.innerWidth * XL_COLUMN_WIDTH_RATIO;
+      } else if (window.innerWidth >= LG_BREAKPOINT) {
         // lg
-        columnWidth = window.innerWidth * 0.4;
+        columnWidth = window.innerWidth * LG_COLUMN_WIDTH_RATIO;
       } else {
         // md
-        columnWidth = window.innerWidth * 0.45;
+        columnWidth = window.innerWidth * MD_COLUMN_WIDTH_RATIO;
       }
 
       // Calculate column position
@@ -55,4 +66,4 @@ export function useColumnVisibility(columnIndex: number) {
   }, [columnIndex]);
 
   return isFullyVisible;
-}
+};

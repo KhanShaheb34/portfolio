@@ -26,12 +26,14 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 ## 🛠️ Tech Stack
 
 ### Core
+
 - **[Next.js 15.4.6](https://nextjs.org/)** - React framework with App Router
 - **[React 19.1.0](https://reactjs.org/)** - UI library
 - **[TypeScript 5](https://www.typescriptlang.org/)** - Type safety
 - **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first styling
 
 ### Content & Data
+
 - **[MDX](https://mdxjs.com/)** - Markdown with JSX support
 - **[next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)** - Load MDX content
 - **[gray-matter](https://github.com/jonschlinkert/gray-matter)** - Parse frontmatter
@@ -39,10 +41,12 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 - **[rehype-highlight](https://github.com/rehypejs/rehype-highlight)** - Syntax highlighting
 
 ### UI & Icons
+
 - **[@phosphor-icons/react](https://phosphoricons.com/)** - Icon library
 - **[@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)** - Prose styling
 
 ### Developer Experience
+
 - **[Ultracite](https://github.com/biomejs/biome)** - Fast code formatter and linter
 - **[Vercel Analytics](https://vercel.com/analytics)** - Performance monitoring
 - **[Bun](https://bun.sh/)** - Fast package manager and runtime
@@ -57,12 +61,14 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/KhanShaheb34/portfolio.git
    cd portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    # Using bun (recommended)
    bun install
@@ -78,6 +84,7 @@ A modern, performant personal portfolio website showcasing my work, experience, 
    ```
 
 3. **Run the development server**
+
    ```bash
    bun dev
 
@@ -89,7 +96,7 @@ A modern, performant personal portfolio website showcasing my work, experience, 
    ```
 
 4. **Open your browser**
-   
+
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📁 Project Structure
@@ -117,16 +124,16 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 │   │   └── opengraph-image.tsx # OG image generator
 │   │
 │   ├── components/            # React components
-│   │   ├── BlogLayout.tsx     # Blog post layout
-│   │   ├── CodeHighlight.tsx  # Code syntax highlighting
-│   │   ├── Column.tsx         # Layout column component
-│   │   ├── ExperienceCard.tsx # Work experience card
-│   │   ├── InterestCard.tsx   # Interest/hobby card
-│   │   ├── PostCard.tsx       # Blog post card
-│   │   ├── ProjectCard.tsx    # Project card
-│   │   ├── ScrollArrows.tsx   # Navigation arrows
-│   │   ├── Section.tsx        # Content section
-│   │   └── SocialLink.tsx     # Social media link
+│   │   ├── blog-layout.tsx     # Blog post layout
+│   │   ├── code-highlight.tsx  # Code syntax highlighting
+│   │   ├── column.tsx         # Layout column component
+│   │   ├── experience-card.tsx # Work experience card
+│   │   ├── interest-card.tsx   # Interest/hobby card
+│   │   ├── post-card.tsx       # Blog post card
+│   │   ├── project-card.tsx    # Project card
+│   │   ├── scroll-arrows.tsx   # Navigation arrows
+│   │   ├── section.tsx        # Content section
+│   │   └── social-link.tsx     # Social media link
 │   │
 │   ├── data/                  # JSON data files
 │   │   ├── experiences.json   # Work experience data
@@ -134,7 +141,7 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 │   │   └── projects.json      # Project showcase data
 │   │
 │   ├── hooks/                 # Custom React hooks
-│   │   └── useColumnVisibility.ts
+│   │   └── use-column-visibility.ts
 │   │
 │   ├── lib/                   # Utility functions
 │   │   ├── blog.ts           # Blog post utilities
@@ -168,7 +175,7 @@ Create new blog posts in `src/app/posts/[slug]/` directory:
 
 ```tsx
 // src/app/posts/my-new-post/page.mdx
-import BlogLayout from '@/components/BlogLayout';
+import BlogLayout from '@/components/blog-layout';
 
 export const metadata = {
   title: 'My New Post',
@@ -313,9 +320,9 @@ The design uses CSS custom properties for easy theming:
 ```css
 /* src/app/globals.css */
 :root {
-  --background: #ffffff;      /* Main background color */
-  --foreground: #171717;      /* Main text color */
-  --muted: #737373;           /* Muted text color */
+  --background: #ffffff; /* Main background color */
+  --foreground: #171717; /* Main text color */
+  --muted: #737373; /* Muted text color */
 }
 ```
 
@@ -338,7 +345,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Website: [https://shakirul.dev](https://shakirul.dev)
 - GitHub: [@KhanShaheb34](https://github.com/KhanShaheb34)
 - LinkedIn: [shakirulhasan](https://linkedin.com/in/shakirulhasan)
-- Twitter: [@_khanshaheb](https://x.com/_khanshaheb)
+- Twitter: [@\_khanshaheb](https://x.com/_khanshaheb)
 
 ## 🤝 Contributing
 

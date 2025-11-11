@@ -1,25 +1,27 @@
-import type { MDXComponents } from "mdx/types";
-import Mermaid from "./components/Mermaid";
+import type { MDXComponents } from 'mdx/types';
+import Mermaid from './components/mermaid';
 
 type CodeProps = {
   className?: string;
   children?: string;
 };
 
-function Code({ className, children }: CodeProps) {
-  const language = className?.replace(/language-/, "");
+const languagePrefixPattern = /language-/;
 
-  if (language === "mermaid" && children) {
+const Code = ({ className, children }: CodeProps) => {
+  const language = className?.replace(languagePrefixPattern, '');
+
+  if (language === 'mermaid' && children) {
     return <Mermaid chart={children.trim()} />;
   }
 
   return <code className={className}>{children}</code>;
-}
+};
 
-export function useMDXComponents(components: MDXComponents): MDXComponents {
+export const useMDXComponents = (components: MDXComponents): MDXComponents => {
   return {
     ...components,
     code: Code,
     Mermaid,
   };
-}
+};

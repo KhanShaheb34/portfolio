@@ -13,8 +13,8 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
-  async redirects() {
-    return [
+  redirects() {
+    return Promise.resolve([
       {
         source: '/resume',
         destination: '/Resume.pdf',
@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
         destination: '/Resume.pdf',
         permanent: false,
       },
-    ];
+    ]);
   },
 };
 
@@ -36,4 +36,20 @@ const withMDX = createMDX({
   },
 });
 
-export default withMDX(nextConfig);
+const mdxConfig = withMDX(nextConfig) as NextConfig & {
+  turbopack?: unknown;
+};
+
+const { turbopack, ...restConfig } = mdxConfig;
+
+const existingExperimental = restConfig.experimental ?? {};
+
+const finalConfig: NextConfig = {
+  ...restConfig,
+  experimental: {
+    ...existingExperimental,
+    ...(turbopack ? { turbo: turbopack } : {}),
+  },
+};
+
+export default finalConfig;

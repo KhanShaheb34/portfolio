@@ -1,8 +1,8 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import BlogLayout from '@/components/BlogLayout';
-import CodeHighlight from '@/components/CodeHighlight';
+import BlogLayout from '@/components/blog-layout';
+import CodeHighlight from '@/components/code-highlight';
 import { getPostBySlug } from '@/lib/blog';
 
 type PostLayoutProps = {
