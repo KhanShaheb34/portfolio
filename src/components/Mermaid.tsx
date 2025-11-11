@@ -32,7 +32,6 @@ export default function Mermaid({ chart, className = "" }: MermaidProps) {
           }
         })
         .catch((error) => {
-          console.error("Mermaid rendering error:", error);
           if (ref.current) {
             ref.current.innerHTML = `<pre style="color: red;">Error rendering diagram: ${error.message}</pre>`;
           }
