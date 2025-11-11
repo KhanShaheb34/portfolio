@@ -15,9 +15,11 @@ export default function Mermaid({ chart, className = "" }: MermaidProps) {
     mermaid.initialize({
       startOnLoad: true,
       theme: "default",
-      securityLevel: "loose",
+      securityLevel: "strict",
     });
+  }, []);
 
+  useEffect(() => {
     if (ref.current) {
       const id = `mermaid-${Math.random().toString(36).substring(2, 9)}`;
       ref.current.innerHTML = "";
