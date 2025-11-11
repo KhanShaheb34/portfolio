@@ -103,4 +103,4 @@ Mermaid supports many diagram types including:
 - Requirement Diagram
 - And more!
 
-For complete Mermaid syntax documentation, visit: https://mermaid.js.org/
+For complete Mermaid syntax documentation, visit: <https://mermaid.js.org/>
