@@ -20,6 +20,8 @@ export default function Mermaid({ chart, className = "" }: MermaidProps) {
   }, []);
 
   useEffect(() => {
+    let cancelled = false;
+
     if (ref.current) {
       const id = `mermaid-${Math.random().toString(36).substring(2, 9)}`;
       ref.current.innerHTML = "";
@@ -27,16 +29,20 @@ export default function Mermaid({ chart, className = "" }: MermaidProps) {
       mermaid
         .render(id, chart)
         .then(({ svg }) => {
-          if (ref.current) {
+          if (ref.current && !cancelled) {
             ref.current.innerHTML = svg;
           }
         })
         .catch((error) => {
-          if (ref.current) {
+          if (ref.current && !cancelled) {
             ref.current.innerHTML = `<pre style="color: red;">Error rendering diagram: ${error.message}</pre>`;
           }
         });
     }
+
+    return () => {
+      cancelled = true;
+    };
   }, [chart]);
 
   return (
