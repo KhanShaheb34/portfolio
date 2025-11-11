@@ -1,5 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
-import Mermaid from './components/mermaid';
+import Mermaid from './components/Mermaid';
 
 type CodeProps = {
   className?: string;

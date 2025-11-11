@@ -5,7 +5,7 @@ import {
   LinkedinLogoIcon,
   UserIcon,
   XLogoIcon,
-} from '@phosphor-icons/react/dist/ssr';
+} from '@phosphor-icons/react';
 import Link from 'next/link';
 
 type SocialLinkProps = {

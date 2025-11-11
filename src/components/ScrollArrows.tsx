@@ -1,6 +1,6 @@
 'use client';
 
-import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr';
+import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 
 const SCROLL_AMOUNT_RATIO = 0.8;

@@ -36,20 +36,6 @@ const withMDX = createMDX({
   },
 });
 
-const mdxConfig = withMDX(nextConfig) as NextConfig & {
-  turbopack?: unknown;
-};
+const mdxConfig = withMDX(nextConfig) as NextConfig;
 
-const { turbopack, ...restConfig } = mdxConfig;
-
-const existingExperimental = restConfig.experimental ?? {};
-
-const finalConfig: NextConfig = {
-  ...restConfig,
-  experimental: {
-    ...existingExperimental,
-    ...(turbopack ? { turbo: turbopack } : {}),
-  },
-};
-
-export default finalConfig;
+export default mdxConfig;

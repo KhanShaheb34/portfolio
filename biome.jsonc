@@ -5,6 +5,9 @@
     "rules": {
       "suspicious": {
         "noArrayIndexKey": "off"
+      },
+      "style": {
+        "useFilenamingConvention": "off"
       }
     }
   }

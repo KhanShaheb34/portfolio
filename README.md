@@ -124,16 +124,16 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 │   │   └── opengraph-image.tsx # OG image generator
 │   │
 │   ├── components/            # React components
-│   │   ├── blog-layout.tsx     # Blog post layout
-│   │   ├── code-highlight.tsx  # Code syntax highlighting
-│   │   ├── column.tsx         # Layout column component
-│   │   ├── experience-card.tsx # Work experience card
-│   │   ├── interest-card.tsx   # Interest/hobby card
-│   │   ├── post-card.tsx       # Blog post card
-│   │   ├── project-card.tsx    # Project card
-│   │   ├── scroll-arrows.tsx   # Navigation arrows
-│   │   ├── section.tsx        # Content section
-│   │   └── social-link.tsx     # Social media link
+│   │   ├── BlogLayout.tsx     # Blog post layout
+│   │   ├── CodeHighlight.tsx  # Code syntax highlighting
+│   │   ├── Column.tsx         # Layout column component
+│   │   ├── ExperienceCard.tsx # Work experience card
+│   │   ├── InterestCard.tsx   # Interest/hobby card
+│   │   ├── PostCard.tsx       # Blog post card
+│   │   ├── ProjectCard.tsx    # Project card
+│   │   ├── ScrollArrows.tsx   # Navigation arrows
+│   │   ├── Section.tsx        # Content section
+│   │   └── SocialLink.tsx     # Social media link
 │   │
 │   ├── data/                  # JSON data files
 │   │   ├── experiences.json   # Work experience data
@@ -141,7 +141,7 @@ A modern, performant personal portfolio website showcasing my work, experience, 
 │   │   └── projects.json      # Project showcase data
 │   │
 │   ├── hooks/                 # Custom React hooks
-│   │   └── use-column-visibility.ts
+│   │   └── useColumnVisibility.ts
 │   │
 │   ├── lib/                   # Utility functions
 │   │   ├── blog.ts           # Blog post utilities
@@ -175,7 +175,7 @@ Create new blog posts in `src/app/posts/[slug]/` directory:
 
 ```tsx
 // src/app/posts/my-new-post/page.mdx
-import BlogLayout from '@/components/blog-layout';
+import BlogLayout from '@/components/BlogLayout';
 
 export const metadata = {
   title: 'My New Post',
