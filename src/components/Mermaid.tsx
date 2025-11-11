@@ -35,7 +35,11 @@ export default function Mermaid({ chart, className = "" }: MermaidProps) {
         })
         .catch((error) => {
           if (ref.current && !cancelled) {
-            ref.current.innerHTML = `<pre style="color: red;">Error rendering diagram: ${error.message}</pre>`;
+            ref.current.innerHTML = "";
+            const errorElement = document.createElement("pre");
+            errorElement.textContent = `Error rendering diagram: ${error.message}`;
+            errorElement.style.color = "red";
+            ref.current.appendChild(errorElement);
           }
         });
     }
