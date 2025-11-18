@@ -27,6 +27,11 @@
       "icon": "scholar",
       "text": "Google Scholar",
       "href": "https://scholar.google.com/citations?user=0UpikxcAAAAJ"
+    },
+    {
+      "icon": "github",
+      "text": "Source Code",
+      "href": "https://github.com/KhanShaheb34/portfolio"
     }
   ],
   "interests": [
