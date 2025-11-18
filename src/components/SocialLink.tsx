@@ -5,7 +5,7 @@ import {
   LinkedinLogoIcon,
   UserIcon,
   XLogoIcon,
-} from '@phosphor-icons/react/dist/ssr';
+} from '@phosphor-icons/react/ssr';
 import Link from 'next/link';
 
 type SocialLinkProps = {
@@ -23,7 +23,7 @@ const iconMap: Record<string, typeof GithubLogoIcon> = {
   resume: FileTextIcon,
 };
 
-export default function SocialLink({ icon, text, href }: SocialLinkProps) {
+const SocialLink = ({ icon, text, href }: SocialLinkProps) => {
   const IconComponent = iconMap[icon as keyof typeof iconMap];
   const isExternal = href.startsWith('http');
 
@@ -50,4 +50,6 @@ export default function SocialLink({ icon, text, href }: SocialLinkProps) {
       )}
     </div>
   );
-}
+};
+
+export default SocialLink;

@@ -2,6 +2,13 @@ type WavyLineProps = {
   hideOnDesktop?: boolean;
 };
 
-export default function WavyLine({ hideOnDesktop = false }: WavyLineProps) {
-  return <div className={`zig-zag-line ${hideOnDesktop ? 'md:hidden' : ''}`} />;
-}
+const WavyLine = ({ hideOnDesktop = false }: WavyLineProps) => {
+  const classes = ['zig-zag-line'];
+  if (hideOnDesktop) {
+    classes.push('md:hidden');
+  }
+
+  return <div className={classes.join(' ')} />;
+};
+
+export default WavyLine;

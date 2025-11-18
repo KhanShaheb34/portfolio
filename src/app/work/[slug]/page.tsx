@@ -7,7 +7,9 @@ type WorkPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata({ params }: WorkPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: WorkPageProps): Promise<Metadata> {
   const { slug } = await params;
   const experience = experiencesData[slug as keyof typeof experiencesData];
 
@@ -32,8 +34,7 @@ export function generateStaticParams() {
 
 export default async function WorkExperiencePage({ params }: WorkPageProps) {
   const { slug } = await params;
-  const experience =
-    experiencesData[slug as keyof typeof experiencesData];
+  const experience = experiencesData[slug as keyof typeof experiencesData];
 
   if (!experience) {
     notFound();

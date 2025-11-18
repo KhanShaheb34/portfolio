@@ -2,14 +2,14 @@
 
 import { useEffect } from 'react';
 
-export default function CodeHighlight() {
+const CodeHighlight = () => {
   useEffect(() => {
     const highlightCode = async () => {
       try {
         const hljs = await import('highlight.js');
         hljs.default.highlightAll();
-      } catch (error) {
-        console.warn('Failed to load syntax highlighting:', error);
+      } catch (_error) {
+        // highlight.js is optional; ignore failures during client hydration
       }
     };
 
@@ -17,4 +17,6 @@ export default function CodeHighlight() {
   }, []);
 
   return null;
-}
+};
+
+export default CodeHighlight;
