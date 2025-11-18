@@ -9,6 +9,7 @@ const posts = [
     tags: ['diagrams', 'visualization', 'documentation', 'mermaid'],
     author: 'Shakirul Hasan Khan',
     readingTime: '8 min read',
+    hidden: true,
   },
   {
     slug: 'why-not-px',
@@ -45,6 +46,7 @@ export type BlogPostMeta = {
 
 export function getAllPosts(): BlogPostMeta[] {
   return posts
+    .filter((post) => !post.hidden)
     .map((post) => ({
       slug: post.slug,
       title: post.title,
