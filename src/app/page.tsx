@@ -203,12 +203,13 @@ export default function Home() {
 
           {/* Column 3: POSTS */}
           <Column>
-            <Section title="POSTS">
+            <Section title="Posts and Talks">
               <div className="space-y-4">
                 {posts.map((post, index) => (
                   <PostCard
                     date={post.date}
-                    href={`/posts/${post.slug}`}
+                    href={post.externalUrl ?? `/posts/${post.slug}`}
+                    isVideo={post.kind === 'video'}
                     key={index}
                     title={post.title}
                   />

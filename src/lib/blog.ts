@@ -3,13 +3,14 @@ const posts = [
   {
     slug: 'mermaid-diagrams-demo',
     title: 'Visualizing Complex Concepts with Mermaid Diagrams',
-    date: '2025-01-15',
+    date: '2025-11-15',
     excerpt:
       'Explore the power of Mermaid diagrams for creating beautiful flowcharts, sequence diagrams, and more directly in your blog posts',
     tags: ['diagrams', 'visualization', 'documentation', 'mermaid'],
     author: 'Shakirul Hasan Khan',
     readingTime: '8 min read',
     hidden: true,
+    kind: 'post' as const,
   },
   {
     slug: 'why-not-px',
@@ -20,6 +21,19 @@ const posts = [
     tags: ['css', 'ui', 'design', 'guidelines'],
     author: 'Shakirul Hasan Khan',
     readingTime: '10 min read',
+    kind: 'post' as const,
+  },
+  {
+    slug: 'instagram-system-breakdown',
+    title: 'Instagram System Breakdown: How they handle 2B users?',
+    date: '2025-11-16',
+    excerpt:
+      'Deep dive into how Instagram designs, scales, and operates their systems to serve billions of users reliably.',
+    tags: ['system-design', 'scalability', 'distributed-systems', 'case-study'],
+    author: 'Shakirul Hasan Khan',
+    readingTime: '1h 40m',
+    kind: 'video' as const,
+    externalUrl: 'https://interactivecares.com/recorded-events/502',
   },
 ];
 
@@ -32,6 +46,8 @@ export type BlogPost = {
   author: string;
   content: string;
   readingTime: string;
+  kind: 'post' | 'video';
+  externalUrl?: string;
 };
 
 export type BlogPostMeta = {
@@ -42,6 +58,8 @@ export type BlogPostMeta = {
   tags: string[];
   author: string;
   readingTime: string;
+  kind: 'post' | 'video';
+  externalUrl?: string;
 };
 
 export function getAllPosts(): BlogPostMeta[] {
@@ -55,6 +73,8 @@ export function getAllPosts(): BlogPostMeta[] {
       tags: post.tags,
       author: post.author,
       readingTime: post.readingTime,
+      kind: post.kind,
+      externalUrl: post.externalUrl,
     }))
     .sort((a, b) => {
       if (a.date < b.date) {

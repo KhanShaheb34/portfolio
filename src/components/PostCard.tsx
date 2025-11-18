@@ -4,9 +4,15 @@ type PostCardProps = {
   title: string;
   date: string;
   href: string;
+  isVideo?: boolean;
 };
 
-export default function PostCard({ title, date, href }: PostCardProps) {
+export default function PostCard({
+  title,
+  date,
+  href,
+  isVideo = false,
+}: PostCardProps) {
   const isExternal = href.startsWith('http');
 
   return (
@@ -18,6 +24,7 @@ export default function PostCard({ title, date, href }: PostCardProps) {
           rel="noopener noreferrer"
           target="_blank"
         >
+          {isVideo && '▶︎ '}
           {title}
         </a>
       ) : (
@@ -26,6 +33,7 @@ export default function PostCard({ title, date, href }: PostCardProps) {
           href={href}
           prefetch={true}
         >
+          {isVideo && '▶︎ '}
           {title}
         </Link>
       )}

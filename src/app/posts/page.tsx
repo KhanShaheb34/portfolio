@@ -32,13 +32,26 @@ export default function PostsPage() {
             <article className="space-y-4" key={post.slug}>
               <div className="space-y-2">
                 <h2 className="font-normal text-2xl">
-                  <Link
-                    className="transition-colors hover:text-muted"
-                    href={`/posts/${post.slug}`}
-                    prefetch={true}
-                  >
-                    {post.title}
-                  </Link>
+                  {post.externalUrl ? (
+                    <a
+                      className="inline-flex items-center gap-2 transition-colors hover:text-muted"
+                      href={post.externalUrl}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {post.kind === 'video' && '▶︎ '}
+                      {post.title}
+                    </a>
+                  ) : (
+                    <Link
+                      className="inline-flex items-center gap-2 transition-colors hover:text-muted"
+                      href={`/posts/${post.slug}`}
+                      prefetch={true}
+                    >
+                      {post.kind === 'video' && '▶︎ '}
+                      {post.title}
+                    </Link>
+                  )}
                 </h2>
 
                 <div className="flex items-center space-x-4 text-muted text-sm">
@@ -69,13 +82,24 @@ export default function PostsPage() {
                 </div>
               )}
 
-              <Link
-                className="inline-block text-foreground transition-colors hover:text-muted"
-                href={`/posts/${post.slug}`}
-                prefetch={true}
-              >
-                Read more →
-              </Link>
+              {post.externalUrl ? (
+                <a
+                  className="inline-block text-foreground transition-colors hover:text-muted"
+                  href={post.externalUrl}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Watch video →
+                </a>
+              ) : (
+                <Link
+                  className="inline-block text-foreground transition-colors hover:text-muted"
+                  href={`/posts/${post.slug}`}
+                  prefetch={true}
+                >
+                  Read more →
+                </Link>
+              )}
             </article>
           ))}
         </div>
