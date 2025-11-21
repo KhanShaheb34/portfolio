@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import posthog from 'posthog-js';
 
 type ProjectCardProps = {
   title: string;
@@ -13,6 +16,13 @@ export default function ProjectCard({
   description,
   slug,
 }: ProjectCardProps) {
+  const handleProjectClick = () => {
+    posthog.capture('project_viewed', {
+      project: title,
+      slug,
+    });
+  };
+
   return (
     <div className="space-y-1">
       <div className="flex items-center space-x-2">
@@ -20,6 +30,7 @@ export default function ProjectCard({
           <Link
             className="block text-md transition-colors hover:text-muted"
             href={`/projects/${slug}`}
+            onClick={handleProjectClick}
             prefetch={true}
           >
             {title}

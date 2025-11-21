@@ -1,3 +1,5 @@
+'use client';
+
 import {
   FileTextIcon,
   GithubLogoIcon,
@@ -7,6 +9,7 @@ import {
   XLogoIcon,
 } from '@phosphor-icons/react/ssr';
 import Link from 'next/link';
+import posthog from 'posthog-js';
 
 type SocialLinkProps = {
   icon: string;
@@ -27,6 +30,13 @@ const SocialLink = ({ icon, text, href }: SocialLinkProps) => {
   const IconComponent = iconMap[icon as keyof typeof iconMap];
   const isExternal = href.startsWith('http');
 
+  const handleClick = () => {
+    posthog.capture('social_link_clicked', {
+      network: icon,
+      href,
+    });
+  };
+
   return (
     <div className="flex items-center space-x-2">
       {IconComponent && <IconComponent size={18} weight="fill" />}
@@ -34,6 +44,7 @@ const SocialLink = ({ icon, text, href }: SocialLinkProps) => {
         <Link
           className="transition-colors hover:text-muted"
           href={href}
+          onClick={handleClick}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -43,6 +54,7 @@ const SocialLink = ({ icon, text, href }: SocialLinkProps) => {
         <Link
           className="transition-colors hover:text-muted"
           href={href}
+          onClick={handleClick}
           prefetch={true}
         >
           {text}

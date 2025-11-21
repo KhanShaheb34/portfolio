@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import posthog from 'posthog-js';
 
 type PostCardProps = {
   title: string;
@@ -15,12 +18,21 @@ export default function PostCard({
 }: PostCardProps) {
   const isExternal = href.startsWith('http');
 
+  const handlePostClick = () => {
+    posthog.capture('post_clicked', {
+      title,
+      href,
+      is_video: isVideo,
+    });
+  };
+
   return (
     <div className="space-y-1">
       {isExternal ? (
         <a
           className="block text-md transition-colors hover:text-muted"
           href={href}
+          onClick={handlePostClick}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -31,6 +43,7 @@ export default function PostCard({
         <Link
           className="block text-md transition-colors hover:text-muted"
           href={href}
+          onClick={handlePostClick}
           prefetch={true}
         >
           {isVideo && '▶︎ '}
