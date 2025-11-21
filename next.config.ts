@@ -27,6 +27,20 @@ const nextConfig: NextConfig = {
       },
     ]);
   },
+  rewrites() {
+    return Promise.resolve([
+      {
+        source: '/relay-RpyN/static/:path*',
+        destination: 'https://us-assets.i.posthog.com/static/:path*',
+      },
+      {
+        source: '/relay-RpyN/:path*',
+        destination: 'https://us.i.posthog.com/:path*',
+      },
+    ]);
+  },
+
+  skipTrailingSlashRedirect: true,
 };
 
 const withMDX = createMDX({
