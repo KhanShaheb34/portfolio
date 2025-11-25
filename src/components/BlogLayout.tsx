@@ -7,6 +7,8 @@ type BlogLayoutProps = {
 };
 
 export default function BlogLayout({ post, children }: BlogLayoutProps) {
+  const postUrl = `https://shakirul.dev/posts/${post.slug}`;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto max-w-3xl px-8 py-16">
@@ -69,14 +71,41 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
             </Link>
 
             <div className="flex items-center space-x-4">
-              <a
-                className="text-muted transition-colors hover:text-foreground"
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://shakirul.dev/posts/${post.slug}`)}`}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Share on Twitter
-              </a>
+              <span className="text-muted">
+                Share on{' '}
+                <a
+                  className="transition-colors hover:text-foreground"
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                    post.title
+                  )}&url=${encodeURIComponent(postUrl)}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Twitter
+                </a>
+                ,{' '}
+                <a
+                  className="transition-colors hover:text-foreground"
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                    postUrl
+                  )}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  LinkedIn
+                </a>{' '}
+                or{' '}
+                <a
+                  className="transition-colors hover:text-foreground"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                    postUrl
+                  )}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Facebook
+                </a>
+              </span>
             </div>
           </div>
         </footer>
