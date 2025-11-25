@@ -1,6 +1,23 @@
 // Blog utilities for MDX posts in app directory
 const posts = [
   {
+    slug: 'confusion-about-load-balancers',
+    title: 'I confused myself thinking about Load Balancers',
+    date: '2025-11-25',
+    excerpt:
+      'A journey from confusion to clarity about how Load Balancers and DNS work together to route user traffic efficiently.',
+    tags: [
+      'System Design',
+      'Load Balancer',
+      'DNS',
+      'Networking',
+      'Architecture',
+    ],
+    author: 'Shakirul Hasan Khan',
+    readingTime: '3 min read',
+    kind: 'post' as const,
+  },
+  {
     slug: 'mermaid-diagrams-demo',
     title: 'Visualizing Complex Concepts with Mermaid Diagrams',
     date: '2025-11-15',

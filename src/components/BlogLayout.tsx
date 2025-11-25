@@ -71,7 +71,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
             <div className="flex items-center space-x-4">
               <a
                 className="text-muted transition-colors hover:text-foreground"
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://shakirulhasan.com/posts/${post.slug}`)}`}
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://shakirul.dev/posts/${post.slug}`)}`}
                 rel="noopener noreferrer"
                 target="_blank"
               >

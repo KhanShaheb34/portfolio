@@ -1,0 +1,92 @@
+import Image from "next/image";
+import confusionAboutLb from "./confusion-about-lb.png";
+
+export const metadata = {
+  title:
+    "I confused myself thinking about Load Balancers | Shakirul Hasan Khan",
+  description:
+    "A journey from confusion to clarity about how Load Balancers and DNS work together to route user traffic efficiently.",
+  openGraph: {
+    title: "I confused myself thinking about Load Balancers",
+    description:
+      "A journey from confusion to clarity about how Load Balancers and DNS work together to route user traffic efficiently.",
+    type: "article",
+    publishedTime: "2025-11-25",
+    authors: ["Shakirul Hasan Khan"],
+    tags: [
+      "System Design",
+      "Load Balancer",
+      "DNS",
+      "Networking",
+      "Architecture",
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "I confused myself thinking about Load Balancers",
+    description:
+      "A journey from confusion to clarity about how Load Balancers and DNS work together to route user traffic efficiently.",
+  },
+};
+
+I confused myself thinking about Load Balancers yesterday 😵‍💫
+
+Here's the question that came to my mind:
+
+If a Load Balancer (LB) routes users to the nearest server for low latency...
+And I'm in Bangladesh requesting from an LB hosted in USA...
+
+Doesn't my request look like this:
+
+> Me (BD) → LB (USA) → Server (BD) → LB (USA) → Me (BD)
+
+That's more latency, not less! 🐌
+
+So should we have LBs in every region? But then... how does a user know which LB to connect to? 🤔
+
+Do we need a Load Balancer for Load Balancers? 😅
+
+## The Answer
+
+The answer: **Yes**. And it already exists. It's called **DNS (Domain Name System)**.
+
+Here's what actually happens:
+
+1. You type `example.com`
+2. DNS sees your IP is from Bangladesh
+3. DNS returns the IP of the BD load balancer
+4. You connect directly to BD, no USA roundtrip!
+
+Your friend in USA? DNS gives them the USA server IP.
+
+## Why do we need both?
+
+But wait, then why do we even need Load Balancers? 🤔
+
+Because DNS and LB solve different problems:
+
+- **DNS** = Which datacenter? (geographic, cached for hours)
+- **LB** = Which server in that datacenter? (real-time, health-aware)
+
+DNS is like GPS saying "go to Dhaka Medical Hospital."
+LB is the reception desk saying “Floor 10, Room 5, Dr. Rahman is free."
+
+GPS doesn't know which doctor is available. Reception doesn't help you find the hospital.
+
+<Image
+  src={confusionAboutLb}
+  alt="Confusion about Load Balancers diagram"
+  width={1000}
+  height={500}
+  className="my-8 rounded-lg"
+/>
+
+**You need both.**
+
+## Conclusion
+
+Sometimes the best way to learn system design is to confuse yourself with a silly question and then dig your way out. 😎
+
+---
+
+###### Read this article on [Substack](https://open.substack.com/pub/shakirulhasan/p/i-confused-myself-thinking-about?r=30rvns&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false) or [LinkedIn](https://www.linkedin.com/posts/shakirulhasan_systemdesign-engineering-architecture-activity-7399083169850933248-oC9v?utm_source=share&utm_medium=member_desktop&rcm=ACoAACRoHXwB3HZFkz_8lbi3oK4NmDTsx12_6XI)
