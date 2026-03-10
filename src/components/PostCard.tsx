@@ -7,16 +7,14 @@ type PostCardProps = {
   title: string;
   date: string;
   href: string;
-  isVideo?: boolean;
-  isBook?: boolean;
+  kind?: 'post' | 'video' | 'book';
 };
 
 export default function PostCard({
   title,
   date,
   href,
-  isVideo = false,
-  isBook = false,
+  kind = 'post',
 }: PostCardProps) {
   const isExternal = href.startsWith('http');
 
@@ -24,12 +22,11 @@ export default function PostCard({
     posthog.capture('post_clicked', {
       title,
       href,
-      is_video: isVideo,
-      is_book: isBook,
+      kind,
     });
   };
 
-  const prefix = isBook ? '\u{1F4D4} ' : isVideo ? '\u25B6\uFE0E ' : '';
+  const prefix = kind === 'book' ? '\u{1F4D4} ' : kind === 'video' ? '\u25B6\uFE0E ' : '';
 
   return (
     <div className="space-y-1">

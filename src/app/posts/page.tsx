@@ -91,7 +91,11 @@ export default function PostsPage() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  {post.kind === 'book' ? 'Read the book' : 'Watch video'} →
+                  {post.kind === 'book'
+                    ? 'Read the book'
+                    : post.kind === 'video'
+                      ? 'Watch video'
+                      : 'Read more'} →
                 </a>
               ) : (
                 <Link

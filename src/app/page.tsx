@@ -24,6 +24,7 @@ const structuredData = {
   sameAs: [
     'https://github.com/KhanShaheb34',
     'https://linkedin.com/in/shakirulhasan',
+    'https://montumia.com',
     'https://x.com/_khanshaheb',
   ],
   knowsAbout: [
@@ -198,9 +199,8 @@ export default function Home() {
                   <PostCard
                     date={post.date}
                     href={post.externalUrl ?? `/posts/${post.slug}`}
-                    isBook={post.kind === 'book'}
-                    isVideo={post.kind === 'video'}
                     key={index}
+                    kind={post.kind}
                     title={post.title}
                   />
                 ))}
