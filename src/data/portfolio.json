@@ -1,10 +1,10 @@
 {
   "intro": {
     "paragraphs": [
-      "Hi, I'm Shakirul Hasan Khan, a Software Engineer with 4+ years of experience building scalable web applications and AI-powered solutions.",
-      "Currently working as a Software Engineer at Re:cruit, developing an AI-powered meeting transcription and contact management sidekick.",
-      "I specialize in full-stack development with expertise in React, Next.js, TypeScript, Python, and Rust. Passionate about creating user-centric applications with cutting-edge technology.",
-      "Besides I'm always building something cool."
+      "Hi, I'm Shakirul Hasan Khan, a Software Engineer with 5+ years of experience building scalable web applications and AI-powered solutions.",
+      "Currently working as a Software Engineer at Re:cruit, building Ramble — an AI-powered meeting transcription and networking tool.",
+      "I also write Montu Mia's System Design, a weekly newsletter making system design concepts accessible in Bengali, reaching 20,000+ readers and 2,000+ subscribers.",
+      "I specialize in full-stack development with expertise in React, Next.js, TypeScript, Python, and Rust. Always building something cool."
     ]
   },
   "socialLinks": [
@@ -17,6 +17,11 @@
       "icon": "linkedin",
       "text": "LinkedIn",
       "href": "https://linkedin.com/in/shakirulhasan"
+    },
+    {
+      "icon": "book",
+      "text": "Montu Mia's System Design",
+      "href": "https://montumia.com"
     },
     {
       "icon": "twitter",
@@ -76,11 +81,16 @@
     },
     {
       "title": "Vibe Coding",
-      "description": "Newly gained hobby, building cool stuff every day"
+      "description": "Rapidly turning ideas into working products with AI tools like Claude and Codex"
+    },
+    {
+      "title": "Technical Writing",
+      "description": "Explaining complex engineering concepts through storytelling in Bengali",
+      "href": "https://montumia.com"
     },
     {
       "title": "Photography",
-      "description": "Capturing moments and emotions",
+      "description": "Street and travel photography",
       "href": "https://www.instagram.com/_khanshaheb/"
     }
   ]

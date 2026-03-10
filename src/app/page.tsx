@@ -19,22 +19,26 @@ const structuredData = {
   name: 'Shakirul Hasan Khan',
   jobTitle: 'Software Engineer',
   description:
-    'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
+    'Software Engineer with 5+ years experience in full-stack development, AI, and open source. Author of Montu Mia\'s System Design newsletter with 20,000+ readers. Building AI-powered applications with React, NextJS, and Rust.',
   url: 'https://shakirul.dev',
   sameAs: [
     'https://github.com/KhanShaheb34',
     'https://linkedin.com/in/shakirulhasan',
+    'https://montumia.com',
     'https://x.com/_khanshaheb',
   ],
   knowsAbout: [
     'Software Engineering',
     'Artificial Intelligence',
+    'System Design',
     'React',
     'NextJS',
     'TypeScript',
     'Rust',
     'Python',
+    'Swift',
     'Full-Stack Development',
+    'Technical Writing',
   ],
   alumniOf: {
     '@type': 'EducationalOrganization',
@@ -51,7 +55,7 @@ export default function Home() {
   const posts = getAllPosts();
 
   const projectsArray = Object.values(projectsData);
-  const experiencesArray = Object.values(experiencesData);
+  const experiencesEntries = Object.entries(experiencesData);
 
   return (
     <>
@@ -97,9 +101,9 @@ export default function Home() {
 
           <VerticalSeparator />
 
-          {/* Column 2: ASSORTED PROJECTS */}
+          {/* Column 2: PROJECTS */}
           <Column>
-            <Section title="ASSORTED PROJECTS">
+            <Section title="PROJECTS">
               <div className="space-y-8">
                 {projectsArray.map((project, index) => (
                   <ProjectCard
@@ -112,32 +116,12 @@ export default function Home() {
                 ))}
               </div>
             </Section>
-
-            <WavyLine />
-
-            <Section title="WORK EXPERIENCE">
-              <div className="space-y-6">
-                {experiencesArray.map((experience, index) => {
-                  const slug = Object.keys(experiencesData)[index];
-                  return (
-                    <ExperienceCard
-                      company={experience.company}
-                      description={experience.description}
-                      duration={experience.duration}
-                      key={index}
-                      position={experience.position}
-                      slug={slug}
-                    />
-                  );
-                })}
-              </div>
-            </Section>
             <WavyLine hideOnDesktop />
           </Column>
 
           <VerticalSeparator />
 
-          {/* Column 4: ACADEMIC */}
+          {/* Column 3: ACADEMIC & WORK EXPERIENCE */}
           <Column>
             <Section title="ACADEMIC">
               <div className="space-y-6">
@@ -185,6 +169,43 @@ export default function Home() {
 
             <WavyLine />
 
+            <Section title="WORK EXPERIENCE">
+              <div className="space-y-6">
+                {experiencesEntries.map(([slug, experience]) => (
+                  <ExperienceCard
+                    company={experience.company}
+                    description={experience.description}
+                    duration={experience.duration}
+                    key={slug}
+                    position={experience.position}
+                    slug={slug}
+                  />
+                ))}
+              </div>
+            </Section>
+            <WavyLine hideOnDesktop />
+          </Column>
+
+          <VerticalSeparator />
+
+          {/* Column 4: WRITING & TALKS */}
+          <Column>
+            <Section title="WRITING & TALKS">
+              <div className="space-y-4">
+                {posts.map((post, index) => (
+                  <PostCard
+                    date={post.date}
+                    href={post.externalUrl ?? `/posts/${post.slug}`}
+                    key={index}
+                    kind={post.kind}
+                    title={post.title}
+                  />
+                ))}
+              </div>
+            </Section>
+
+            <WavyLine />
+
             <Section title="INTERESTS">
               <div className="space-y-4">
                 {portfolioData.interests.map((interest, index) => (
@@ -192,27 +213,6 @@ export default function Home() {
                     <h3 className="text-md">{interest.title}</h3>
                     <p className="text-muted text-sm">{interest.description}</p>
                   </div>
-                ))}
-              </div>
-            </Section>
-
-            <WavyLine hideOnDesktop />
-          </Column>
-
-          <VerticalSeparator />
-
-          {/* Column 3: POSTS */}
-          <Column>
-            <Section title="Posts and Talks">
-              <div className="space-y-4">
-                {posts.map((post, index) => (
-                  <PostCard
-                    date={post.date}
-                    href={post.externalUrl ?? `/posts/${post.slug}`}
-                    isVideo={post.kind === 'video'}
-                    key={index}
-                    title={post.title}
-                  />
                 ))}
               </div>
             </Section>

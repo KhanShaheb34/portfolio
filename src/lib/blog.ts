@@ -1,6 +1,18 @@
 // Blog utilities for MDX posts in app directory
 const posts = [
   {
+    slug: 'montu-mia-system-design',
+    title: "Montu Mia's System Design",
+    date: '2026-01-01',
+    excerpt:
+      'A weekly system design book making complex concepts simple for everyone. 2,000+ subscribers, 20,000+ readers.',
+    tags: ['System Design', 'Bengali', 'Newsletter', 'Book'],
+    author: 'Shakirul Hasan Khan',
+    readingTime: 'Weekly',
+    kind: 'book' as const,
+    externalUrl: 'https://montumia.com',
+  },
+  {
     slug: 'confusion-about-load-balancers',
     title: 'I confused myself thinking about Load Balancers',
     date: '2025-11-25',
@@ -63,7 +75,7 @@ export type BlogPost = {
   author: string;
   content: string;
   readingTime: string;
-  kind: 'post' | 'video';
+  kind: 'post' | 'video' | 'book';
   externalUrl?: string;
 };
 
@@ -75,7 +87,7 @@ export type BlogPostMeta = {
   tags: string[];
   author: string;
   readingTime: string;
-  kind: 'post' | 'video';
+  kind: 'post' | 'video' | 'book';
   externalUrl?: string;
 };
 
