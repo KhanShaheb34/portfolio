@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  BookOpenIcon,
   FileTextIcon,
   GithubLogoIcon,
   GraduationCapIcon,
@@ -24,6 +25,7 @@ const iconMap: Record<string, typeof GithubLogoIcon> = {
   user: UserIcon,
   scholar: GraduationCapIcon,
   resume: FileTextIcon,
+  book: BookOpenIcon,
 };
 
 const SocialLink = ({ icon, text, href }: SocialLinkProps) => {

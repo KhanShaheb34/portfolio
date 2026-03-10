@@ -8,6 +8,7 @@ type PostCardProps = {
   date: string;
   href: string;
   isVideo?: boolean;
+  isBook?: boolean;
 };
 
 export default function PostCard({
@@ -15,6 +16,7 @@ export default function PostCard({
   date,
   href,
   isVideo = false,
+  isBook = false,
 }: PostCardProps) {
   const isExternal = href.startsWith('http');
 
@@ -23,8 +25,11 @@ export default function PostCard({
       title,
       href,
       is_video: isVideo,
+      is_book: isBook,
     });
   };
+
+  const prefix = isBook ? '\u{1F4D4} ' : isVideo ? '\u25B6\uFE0E ' : '';
 
   return (
     <div className="space-y-1">
@@ -36,8 +41,7 @@ export default function PostCard({
           rel="noopener noreferrer"
           target="_blank"
         >
-          {isVideo && '▶︎ '}
-          {title}
+          {prefix}{title}
         </a>
       ) : (
         <Link
@@ -46,8 +50,7 @@ export default function PostCard({
           onClick={handlePostClick}
           prefetch={true}
         >
-          {isVideo && '▶︎ '}
-          {title}
+          {prefix}{title}
         </Link>
       )}
       <p className="text-muted text-sm">{date}</p>

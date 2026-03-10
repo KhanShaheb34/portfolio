@@ -39,6 +39,7 @@ export default function PostsPage() {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
+                      {post.kind === 'book' && '\u{1F4D4} '}
                       {post.kind === 'video' && '▶︎ '}
                       {post.title}
                     </a>
@@ -48,6 +49,7 @@ export default function PostsPage() {
                       href={`/posts/${post.slug}`}
                       prefetch={true}
                     >
+                      {post.kind === 'book' && '\u{1F4D4} '}
                       {post.kind === 'video' && '▶︎ '}
                       {post.title}
                     </Link>
@@ -89,7 +91,7 @@ export default function PostsPage() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Watch video →
+                  {post.kind === 'book' ? 'Read the book' : 'Watch video'} →
                 </a>
               ) : (
                 <Link

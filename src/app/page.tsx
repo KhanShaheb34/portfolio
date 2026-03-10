@@ -19,7 +19,7 @@ const structuredData = {
   name: 'Shakirul Hasan Khan',
   jobTitle: 'Software Engineer',
   description:
-    'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
+    'Software Engineer with 5+ years experience in full-stack development, AI, and open source. Author of Montu Mia\'s System Design newsletter with 20,000+ readers. Building AI-powered applications with React, NextJS, and Rust.',
   url: 'https://shakirul.dev',
   sameAs: [
     'https://github.com/KhanShaheb34',
@@ -29,12 +29,15 @@ const structuredData = {
   knowsAbout: [
     'Software Engineering',
     'Artificial Intelligence',
+    'System Design',
     'React',
     'NextJS',
     'TypeScript',
     'Rust',
     'Python',
+    'Swift',
     'Full-Stack Development',
+    'Technical Writing',
   ],
   alumniOf: {
     '@type': 'EducationalOrganization',
@@ -99,7 +102,7 @@ export default function Home() {
 
           {/* Column 2: ASSORTED PROJECTS */}
           <Column>
-            <Section title="ASSORTED PROJECTS">
+            <Section title="PROJECTS">
               <div className="space-y-8">
                 {projectsArray.map((project, index) => (
                   <ProjectCard
@@ -203,12 +206,13 @@ export default function Home() {
 
           {/* Column 3: POSTS */}
           <Column>
-            <Section title="Posts and Talks">
+            <Section title="WRITING & TALKS">
               <div className="space-y-4">
                 {posts.map((post, index) => (
                   <PostCard
                     date={post.date}
                     href={post.externalUrl ?? `/posts/${post.slug}`}
+                    isBook={post.kind === 'book'}
                     isVideo={post.kind === 'video'}
                     key={index}
                     title={post.title}

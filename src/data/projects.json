@@ -1,24 +1,64 @@
 {
+  "montu-mia": {
+    "title": "Montu Mia's System Design",
+    "slug": "montu-mia",
+    "badge": "BOOK",
+    "description": "Making complex system design concepts simple for everyone. 2,000+ subscribers, 20,000+ readers.",
+    "longDescription": "A weekly system design book published as a LinkedIn newsletter and website, explaining complex system design fundamentals in Bengali through storytelling. Follows the journey of a character named Montu Mia building a video platform, covering topics like scaling, load balancers, networking protocols, caching, and CDNs. Built with a full-stack infrastructure including automated email newsletters, dynamic OG image generation, and a documentation site.",
+    "technologies": [
+      "Next.js",
+      "MDX",
+      "Fumadocs",
+      "AWS SES",
+      "React Email",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "features": [
+      "Weekly system design chapters in Bengali",
+      "Automated email newsletter delivery via AWS SES",
+      "Dynamic OG image generation for social sharing",
+      "Interactive documentation site with dark/light themes",
+      "Subscriber management and analytics"
+    ],
+    "github": "https://github.com/KhanShaheb34/montu-mia",
+    "demo": null,
+    "live": "https://montumia.com",
+    "images": [],
+    "challenges": [
+      "Building an automated newsletter pipeline with AWS SES and React Email",
+      "Generating dynamic Open Graph images for each chapter",
+      "Making complex system design concepts accessible through Bengali storytelling",
+      "Building a documentation site with Fumadocs and MDX"
+    ],
+    "impact": [
+      "2,000+ subscribers across website and LinkedIn newsletter",
+      "20,000+ readers reached online",
+      "Making system design education accessible in Bengali"
+    ],
+    "status": "active"
+  },
+
   "ramble": {
     "title": "Ramble",
     "slug": "ramble",
     "badge": "AI TOOL",
-    "description": "AI-powered meeting transcription and contact management platform",
-    "longDescription": "Ramble is an AI-powered meeting management platform that transforms how teams handle meeting transcription, action items, and follow-ups. It automatically captures, transcribes, and analyzes meetings to extract key insights and commitments. And also helps you manage your contacts and meetings.",
+    "description": "Your network, pooled-in. An app to transcribe meetings, extract commitments, and take notes using voice with AI.",
+    "longDescription": "Ramble is an application to transcribe meetings, get overheard commitments, and follow up from meetings — taking notes using voice with the help of AI. It helps teams capture, organize, and act on meeting insights automatically.",
     "technologies": [
       "React",
-      "Flask",
       "Next.js",
       "TypeScript",
       "Python",
+      "Flask",
       "LLMs",
       "Playwright"
     ],
     "features": [
       "Real-time meeting transcription",
-      "Automatic action item extraction",
-      "Contact management",
-      "Meeting management"
+      "Automatic commitment and action item extraction",
+      "Voice-powered note taking",
+      "Contact management with RAG-powered search"
     ],
     "github": null,
     "demo": null,
@@ -33,38 +73,132 @@
     "impact": [
       "Improved meeting productivity for teams",
       "Reduced manual note-taking overhead",
-      "Better follow-up on commitments",
-      "Improved contact management"
+      "Better follow-up on commitments"
     ],
     "status": "active"
   },
 
-  "ponno": {
-    "title": "Ponno",
-    "slug": "ponno",
-    "badge": "Startup",
-    "description": "An AI driven e-commerce business growing platform.",
-    "longDescription": "Ponno is an AI-driven e-commerce business growth platform that helps businesses grow their sales and revenue using AI-powered tools and strategies.",
+  "avro-silicon": {
+    "title": "Avro Silicon",
+    "slug": "avro-silicon",
+    "badge": "MACOS APP",
+    "description": "Avro phonetic keyboard modernized for Apple Silicon Macs with native performance",
+    "longDescription": "Avro Silicon is a modernized version of the popular Avro phonetic Bengali keyboard, rebuilt for Apple Silicon (M-series) Macs. It brings native performance and compatibility to the most widely used Bengali phonetic typing tool on macOS.",
+    "technologies": [
+      "Swift",
+      "Objective-C",
+      "macOS",
+      "Input Method Kit"
+    ],
+    "features": [
+      "Native Apple Silicon support",
+      "Phonetic Bengali typing",
+      "System-level keyboard integration",
+      "Optimized for M-series Mac performance"
+    ],
+    "github": "https://github.com/KhanShaheb34/iAvro",
+    "demo": null,
+    "live": null,
+    "images": [],
+    "challenges": [
+      "Modernizing legacy Objective-C codebase for Apple Silicon",
+      "Working with macOS Input Method Kit for system-level keyboard integration",
+      "Ensuring compatibility across macOS versions"
+    ],
+    "impact": [
+      "Enabling Bengali typing on modern Macs",
+      "Serving the Bengali-speaking macOS user community"
+    ],
+    "status": "active"
+  },
+
+  "vocables": {
+    "title": "Vocables",
+    "slug": "vocables",
+    "badge": "AI TOOL",
+    "description": "AI-powered vocabulary learning platform that helps you build and retain new words",
+    "longDescription": "Vocables is an AI-powered vocabulary learning platform designed to help users build and retain new words effectively. It leverages AI to create personalized learning experiences and help users expand their vocabulary.",
     "technologies": [
       "Next.js",
       "TypeScript",
-      "PostgreSQL",
-      "ChromaDB",
-      "Clerk",
-      "Vercel AI SDK",
+      "AI",
       "LLMs"
     ],
-    "features": ["AI powered social media management for businesses"],
-    "github": "",
+    "features": [
+      "AI-powered word learning",
+      "Personalized vocabulary building",
+      "Interactive learning experience"
+    ],
+    "github": null,
     "demo": null,
+    "live": "https://www.vocables.xyz/",
     "images": [],
     "challenges": [
-      "Built & managed a team of 2 engineers, set sprints, conducted code reviews, and mentored resulting in on-time deliveries.",
-      "Finalizing the MVP featuring: A React/Next.js dashboard for merchants to create businesses and manage products & orders.",
-      "RAG-powered chatbot integration with Facebook Messenger (tool-calling + vector search) so customers can query products & place orders via chat.",
-      "Led customer development, finalizing feature set, running demos, and gathering 10+ early leads to validate product–market fit."
+      "Designing effective AI-driven vocabulary learning flows",
+      "Building engaging and retention-focused learning experiences"
     ],
-    "impact": ["Still in development"],
+    "impact": [
+      "Helping users expand their vocabulary with AI assistance"
+    ],
+    "status": "active"
+  },
+
+  "profreach": {
+    "title": "Profreach",
+    "slug": "profreach",
+    "badge": "WEB APP",
+    "description": "Professor outreach platform to help students connect with professors for higher studies",
+    "longDescription": "Profreach is a platform designed to streamline the process of reaching out to professors for higher studies. It helps students find, organize, and manage their outreach to potential academic advisors.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React"
+    ],
+    "features": [
+      "Professor discovery and search",
+      "Outreach management and tracking",
+      "Organized communication workflows"
+    ],
+    "github": null,
+    "demo": null,
+    "live": "https://profreach.shakirul.dev/",
+    "images": [],
+    "challenges": [
+      "Building an intuitive interface for managing professor outreach",
+      "Organizing and tracking communication across multiple professors"
+    ],
+    "impact": [
+      "Simplifying the professor outreach process for students pursuing higher studies"
+    ],
+    "status": "active"
+  },
+
+  "trak": {
+    "title": "trak",
+    "slug": "trak",
+    "badge": "CLI TOOL",
+    "description": "A simple, fast analytics tool built with Rust for lightweight traffic tracking",
+    "longDescription": "trak is a lightweight analytics tool built in Rust, designed for developers who want simple, fast, and privacy-respecting traffic tracking without the overhead of complex analytics platforms.",
+    "technologies": [
+      "Rust",
+      "CLI"
+    ],
+    "features": [
+      "Lightweight traffic tracking",
+      "Fast Rust-powered performance",
+      "Simple setup and usage"
+    ],
+    "github": "https://github.com/KhanShaheb34/trak",
+    "demo": null,
+    "live": null,
+    "images": [],
+    "challenges": [
+      "Building a performant analytics tool in Rust",
+      "Designing a minimal yet useful analytics interface"
+    ],
+    "impact": [
+      "Providing a lightweight alternative to bloated analytics tools"
+    ],
     "status": "active"
   },
 
@@ -72,21 +206,19 @@
     "title": "Coterm",
     "slug": "coterm",
     "badge": "CLI TOOL",
-    "description": "Copilot for terminal built using Rust, Vercel edge function and OpenAI API with natural language command generation",
-    "longDescription": "Coterm is a revolutionary terminal copilot that bridges the gap between natural language and command-line interfaces. Built with Rust for performance and integrated with OpenAI's API, it allows developers to describe what they want to do in plain English and receive the exact command they need.",
+    "description": "Copilot for your terminal built with Rust, Vercel edge functions, and OpenAI API",
+    "longDescription": "Coterm is a terminal copilot that bridges the gap between natural language and command-line interfaces. Built with Rust for performance and integrated with OpenAI's API, it allows developers to describe what they want to do in plain English and receive the exact command they need.",
     "technologies": [
       "Rust",
       "OpenAI API",
       "Vercel Edge Functions",
-      "CLI",
-      "Natural Language Processing"
+      "CLI"
     ],
     "features": [
       "Natural language to CLI command generation",
       "Command revision and refinement",
       "Safety measures and dangerous command detection",
-      "One-key execution with confirmation prompts",
-      "Cross-platform compatibility"
+      "One-key execution with confirmation prompts"
     ],
     "github": "https://github.com/KhanShaheb34/coterm",
     "live": "https://github.com/KhanShaheb34/Coterm/releases/tag/v0.2.2",
@@ -117,12 +249,11 @@
       "PostgreSQL",
       "Prisma",
       "OpenAI API",
-      "PDF Generation",
       "React PDF"
     ],
     "features": [
-      "AI-powered content enhancement",
-      "Multiple resume templates",
+      "AI-powered content enhancement with OpenAI GPT",
+      "Create and view resumes",
       "PDF generation and export",
       "Database storage and versioning"
     ],
@@ -138,19 +269,19 @@
     "impact": ["Helped users create professional resumes"],
     "status": "completed"
   },
+
   "bochon": {
     "title": "Bochon",
     "slug": "bochon",
     "badge": "WEB APP",
-    "description": "Performance dashboard for various Bengali Speech to Text models developed for Bengali.ai",
+    "description": "Bengali speech-to-text model comparison platform developed for Bengali.ai",
     "longDescription": "Bochon is a comprehensive performance dashboard developed for Bengali.ai to showcase and compare various Bengali Speech-to-Text models. It provides detailed analytics, benchmarks, and interactive demonstrations of different ASR models.",
-    "technologies": ["TypeScript", "React", "Chakra UI", "Python"],
+    "technologies": ["TypeScript", "React", "Chakra UI", "Python", "Docker", "Nginx"],
     "features": [
       "Model performance comparison",
       "Interactive speech recognition demos",
       "Detailed accuracy metrics",
-      "Real-time inference testing",
-      "Responsive dashboard interface"
+      "Real-time inference testing"
     ],
     "github": "https://github.com/BengaliAI/bochon",
     "demo": null,
@@ -165,37 +296,6 @@
       "Showcased Bengali ASR model capabilities",
       "Facilitated model comparison and selection",
       "Contributed to Bengali.ai research efforts"
-    ],
-    "status": "completed"
-  },
-
-  "sust-ghms": {
-    "title": "SUST GHMS",
-    "slug": "sust-ghms",
-    "badge": "WEB APP",
-    "description": "Guest house management system with room booking, authentication, and profile management",
-    "longDescription": "SUST Guest House Management System is a comprehensive web application designed to streamline the booking and management of guest house facilities at Shahjalal University of Science and Technology.",
-    "technologies": ["React", "TypeScript", "Chakra UI"],
-    "features": [
-      "Room availability search and booking",
-      "User authentication and profiles",
-      "Booking history and status tracking",
-      "Admin panel for room management",
-      "Responsive design for all devices"
-    ],
-    "github": null,
-    "live": "http://guesthouse.sust.edu.bd/",
-    "demo": null,
-    "images": [],
-    "challenges": [
-      "Complex booking state management",
-      "Real-time availability updates",
-      "User role and permission management"
-    ],
-    "impact": [
-      "Digitized guest house booking process for SUST",
-      "Reduced manual booking overhead",
-      "Improved resource utilization"
     ],
     "status": "completed"
   }
