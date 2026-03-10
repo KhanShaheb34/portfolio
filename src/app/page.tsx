@@ -100,7 +100,7 @@ export default function Home() {
 
           <VerticalSeparator />
 
-          {/* Column 2: ASSORTED PROJECTS */}
+          {/* Column 2: PROJECTS */}
           <Column>
             <Section title="PROJECTS">
               <div className="space-y-8">
@@ -115,32 +115,12 @@ export default function Home() {
                 ))}
               </div>
             </Section>
-
-            <WavyLine />
-
-            <Section title="WORK EXPERIENCE">
-              <div className="space-y-6">
-                {experiencesArray.map((experience, index) => {
-                  const slug = Object.keys(experiencesData)[index];
-                  return (
-                    <ExperienceCard
-                      company={experience.company}
-                      description={experience.description}
-                      duration={experience.duration}
-                      key={index}
-                      position={experience.position}
-                      slug={slug}
-                    />
-                  );
-                })}
-              </div>
-            </Section>
             <WavyLine hideOnDesktop />
           </Column>
 
           <VerticalSeparator />
 
-          {/* Column 4: ACADEMIC */}
+          {/* Column 3: ACADEMIC & WORK EXPERIENCE */}
           <Column>
             <Section title="ACADEMIC">
               <div className="space-y-6">
@@ -188,23 +168,29 @@ export default function Home() {
 
             <WavyLine />
 
-            <Section title="INTERESTS">
-              <div className="space-y-4">
-                {portfolioData.interests.map((interest, index) => (
-                  <div key={index}>
-                    <h3 className="text-md">{interest.title}</h3>
-                    <p className="text-muted text-sm">{interest.description}</p>
-                  </div>
-                ))}
+            <Section title="WORK EXPERIENCE">
+              <div className="space-y-6">
+                {experiencesArray.map((experience, index) => {
+                  const slug = Object.keys(experiencesData)[index];
+                  return (
+                    <ExperienceCard
+                      company={experience.company}
+                      description={experience.description}
+                      duration={experience.duration}
+                      key={index}
+                      position={experience.position}
+                      slug={slug}
+                    />
+                  );
+                })}
               </div>
             </Section>
-
             <WavyLine hideOnDesktop />
           </Column>
 
           <VerticalSeparator />
 
-          {/* Column 3: POSTS */}
+          {/* Column 4: WRITING & TALKS */}
           <Column>
             <Section title="WRITING & TALKS">
               <div className="space-y-4">
@@ -217,6 +203,19 @@ export default function Home() {
                     key={index}
                     title={post.title}
                   />
+                ))}
+              </div>
+            </Section>
+
+            <WavyLine />
+
+            <Section title="INTERESTS">
+              <div className="space-y-4">
+                {portfolioData.interests.map((interest, index) => (
+                  <div key={index}>
+                    <h3 className="text-md">{interest.title}</h3>
+                    <p className="text-muted text-sm">{interest.description}</p>
+                  </div>
                 ))}
               </div>
             </Section>
