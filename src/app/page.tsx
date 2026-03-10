@@ -55,7 +55,7 @@ export default function Home() {
   const posts = getAllPosts();
 
   const projectsArray = Object.values(projectsData);
-  const experiencesArray = Object.values(experiencesData);
+  const experiencesEntries = Object.entries(experiencesData);
 
   return (
     <>
@@ -171,19 +171,16 @@ export default function Home() {
 
             <Section title="WORK EXPERIENCE">
               <div className="space-y-6">
-                {experiencesArray.map((experience, index) => {
-                  const slug = Object.keys(experiencesData)[index];
-                  return (
-                    <ExperienceCard
-                      company={experience.company}
-                      description={experience.description}
-                      duration={experience.duration}
-                      key={index}
-                      position={experience.position}
-                      slug={slug}
-                    />
-                  );
-                })}
+                {experiencesEntries.map(([slug, experience]) => (
+                  <ExperienceCard
+                    company={experience.company}
+                    description={experience.description}
+                    duration={experience.duration}
+                    key={slug}
+                    position={experience.position}
+                    slug={slug}
+                  />
+                ))}
               </div>
             </Section>
             <WavyLine hideOnDesktop />
