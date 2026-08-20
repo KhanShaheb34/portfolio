@@ -6,8 +6,8 @@
     "location": "Remote, United States",
     "duration": "Mar 2023 to present",
     "type": "Full-time",
-    "description": "I own Peaches, Ramble's meeting agent. Python on the server, TypeScript and React on the web, Swift on Mac and iPhone. Internal beta. No outside users yet.",
-    "longDescription": "Peaches sits in the meeting. You wake it, it joins from the calendar, it keeps a session, it writes notes and checklists. I own that product. Python services, the web client, the Mac app, the iPhone app. Other engineers review and test. Nobody outside the company uses it yet.",
+    "description": "I own Peaches, the meeting agent inside Ramble. Python on the server, TypeScript and React on the web, Swift on Mac and iPhone. Internal beta. No outside users yet.",
+    "longDescription": "Peaches sits in the meeting. You wake it, it joins from the calendar, it keeps a session, it writes notes and checklists. I own that feature. Python services, the web client, the Mac app, the iPhone app. Other engineers review and test. Nobody outside the company uses it yet.",
     "responsibilities": [
       "Owned Peaches end to end: Python backend, TypeScript and React web client, native Swift on macOS and iPhone",
       "Built the voice loop: wake and sleep, transcript buffering, session context, tools that write notes and checklists",
@@ -31,8 +31,8 @@
     "location": "Sylhet, Bangladesh",
     "duration": "2026 to present",
     "type": "Founding",
-    "description": "Three-person software company in Sylhet. First product is HealthERP, a hospital system. We also take custom software work.",
-    "longDescription": "Thinking Lab is me, Mehedi Hasan Rumi, and Fazle Rabbi Rakib. Small company, Sylhet. We build software for operations that off-the-shelf tools don't fit. HealthERP is the first product: patients, appointments, pharmacy, billing, lab, admin, in one place. The site is up. The product is still being built.",
+    "description": "A software company I'm starting in Sylhet with friends. First product is HealthERP, still being built.",
+    "longDescription": "Thinking Lab is me, Mehedi Hasan Rumi, and Fazle Rabbi Rakib. Friends, Sylhet, a company we are trying to start. HealthERP is the first product: patients, appointments, pharmacy, billing, lab, admin, in one place. The site is up. The product is still being built.",
     "responsibilities": [
       "Co-founded the company with a three-person team",
       "Building HealthERP, covering patients, appointments, pharmacy, billing, laboratory, and administration",

@@ -246,18 +246,18 @@ export function generateMetadata() {
   return {
     title: 'About Shakirul Hasan Khan',
     description:
-      "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
+      "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     openGraph: {
       title: 'About Shakirul Hasan Khan',
       description:
-        "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
+        "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
       type: 'profile',
     },
     twitter: {
       card: 'summary_large_image',
       title: 'About Shakirul Hasan Khan',
       description:
-        "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
+        "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     },
   };
 }

@@ -1,10 +1,10 @@
 {
   "intro": {
     "paragraphs": [
-      "Hi, I'm Shakirul Hasan Khan. I write software in Bangladesh. A little over five years of it, web, backend, Mac, and iPhone.",
-      "I work at Ramble. I own Peaches, an AI meeting agent. Python on the server, TypeScript and React in the browser, Swift on Mac and iPhone. Wake it, join the calendar event, keep a session, take notes. Internal beta. No outside users yet. In Sylhet I'm also on the founding team at Thinking Lab. Small software company. HealthERP is the first product, still being built.",
-      "I write Montu Mia's System Design. Montu tries to keep a video site from falling over, and you pick up load balancers without a textbook. Bengali first. English exists because someone in Turkey asked. 2,500 newsletter subscribers, 20,000 readers, 100,000 monthly impressions. Montu still has not shipped to production.",
-      "TypeScript, Python, Swift, React, Next.js. Rust when the tool wants to be small."
+      "Hi, I'm Shakirul Hasan Khan. I write software in Bangladesh, mostly remote. A little over five years. Web, backend, Mac, and iPhone.",
+      "I work at Ramble. I own Peaches, the meeting agent inside the product. Python on the server, TypeScript and React on the web, Swift on Mac and iPhone. Internal beta.",
+      "In Sylhet, friends and I are starting Thinking Lab. HealthERP is the first product, still being built.",
+      "I write Montu Mia's System Design. Bengali first, English second. 2,500 subscribers, 20,000 readers, 100,000 monthly impressions."
     ]
   },
   "socialLinks": [

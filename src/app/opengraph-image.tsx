@@ -83,7 +83,7 @@ export default function Image() {
             lineHeight: 1.4,
           }}
         >
-          I own Peaches at Ramble. I write Montu Mia's System Design.
+          I work on Peaches at Ramble. I write Montu Mia's System Design.
         </p>
       </div>
 

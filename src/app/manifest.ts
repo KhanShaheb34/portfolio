@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Shakirul Hasan Khan',
     short_name: 'Shakirul Khan',
     description:
-      "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
+      "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     start_url: '/',
     display: 'standalone',
     background_color: '#141210',

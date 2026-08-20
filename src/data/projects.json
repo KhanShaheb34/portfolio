@@ -98,12 +98,12 @@
   },
 
   "ramble": {
-    "title": "Peaches",
+    "title": "Ramble",
     "slug": "ramble",
-    "badge": "RAMBLE",
+    "badge": "AI",
     "featured": true,
-    "description": "The meeting agent I own at Ramble. Python backend, TypeScript and React on the web, Swift on Mac and iPhone. Internal beta. No outside users yet.",
-    "longDescription": "Peaches sits in the meeting. Wake it, join from the calendar, keep a session, write notes and checklists. I own the product. Python services, the web client, native Swift on macOS and iPhone. Other engineers review and test.",
+    "description": "Peaches is the meeting agent inside Ramble. I own that feature. Python, TypeScript, React, Swift. Internal beta. No outside users yet.",
+    "longDescription": "Peaches sits in the meeting. Wake it, join from the calendar, keep a session, write notes and checklists. It lives inside Ramble. I own that feature. Python services, the web client, native Swift on macOS and iPhone. Other engineers review and test.",
     "technologies": ["Python", "TypeScript", "React", "Swift", "SwiftUI"],
     "features": [
       "Wake and sleep, plus transcript buffering for live meetings",

@@ -14,7 +14,7 @@ const firaMono = Fira_Mono({
 export const metadata: Metadata = {
   title: 'Shakirul Hasan Khan',
   description:
-    "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
+    "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
   keywords: [
     'Shakirul Hasan Khan',
     'Software Engineer',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: 'https://shakirul.dev',
     title: 'Shakirul Hasan Khan',
     description:
-      "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
+      "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     siteName: 'Shakirul Hasan Khan',
     images: [
       {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Shakirul Hasan Khan',
     description:
-      "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
+      "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     creator: '@_khanshaheb',
   },
   robots: {
@@ -65,9 +65,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
   icons: {
     icon: '/icons/favicon-32x32.png',

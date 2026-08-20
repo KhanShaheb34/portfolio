@@ -20,8 +20,9 @@ export default function WorkPage() {
             </Link>
             <h1 className="mb-4 font-bold text-3xl">Work</h1>
             <p className="text-lg text-muted-foreground">
-              Ramble is the day job. Then a company in Sylhet, a completed
-              founding role, teaching, and the older jobs.
+              Ramble is the day job. Thinking Lab is a startup with friends in
+              Sylhet. Then a completed founding role, teaching, and the older
+              jobs.
             </p>
           </div>
 
