@@ -5,7 +5,7 @@ const posts = [
     title: "Montu Mia's System Design",
     date: '2026-01-01',
     excerpt:
-      'System design as a story. Bengali first, English second. 2,500 subscribers, 20,000 readers, 100,000 monthly impressions.',
+      'System design as a story. Bengali first, English second. 3,000+ subscribers, 30,000+ visitors, 125,000+ page views.',
     tags: ['System Design', 'Bengali', 'Newsletter', 'Book'],
     author: 'Shakirul Hasan Khan',
     readingTime: 'Weekly',
@@ -46,7 +46,7 @@ const posts = [
     title: 'Why Should You Not Use px?',
     date: '2024-01-10',
     excerpt:
-      "px ignores the user's font size. rem and em don't. That's the whole argument.",
+      "Fixed px sizes don't follow the root font size. rem does. em follows its parent.",
     tags: ['css', 'ui', 'design', 'guidelines'],
     author: 'Shakirul Hasan Khan',
     readingTime: '10 min read',

@@ -4,8 +4,8 @@
     "slug": "montu-mia",
     "badge": "BOOK",
     "featured": true,
-    "description": "System design as a story, in Bengali first, English second. 2,500 subscribers, 20,000 readers, 100,000 monthly impressions, 147 GitHub stars.",
-    "longDescription": "Montu Mia is trying to keep a video site alive. Each chapter is a problem he hits, load balancers, caches, CDNs, the trade-off that didn't fit on the first slide. I publish it as a site and a LinkedIn newsletter. Bengali is the default. English lives under /en. Email goes out through AWS SES. OG images are generated per chapter. The reading UI is Fumadocs and MDX.",
+    "description": "System design as a story, in Bengali first, English second. 3,000+ subscribers, 30,000+ visitors, 125,000+ page views, 147 GitHub stars.",
+    "longDescription": "Montu Mia is trying to keep a video site alive. Each chapter is a problem he hits, load balancers, caches, CDNs, the trade-off that didn't fit on the first slide. I publish it as a site and a LinkedIn newsletter. Bengali is the default. English lives under /en. Email goes out through AWS SES. The site list has 1,100+ subscribers. LinkedIn has 2,600+. OG images are generated per chapter. The reading UI is Fumadocs and MDX.",
     "technologies": [
       "Next.js",
       "MDX",
@@ -33,8 +33,9 @@
       "Making Fumadocs read like a book, not a docs site"
     ],
     "impact": [
-      "2,500+ newsletter subscribers",
-      "20,000+ readers, 100,000+ monthly impressions",
+      "3,000+ subscribers across the site and LinkedIn",
+      "1,100+ on the site list, 2,600+ on LinkedIn",
+      "30,000+ unique visitors, 125,000+ page views",
       "147 GitHub stars"
     ],
     "status": "active"
