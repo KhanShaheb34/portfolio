@@ -15,7 +15,7 @@ export async function generateMetadata({
 
   if (!experience) {
     return {
-      title: 'Work Experience Not Found',
+      title: 'Work not found',
     };
   }
 
@@ -50,7 +50,7 @@ export default async function WorkExperiencePage({ params }: WorkPageProps) {
               className="text-muted-foreground text-sm transition-colors hover:text-foreground"
               href="/work"
             >
-              ← Back to Work Experience
+              ← Work
             </Link>
           </div>
 
@@ -94,9 +94,7 @@ export default async function WorkExperiencePage({ params }: WorkPageProps) {
           <div className="grid gap-12">
             {/* Responsibilities */}
             <section>
-              <h2 className="mb-6 font-semibold text-2xl">
-                Key Responsibilities
-              </h2>
+              <h2 className="mb-6 font-semibold text-2xl">What I did</h2>
               <ul className="space-y-3">
                 {experience.responsibilities.map((responsibility, index) => (
                   <li
@@ -111,9 +109,7 @@ export default async function WorkExperiencePage({ params }: WorkPageProps) {
 
             {/* Technologies */}
             <section>
-              <h2 className="mb-6 font-semibold text-2xl">
-                Technologies & Tools
-              </h2>
+              <h2 className="mb-6 font-semibold text-2xl">Stack</h2>
               <div className="flex flex-wrap gap-2">
                 {experience.technologies.map((tech, index) => (
                   <span
@@ -128,7 +124,7 @@ export default async function WorkExperiencePage({ params }: WorkPageProps) {
 
             {/* Achievements */}
             <section>
-              <h2 className="mb-6 font-semibold text-2xl">Key Achievements</h2>
+              <h2 className="mb-6 font-semibold text-2xl">What came of it</h2>
               <ul className="space-y-3">
                 {experience.achievements.map((achievement, index) => (
                   <li
@@ -149,14 +145,14 @@ export default async function WorkExperiencePage({ params }: WorkPageProps) {
                 className="text-muted-foreground text-sm transition-colors hover:text-foreground"
                 href="/work"
               >
-                ← Back to All Experiences
+                ← Work
               </Link>
               <Link
                 className="text-muted-foreground text-sm transition-colors hover:text-foreground"
                 href="/"
                 prefetch
               >
-                Back to Portfolio →
+                Home
               </Link>
             </div>
           </div>

@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Shakirul Hasan Khan | Software Engineer & AI Developer',
+    name: 'Shakirul Hasan Khan',
     short_name: 'Shakirul Khan',
     description:
-      'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
+      "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     start_url: '/',
     display: 'standalone',
     background_color: '#141210',

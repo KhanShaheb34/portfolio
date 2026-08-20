@@ -1,52 +1,79 @@
 {
-  "recruit": {
-    "company": "Re:cruit",
-    "link": "https://recruit.so/",
+  "ramble": {
+    "company": "Ramble",
+    "link": "https://www.ramble.ai/",
     "position": "Software Engineer",
-    "location": "United States (Remote)",
-    "duration": "2022 - Present",
+    "location": "Remote, United States",
+    "duration": "Mar 2023 to present",
     "type": "Full-time",
-    "description": "Building innovative AI-powered recruitment solutions using modern web technologies and machine learning.",
-    "longDescription": "At Re:cruit, I develop comprehensive web applications and AI-powered features for recruitment platform. Working with cutting-edge technologies including LLMs, real-time collaboration tools, and advanced text processing systems.",
+    "description": "I own Peaches, the meeting agent inside Ramble. Python on the server, TypeScript and React on the web, Swift on Mac and iPhone. Internal beta. No outside users yet.",
+    "longDescription": "Peaches sits in the meeting. You wake it, it joins from the calendar, it keeps a session, it writes notes and checklists. I own that feature. Python services, the web client, the Mac app, the iPhone app. Other engineers review and test. Nobody outside the company uses it yet.",
     "responsibilities": [
-      "Developed a feature enabling summary generation and conversation with documents, leveraging Instructor and Pydantic across various LLMs",
-      "Implemented CRUD-based functionalities on a Flask server",
-      "Built a comprehensive web application adhering to Figma designs, using NextJS and TypeScript",
-      "Written end-to-end tests employing Playwright for a NextJS application",
-      "Engineered a sophisticated rich text editor, featuring commenting, mentioning, and highlighting capabilities, utilizing PlateJS, enhanced by real-time multi-user editing synchronization through PubNub",
-      "Crafted a native-like web application interface with ReactJS for integration into a Mac application via web view",
-      "Developed comprehensive test suites for NextJS applications utilizing Jest and Playwright",
-      "Spearheaded the creation of a full-stack resume-building application with NextJS, TypeScript, Prisma, and Stitches, integrating PostgreSQL for data storage and OpenAI API for content enhancement",
-      "Engineered a large-scale language corpus testing tool using Python, enabling extensive data analysis and system optimization",
-      "Implemented an authentication system using MagicLink and contributed to the design of several web pages for a DAO, leveraging NextJS"
+      "Owned Peaches end to end: Python backend, TypeScript and React web client, native Swift on macOS and iPhone",
+      "Built the voice loop: wake and sleep, transcript buffering, session context, tools that write notes and checklists",
+      "Ran meeting-bot lifecycle and calendar auto-join: durable persistence, short-lived credentials, verified webhooks, background reconciliation",
+      "Shipped cross-device control from macOS: presence, acknowledgements, failure-state feedback",
+      "Shipped the iPhone app: on-device transcription, session history, editable notes, bounded real-time audio"
+    ],
+    "technologies": ["Python", "TypeScript", "React", "Swift", "SwiftUI"],
+    "achievements": [
+      "Took Peaches from a prototype to an internal beta on Mac, iPhone, and web",
+      "Calendar auto-join can run without someone watching the bot",
+      "Native apps, web, and backend share one session model"
+    ],
+    "status": "active"
+  },
+
+  "thinking-lab": {
+    "company": "Thinking Lab",
+    "link": "https://thinkinglab.info",
+    "position": "Founding Engineer",
+    "location": "Sylhet, Bangladesh",
+    "duration": "2026 to present",
+    "type": "Founding",
+    "description": "A software company I'm starting in Sylhet with friends. First product is HealthERP, still being built.",
+    "longDescription": "Thinking Lab is me, Mehedi Hasan Rumi, and Fazle Rabbi Rakib. Friends, Sylhet, a company we are trying to start. HealthERP is the first product: patients, appointments, pharmacy, billing, lab, admin, in one place. The site is up. The product is still being built.",
+    "responsibilities": [
+      "Co-founded the company with a three-person team",
+      "Building HealthERP, covering patients, appointments, pharmacy, billing, laboratory, and administration",
+      "Talking to hospitals about the actual workflow before we draw a screen",
+      "Writing custom software for businesses whose ops live in too many tools"
+    ],
+    "technologies": ["TypeScript", "React", "Next.js"],
+    "achievements": [
+      "Shipped thinkinglab.info",
+      "HealthERP is the founding product and is in active development"
+    ],
+    "status": "active"
+  },
+
+  "ponno": {
+    "company": "Ponno",
+    "link": "",
+    "position": "Founding Engineer",
+    "location": "Dhaka, Bangladesh",
+    "duration": "2025 to 2026",
+    "type": "Founding",
+    "description": "Founding engineer on a three-person team. RAG over product and order data, tool-calling agents, the first architecture. Work finished in 2026.",
+    "longDescription": "Ponno needed a way to turn messy buyer messages into catalog lookups and orders. I was the founding engineer on a team of three. We built retrieval on pgVector and ChromaDB, and tool-calling with the Vercel AI SDK so the agent could take the next step instead of only chatting. I left after the architecture and the first working path were in place.",
+    "responsibilities": [
+      "Built a retrieval layer on pgVector and ChromaDB that maps messy intent onto product and order data",
+      "Made tool-calling reliable when schemas drifted, context ran out, or the model invented a parameter",
+      "Set code review and architecture habits for a three-person engineering team"
     ],
     "technologies": [
-      "Next.js",
       "TypeScript",
-      "React",
-      "Python",
-      "Flask",
+      "Next.js",
       "PostgreSQL",
-      "Prisma",
-      "Stitches",
-      "PlateJS",
-      "PubNub",
-      "OpenAI API",
-      "Playwright",
-      "Jest",
-      "LLMs",
-      "Instructor",
-      "Pydantic",
-      "MagicLink"
+      "pgVector",
+      "ChromaDB",
+      "Vercel AI SDK"
     ],
     "achievements": [
-      "Built advanced AI-powered document processing features using multiple LLMs",
-      "Implemented real-time collaborative text editing with multi-user synchronization",
-      "Developed comprehensive resume-building application with AI enhancement capabilities",
-      "Created large-scale language corpus testing tools for data analysis"
+      "Left a working retrieval and tool-calling path, not a slide deck",
+      "Three-person team, with review and architecture in place"
     ],
-    "date": "2022-01-01",
-    "status": "active"
+    "status": "completed"
   },
 
   "edgep-instructor": {
@@ -54,28 +81,20 @@
     "link": "https://edge.gov.bd/",
     "position": "Guest Instructor",
     "location": "Bangladesh",
-    "duration": "2024 - 2025",
+    "duration": "2024 to 2025",
     "type": "Contract",
-    "description": "Provided expert lectures on Python and machine learning to university students as part of a World Bank backed government initiative.",
-    "longDescription": "As an industry expert, delivered comprehensive training on Python programming and machine learning concepts to students from top universities in Bangladesh. This project is managed by ICT Division of Bangladesh government and backed by World Bank.",
+    "description": "Taught Python and a bit of machine learning to more than 100 students at three universities.",
+    "longDescription": "EDGE is an ICT Division program, World Bank money. I taught Python, pandas, NumPy, scikit-learn, and a first pass at regression and clustering. Students from SUST, Jagannath, and Stamford. One of the rooms was the same one where I sat my first programming class.",
     "responsibilities": [
-      "Delivered lectures on Python fundamentals including pandas, numpy, and scikit-learn libraries",
-      "Taught machine learning concepts including regression, clustering, and classification algorithms",
-      "Demonstrated construction of user interfaces using Flask framework",
-      "Provided training to students from Shahjalal University of Science and Technology, Jagannath University, and Stamford University Bangladesh"
+      "Lectures on Python, pandas, NumPy, and scikit-learn",
+      "Regression, clustering, and classification, at undergrad pace",
+      "A small Flask UI so the models weren't just notebooks",
+      "More than 100 students across three universities"
     ],
-    "technologies": [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "Scikit-learn",
-      "Flask",
-      "Machine Learning"
-    ],
+    "technologies": ["Python", "Pandas", "NumPy", "Scikit-learn", "Flask"],
     "achievements": [
-      "Successfully trained students from 3 major universities in Bangladesh",
-      "Contributed to government-backed digital skills development initiative",
-      "Delivered comprehensive curriculum covering both programming fundamentals and advanced ML concepts"
+      "100+ students, three campuses",
+      "Taught in the room where I learned to code"
     ],
     "status": "completed"
   },
@@ -83,18 +102,18 @@
   "traders-connect": {
     "company": "Traders Connect",
     "link": "https://tradersconnect.com/",
-    "position": "Contract Software Engineer",
-    "location": "United Kingdom (Remote)",
-    "duration": "2023 - 2024",
+    "position": "Contract iOS Developer",
+    "location": "Remote, United Kingdom",
+    "duration": "2023 to 2024",
     "type": "Contract",
-    "description": "Developed foundational infrastructure and mobile applications for a large-scale trading platform using React Native and modern web technologies.",
-    "longDescription": "Led the development of foundational front-end infrastructure and cross-platform mobile applications for an upcoming large-scale trading platform, focusing on performance, security, and user experience.",
+    "description": "Native Swift talking to gRPC, a React Native component library, and a 20+ screen trading app.",
+    "longDescription": "Contract work on a trading product that was still finding its feet. I wrote Swift modules so React Native could talk to a gRPC server, built a reusable component library, and shipped a mobile app with more than 20 screens. OAuth for login.",
     "responsibilities": [
-      "Developed the foundational front-end infrastructure for an upcoming large-scale web application",
-      "Written native modules in Swift to seamlessly connect a React Native app with a gRPC server",
-      "Crafted a customized and reusable component library in React Native, utilizing styled-components for cross-platform mobile application",
-      "Engineered a cross-platform mobile application featuring over 20 distinct screens using React Native",
-      "Implemented OAuth to secure authentication processes within a React Native application"
+      "Native Swift modules bridging React Native to a gRPC server",
+      "Reusable React Native components with styled-components",
+      "Mobile app, 20+ screens",
+      "OAuth login",
+      "Early front-end setup for the web app"
     ],
     "technologies": [
       "React Native",
@@ -106,10 +125,42 @@
       "JavaScript"
     ],
     "achievements": [
-      "Built comprehensive mobile application with 20+ screens",
-      "Created reusable component library for cross-platform development",
-      "Successfully integrated native Swift modules with React Native",
-      "Implemented secure OAuth authentication system"
+      "20+ screen app shipped",
+      "Swift and React Native talking over gRPC without a mess of glue"
+    ],
+    "status": "completed"
+  },
+
+  "recruit": {
+    "company": "Re:cruit",
+    "link": "https://recruit.so/",
+    "position": "Software Engineer",
+    "location": "Remote, United States",
+    "duration": "2022 to 2023",
+    "type": "Full-time",
+    "description": "The job that turned into Ramble. I built the AI resume product, the tests, and the login.",
+    "longDescription": "This is where I started with this team. Next.js, Postgres, Prisma, OpenAI for resume text, Playwright and Jest, Magic Link for auth. A Python corpus tester on the side. That product line became Ramble.",
+    "responsibilities": [
+      "Resume builder in Next.js, TypeScript, Prisma, Postgres, with OpenAI for the writing",
+      "Jest and Playwright suites",
+      "Magic Link auth",
+      "Python tools for corpus testing"
+    ],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "PostgreSQL",
+      "Prisma",
+      "OpenAI API",
+      "Playwright",
+      "Jest",
+      "Python",
+      "MagicLink"
+    ],
+    "achievements": [
+      "Resume product people could actually finish",
+      "End-to-end tests that actually ran"
     ],
     "status": "completed"
   },
@@ -119,17 +170,16 @@
     "link": "https://kaz.com.bd/",
     "position": "Associate Software Engineer",
     "location": "Dhaka, Bangladesh",
-    "duration": "2021 - 2022",
+    "duration": "2021 to 2022",
     "type": "Full-time",
-    "description": "Led design and development of complex web applications, specializing in ReactJS, TypeScript, and modern frontend architectures.",
-    "longDescription": "At Kaz Software, I led the design and development of large-scale web applications, focusing on performance optimization, micro-frontend architecture, and automated testing. Worked extensively with modern React ecosystems and deployment technologies.",
+    "description": "40+ pages, two UIs, a React 16 to 18 upgrade, and four apps mashed into Single-SPA.",
+    "longDescription": "Kaz was a lot of React. I designed over 40 pages for an app with two different interfaces, moved two codebases from React 16 to 18, merged four apps into one Single-SPA shell, put Docker around deploys, and wrote Cypress tests. Unromantic work. The kind that ships.",
     "responsibilities": [
-      "Led the design of over 40 pages for a complex web application, catering to two distinct user interfaces with ReactJS, TypeScript, SWR, Redux-Toolkit, RSuite, and SCSS",
-      "Successfully upgraded two web applications from ReactJS version 16 to version 18, enhancing performance and compatibility",
-      "Merged four separate ReactJS applications into a unified micro-frontend platform using Single-SPA",
-      "Improved deployment efficiency by containerizing applications with Docker",
-      "Authored end-to-end automated tests for a ReactJS web application utilizing Cypress",
-      "Engineered and implemented a range of features across two ReactJS web applications, employing TypeScript for development"
+      "40+ pages, two UIs, React, TypeScript, SWR, Redux Toolkit, RSuite, SCSS",
+      "React 16 to 18 on two apps",
+      "Four React apps into one Single-SPA micro-frontend",
+      "Docker for deploys",
+      "Cypress end-to-end tests"
     ],
     "technologies": [
       "React",
@@ -144,10 +194,8 @@
       "REST API"
     ],
     "achievements": [
-      "Successfully designed and implemented 40+ complex web application pages",
-      "Led React 16 to 18 migration for multiple applications, improving performance",
-      "Architected micro-frontend platform consolidating 4 separate applications",
-      "Implemented comprehensive end-to-end testing with Cypress"
+      "40+ pages live on a dual-interface product",
+      "Four apps, one shell"
     ],
     "status": "completed"
   },
@@ -156,27 +204,18 @@
     "company": "Bengali.AI",
     "link": "https://www.bengali.ai/",
     "position": "Contract Software Engineer",
-    "location": "Dhaka, Bangladesh",
-    "duration": "2020 - 2021",
+    "location": "Remote, Bangladesh",
+    "duration": "2020 to 2021",
     "type": "Contract",
-    "description": "Developed web applications for Bengali language processing and machine learning model benchmarking using React and Python.",
-    "longDescription": "At Bengali.AI, I contributed to advancing Bengali language technology by developing web applications for benchmarking text-to-speech models and creating integration layers between machine learning models and web interfaces.",
+    "description": "A React dashboard for comparing Bengali text-to-speech models, wired to Python over WebSocket.",
+    "longDescription": "Bengali.AI needed a way to put speech models in front of people. I built a React app that could benchmark Bengali TTS models, and a Flask server that pushed audio and scores over WebSocket so you didn't wait on a full page reload.",
     "responsibilities": [
-      "Developed a web application with ReactJS, designed for benchmarking various Bengali text-to-speech models",
-      "Created a Python-based Flask wrapper server to integrate machine-learning models with the ReactJS application via web-socket"
+      "React app for comparing Bengali TTS models",
+      "Flask wrapper so the models could talk to the browser over WebSocket"
     ],
-    "technologies": [
-      "React",
-      "Python",
-      "Flask",
-      "WebSocket",
-      "Machine Learning",
-      "Bengali NLP"
-    ],
+    "technologies": ["React", "Python", "Flask", "WebSocket", "Bengali NLP"],
     "achievements": [
-      "Built comprehensive benchmarking platform for Bengali text-to-speech models",
-      "Successfully integrated ML models with web interface using WebSocket communication",
-      "Contributed to Bengali language processing research and development"
+      "Researchers could click a model and hear it, in the browser"
     ],
     "status": "completed"
   }

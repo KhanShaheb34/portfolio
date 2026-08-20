@@ -16,11 +16,13 @@ export default function WorkPage() {
               className="mb-6 inline-block text-muted-foreground text-sm transition-colors hover:text-foreground"
               href="/"
             >
-              ← Back to Portfolio
+              ← Home
             </Link>
-            <h1 className="mb-4 font-bold text-3xl">Work Experience</h1>
+            <h1 className="mb-4 font-bold text-3xl">Work</h1>
             <p className="text-lg text-muted-foreground">
-              My professional journey spanning 4+ years in software engineering
+              Ramble is the day job. Thinking Lab is a startup with friends in
+              Sylhet. Then a completed founding role, teaching, and the older
+              jobs.
             </p>
           </div>
 
@@ -47,14 +49,20 @@ export default function WorkPage() {
                     </span>
                   </div>
 
-                  <Link
-                    className="text-muted text-sm"
-                    href={experience.link}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {experience.company}, {experience.location}
-                  </Link>
+                  {experience.link ? (
+                    <Link
+                      className="text-muted text-sm"
+                      href={experience.link}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {experience.company}, {experience.location}
+                    </Link>
+                  ) : (
+                    <p className="text-muted text-sm">
+                      {experience.company}, {experience.location}
+                    </p>
+                  )}
                 </div>
 
                 <p className="text-muted leading-relaxed">
@@ -85,7 +93,7 @@ export default function WorkPage() {
                     href={`/work/${slug}`}
                     prefetch={true}
                   >
-                    View Details →
+                    More
                   </Link>
                 </div>
               </article>

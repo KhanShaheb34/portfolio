@@ -1,8 +1,12 @@
 import Link from 'next/link';
+import experiencesData from '@/data/experiences.json' with { type: 'json' };
 import portfolioData from '@/data/portfolio.json' with { type: 'json' };
+
+const MAX_TECHNOLOGIES = 6;
 
 export default function AboutPage() {
   const { intro, academic, socialLinks, hobbies } = portfolioData;
+  const experiences = Object.entries(experiencesData);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -14,7 +18,7 @@ export default function AboutPage() {
             href="/"
             prefetch={true}
           >
-            ← Back to Portfolio
+            ← Home
           </Link>
 
           <div className="space-y-4">
@@ -51,88 +55,54 @@ export default function AboutPage() {
 
           {/* Experience */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">
-              Professional Experience
-            </h2>
+            <h2 className="mb-6 font-normal text-2xl">Work</h2>
             <div className="space-y-6">
-              <div className="space-y-4 rounded-lg border border-foreground/20 p-6">
-                <div className="flex items-start justify-between">
-                  <div className="space-y-2">
-                    <h3 className="font-normal text-xl">Software Engineer</h3>
-                    <p className="text-muted">Re:cruit</p>
-                    <p className="text-muted text-sm">Current Position</p>
+              {experiences.map(([slug, experience]) => (
+                <div
+                  className="space-y-4 rounded-lg border border-foreground/20 p-6"
+                  key={slug}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-2">
+                      <h3 className="font-normal text-xl">
+                        <Link href={`/work/${slug}`}>
+                          {experience.position}
+                        </Link>
+                      </h3>
+                      <p className="text-muted">{experience.company}</p>
+                      <p className="text-muted text-sm">
+                        {experience.duration} · {experience.location}
+                      </p>
+                    </div>
+                    {experience.status === 'active' && (
+                      <span className="rounded bg-green-400/20 px-3 py-1 text-green-400 text-sm">
+                        Active
+                      </span>
+                    )}
                   </div>
-                  <span className="rounded bg-green-400/20 px-3 py-1 text-green-400 text-sm">
-                    Active
-                  </span>
-                </div>
-                <p className="text-muted leading-relaxed">
-                  Building an AI sidekick with React, NextJS, Python and LLMs.
-                  Specializing in ReactJS, NextJS, and TypeScript to create
-                  scalable, user-focused applications with complex design and
-                  performance requirements.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    'React',
-                    'NextJS',
-                    'TypeScript',
-                    'Python',
-                    'LLMs',
-                    'AI',
-                  ].map((tech) => (
-                    <span
-                      className="rounded bg-foreground/10 px-2 py-1 text-foreground text-xs"
-                      key={tech}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-4 rounded-lg border border-foreground/20 p-6">
-                <div className="flex items-start justify-between">
-                  <div className="space-y-2">
-                    <h3 className="font-normal text-xl">
-                      Full-Stack Developer
-                    </h3>
-                    <p className="text-muted">Freelance & Personal Projects</p>
-                    <p className="text-muted text-sm">2019 - Present</p>
+                  <p className="text-muted leading-relaxed">
+                    {experience.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {experience.technologies
+                      .slice(0, MAX_TECHNOLOGIES)
+                      .map((tech) => (
+                        <span
+                          className="rounded bg-foreground/10 px-2 py-1 text-foreground text-xs"
+                          key={tech}
+                        >
+                          {tech}
+                        </span>
+                      ))}
                   </div>
                 </div>
-                <p className="text-muted leading-relaxed">
-                  Developed multiple AI-powered applications including Coterm
-                  (Rust CLI tool), Ramble (meeting transcription), and Re:sume
-                  (AI resume builder). Over 4 years of experience in full-stack
-                  development with focus on performance and user experience.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    'Rust',
-                    'React',
-                    'Node.js',
-                    'TypeScript',
-                    'OpenAI API',
-                    'Vercel',
-                  ].map((tech) => (
-                    <span
-                      className="rounded bg-foreground/10 px-2 py-1 text-foreground text-xs"
-                      key={tech}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </section>
 
           {/* Research & Publications */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">
-              Research & Publications
-            </h2>
+            <h2 className="mb-6 font-normal text-2xl">Paper</h2>
             <div className="space-y-4">
               {academic.research.map((research, index) => (
                 <div
@@ -140,7 +110,19 @@ export default function AboutPage() {
                   key={index}
                 >
                   <div className="space-y-2">
-                    <h3 className="font-normal text-lg">{research.title}</h3>
+                    <h3 className="font-normal text-lg">
+                      {research.url ? (
+                        <a
+                          href={research.url}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {research.title}
+                        </a>
+                      ) : (
+                        research.title
+                      )}
+                    </h3>
                     <p className="text-muted leading-relaxed">
                       {research.description}
                     </p>
@@ -150,9 +132,28 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* Teaching */}
+          <section>
+            <h2 className="mb-6 font-normal text-2xl">Teaching</h2>
+            <div className="space-y-4">
+              {academic.teaching.map((item, index) => (
+                <div
+                  className="space-y-2 rounded-lg border border-foreground/20 p-6"
+                  key={index}
+                >
+                  <h3 className="font-normal text-lg">{item.title}</h3>
+                  <p className="text-muted">{item.institution}</p>
+                  <p className="text-muted text-sm">{item.details}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Certifications */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">Certifications</h2>
+            <h2 className="mb-6 font-normal text-2xl">
+              Certificates and awards
+            </h2>
             <div className="grid gap-4 md:grid-cols-2">
               {academic.certifications.map((cert, index) => (
                 <div
@@ -167,7 +168,7 @@ export default function AboutPage() {
 
           {/* Hobbies & Interests */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">Hobbies & Interests</h2>
+            <h2 className="mb-6 font-normal text-2xl">Hobbies</h2>
             <div className="grid gap-6 md:grid-cols-2">
               {hobbies.map((hobby, index) => (
                 <div className="space-y-2" key={index}>
@@ -182,12 +183,12 @@ export default function AboutPage() {
 
           {/* Contact */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">Get In Touch</h2>
+            <h2 className="mb-6 font-normal text-2xl">Say hi</h2>
             <div className="space-y-4">
               <p className="text-lg text-muted leading-relaxed">
-                I'm always interested in new opportunities and collaborations.
-                Feel free to reach out if you'd like to discuss a project, share
-                ideas, or just connect.
+                I'm usually building something. A product, a chapter of Montu
+                Mia, or a tool I needed the week before. If you want to talk
+                about a project or system design in Bengali, say hi.
               </p>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
@@ -215,7 +216,7 @@ export default function AboutPage() {
               href="/"
               prefetch={true}
             >
-              ← Back to Portfolio
+              ← Home
             </Link>
 
             <div className="flex space-x-6">
@@ -224,14 +225,14 @@ export default function AboutPage() {
                 href="/posts"
                 prefetch={true}
               >
-                Read My Blog
+                Posts
               </Link>
               <Link
                 className="text-muted transition-colors hover:text-foreground"
                 href="/projects"
                 prefetch={true}
               >
-                View Projects
+                Projects
               </Link>
             </div>
           </div>
@@ -243,20 +244,20 @@ export default function AboutPage() {
 
 export function generateMetadata() {
   return {
-    title: 'About Shakirul Hasan Khan | Software Engineer & AI Developer',
+    title: 'About Shakirul Hasan Khan',
     description:
-      'Learn more about Shakirul Hasan Khan - Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
+      "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     openGraph: {
       title: 'About Shakirul Hasan Khan',
       description:
-        'Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
+        "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
       type: 'profile',
     },
     twitter: {
       card: 'summary_large_image',
       title: 'About Shakirul Hasan Khan',
       description:
-        'Software Engineer with 4+ years experience in full-stack development, AI, and open source contributions.',
+        "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     },
   };
 }

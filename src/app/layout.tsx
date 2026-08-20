@@ -12,18 +12,21 @@ const firaMono = Fira_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Shakirul Hasan Khan | Software Engineer & AI Developer',
+  title: 'Shakirul Hasan Khan',
   description:
-    'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
+    "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
   keywords: [
     'Shakirul Hasan Khan',
     'Software Engineer',
-    'AI Developer',
+    'Ramble',
+    'Peaches',
+    'Thinking Lab',
+    'Montu Mia',
     'React',
-    'NextJS',
+    'Next.js',
     'TypeScript',
-    'Rust',
-    'Full-Stack Developer',
+    'Python',
+    'Swift',
   ],
   authors: [{ name: 'Shakirul Hasan Khan' }],
   creator: 'Shakirul Hasan Khan',
@@ -32,24 +35,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://shakirul.dev',
-    title: 'Shakirul Hasan Khan | Software Engineer & AI Developer',
+    title: 'Shakirul Hasan Khan',
     description:
-      'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
-    siteName: 'Shakirul Hasan Khan Portfolio',
+      "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
+    siteName: 'Shakirul Hasan Khan',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Shakirul Hasan Khan - Software Engineer & AI Developer',
+        alt: 'Shakirul Hasan Khan, software engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shakirul Hasan Khan | Software Engineer & AI Developer',
+    title: 'Shakirul Hasan Khan',
     description:
-      'Software Engineer with 4+ years experience in full-stack development, AI, and open source.',
+      "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
     creator: '@_khanshaheb',
   },
   robots: {
@@ -62,9 +65,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
   icons: {
     icon: '/icons/favicon-32x32.png',

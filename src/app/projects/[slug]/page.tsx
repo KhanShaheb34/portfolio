@@ -26,7 +26,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             href="/"
             prefetch={true}
           >
-            ← Back to Portfolio
+            ← Home
           </Link>
 
           <div className="space-y-4">
@@ -95,7 +95,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="space-y-12">
           {/* Overview */}
           <section>
-            <h2 className="mb-4 font-normal text-2xl">Overview</h2>
+            <h2 className="mb-4 font-normal text-2xl">What it is</h2>
             <p className="text-lg text-muted leading-relaxed">
               {project.longDescription}
             </p>
@@ -103,7 +103,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {/* Technologies */}
           <section>
-            <h2 className="mb-4 font-normal text-2xl">Technologies Used</h2>
+            <h2 className="mb-4 font-normal text-2xl">Stack</h2>
             <div className="flex flex-wrap gap-3">
               {project.technologies.map((tech) => (
                 <span
@@ -118,7 +118,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {/* Features */}
           <section>
-            <h2 className="mb-4 font-normal text-2xl">Key Features</h2>
+            <h2 className="mb-4 font-normal text-2xl">What it does</h2>
             <ul className="space-y-3">
               {project.features.map((feature, index) => (
                 <li className="flex items-start space-x-3" key={index}>
@@ -132,9 +132,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {/* Challenges */}
           {project.challenges.length > 0 && (
             <section>
-              <h2 className="mb-4 font-normal text-2xl">
-                Technical Challenges
-              </h2>
+              <h2 className="mb-4 font-normal text-2xl">What was hard</h2>
               <ul className="space-y-3">
                 {project.challenges.map((challenge, index) => (
                   <li className="flex items-start space-x-3" key={index}>
@@ -151,7 +149,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {/* Impact */}
           {project.impact.length > 0 && (
             <section>
-              <h2 className="mb-4 font-normal text-2xl">Impact & Results</h2>
+              <h2 className="mb-4 font-normal text-2xl">What happened</h2>
               <ul className="space-y-3">
                 {project.impact.map((impact, index) => (
                   <li className="flex items-start space-x-3" key={index}>
@@ -172,7 +170,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               href="/"
               prefetch={true}
             >
-              ← Back to Portfolio
+              ← Home
             </Link>
 
             <Link
@@ -180,7 +178,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               href="/projects"
               prefetch={true}
             >
-              View All Projects →
+              All projects
             </Link>
           </div>
         </footer>
