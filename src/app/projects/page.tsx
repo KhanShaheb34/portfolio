@@ -21,9 +21,8 @@ export default function ProjectsPage() {
           <div className="space-y-4">
             <h1 className="font-normal text-4xl">Projects</h1>
             <p className="text-lg text-muted">
-              A collection of applications, tools, and research projects
-              showcasing full-stack development, AI integration, and innovative
-              problem-solving.
+              Things I've shipped — books, products, games, and a few
+              experiments that earned their place.
             </p>
           </div>
         </header>

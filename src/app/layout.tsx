@@ -12,15 +12,17 @@ const firaMono = Fira_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Shakirul Hasan Khan | Software Engineer & AI Developer',
+  title: 'Shakirul Hasan Khan | Software Engineer & Builder',
   description:
-    'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
+    "Software engineer and founder with 5+ years shipping full-stack products, AI systems, and tools. Author of Montu Mia's System Design. Currently building at Ramble and Thinking Lab.",
   keywords: [
     'Shakirul Hasan Khan',
     'Software Engineer',
-    'AI Developer',
+    'Thinking Lab',
+    'Ramble',
+    'Montu Mia',
     'React',
-    'NextJS',
+    'Next.js',
     'TypeScript',
     'Rust',
     'Full-Stack Developer',
@@ -32,24 +34,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://shakirul.dev',
-    title: 'Shakirul Hasan Khan | Software Engineer & AI Developer',
+    title: 'Shakirul Hasan Khan | Software Engineer & Builder',
     description:
-      'Software Engineer with 4+ years experience in full-stack development, AI, and open source. Currently building AI-powered applications with React, NextJS, and Rust.',
+      "Software engineer and founder with 5+ years shipping full-stack products, AI systems, and tools. Author of Montu Mia's System Design.",
     siteName: 'Shakirul Hasan Khan Portfolio',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Shakirul Hasan Khan - Software Engineer & AI Developer',
+        alt: 'Shakirul Hasan Khan - Software Engineer & Builder',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shakirul Hasan Khan | Software Engineer & AI Developer',
+    title: 'Shakirul Hasan Khan | Software Engineer & Builder',
     description:
-      'Software Engineer with 4+ years experience in full-stack development, AI, and open source.',
+      "Software engineer and founder. Author of Montu Mia's System Design. Building at Ramble and Thinking Lab.",
     creator: '@_khanshaheb',
   },
   robots: {

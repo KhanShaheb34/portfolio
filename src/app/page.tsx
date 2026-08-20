@@ -10,8 +10,8 @@ import VerticalSeparator from '@/components/VerticalSeparator';
 import WavyLine from '@/components/WavyLine';
 import experiencesData from '@/data/experiences.json' with { type: 'json' };
 import portfolioData from '@/data/portfolio.json' with { type: 'json' };
-import projectsData from '@/data/projects.json' with { type: 'json' };
 import { getAllPosts } from '@/lib/blog';
+import { getFeaturedProjects } from '@/lib/projects';
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -19,7 +19,7 @@ const structuredData = {
   name: 'Shakirul Hasan Khan',
   jobTitle: 'Software Engineer',
   description:
-    'Software Engineer with 5+ years experience in full-stack development, AI, and open source. Author of Montu Mia\'s System Design newsletter with 20,000+ readers. Building AI-powered applications with React, NextJS, and Rust.',
+    "Software engineer and founder with 5+ years shipping full-stack products, AI systems, and tools. Author of Montu Mia's System Design with 30,000+ readers. Building at Ramble and Thinking Lab.",
   url: 'https://shakirul.dev',
   sameAs: [
     'https://github.com/KhanShaheb34',
@@ -45,16 +45,24 @@ const structuredData = {
     name: 'Shahjalal University of Science & Technology',
     degree: 'B.Sc. (Engg.) Software Engineering',
   },
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Re:cruit',
-  },
+  worksFor: [
+    {
+      '@type': 'Organization',
+      name: 'Thinking Lab',
+      url: 'https://thinkinglab.info',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Ramble',
+      url: 'https://ramble.ai',
+    },
+  ],
 };
 
 export default function Home() {
   const posts = getAllPosts();
 
-  const projectsArray = Object.values(projectsData);
+  const projectsArray = getFeaturedProjects();
   const experiencesEntries = Object.entries(experiencesData);
 
   return (
@@ -145,8 +153,32 @@ export default function Home() {
                   <div className="space-y-4">
                     {portfolioData.academic.research.map((item, index) => (
                       <div key={index}>
-                        <p className="font-medium">{item.title}</p>
+                        {item.url ? (
+                          <a
+                            className="font-medium"
+                            href={item.url}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            {item.title}
+                          </a>
+                        ) : (
+                          <p className="font-medium">{item.title}</p>
+                        )}
                         <p className="text-muted text-sm">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 text-md">Teaching</h3>
+                  <div className="space-y-4">
+                    {portfolioData.academic.teaching.map((item, index) => (
+                      <div key={index}>
+                        <p className="font-medium">{item.title}</p>
+                        <p className="text-muted text-sm">{item.institution}</p>
+                        <p className="text-muted text-sm">{item.details}</p>
                       </div>
                     ))}
                   </div>

@@ -1,10 +1,10 @@
 {
   "intro": {
     "paragraphs": [
-      "Hi, I'm Shakirul Hasan Khan, a Software Engineer with 5+ years of experience building scalable web applications and AI-powered solutions.",
-      "Currently working as a Software Engineer at Re:cruit, building Ramble — an AI-powered meeting transcription and networking tool.",
-      "I also write Montu Mia's System Design, a weekly newsletter making system design concepts accessible in Bengali, reaching 20,000+ readers and 2,000+ subscribers.",
-      "I specialize in full-stack development with expertise in React, Next.js, TypeScript, Python, and Rust. Always building something cool."
+      "Hi, I'm Shakirul Hasan Khan — a software engineer and builder from Bangladesh. I've spent 5+ years shipping full-stack products, AI features, and tools I actually wanted to exist.",
+      "I currently engineer Ramble, an AI network-intelligence product, and I'm on the founding team at Thinking Lab in Sylhet, where we're building HealthERP and custom software for ambitious businesses. In 2025 I founded Ponno, an AI sales agent for Facebook-first merchants.",
+      "I also write Montu Mia's System Design, a Bengali-first (now also English) storytelling series that sneaks system design into a character's slightly chaotic life. 3,000+ subscribers, 30,000+ readers, 147 GitHub stars, and Montu still hasn't shipped to production.",
+      "I work mostly in TypeScript, React, Next.js, Python, and Rust. Always building something slightly too ambitious."
     ]
   },
   "socialLinks": [
@@ -41,34 +41,44 @@
   ],
   "interests": [
     {
-      "title": "AI & Machine Learning",
-      "description": "TensorFlow, Natural Language Processing, Deep Learning"
+      "title": "AI Product Engineering",
+      "description": "RAG, LLMs, tool-calling agents, Vercel AI SDK"
     },
     {
-      "title": "Full-Stack Development",
+      "title": "Full-Stack Product Work",
       "description": "React, Next.js, TypeScript, Node.js"
     },
     {
-      "title": "Systems Programming",
-      "description": "Rust, CLI Tools, Performance Optimization"
+      "title": "Developer Tools",
+      "description": "Rust, Swift, CLIs, and macOS menubar apps"
     }
   ],
   "academic": {
     "education": {
       "degree": "B.Sc. (Engg.) Software Engineering",
       "institution": "Shahjalal University of Science & Technology",
-      "details": "CGPA: 3.67/4.00 | 2018-2022"
+      "details": "CGPA: 3.67/4.00 | 2018–2023"
     },
     "research": [
       {
-        "title": "BnPC Dataset - Gold Standard Corpus for Paraphrase Detection in Bangla",
-        "description": "Research paper published in ELRA (European Language Resources Association) and ICCL, May 2024. Dataset contains 15,000+ paraphrase pairs for Bengali language processing."
+        "title": "BnPC: A Gold Standard Corpus for Paraphrase Detection in Bangla",
+        "description": "BUCC @ LREC-COLING 2024. 8,787 human-annotated sentence pairs from 23 Bangladeshi news outlets. Fine-tuned BanglaBERT reached a weighted F1 of 87.91. Dataset and code are public.",
+        "url": "https://aclanthology.org/2024.bucc-1.8/"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Undergraduate Thesis Mentor",
+        "institution": "IICT, Shahjalal University of Science & Technology",
+        "details": "2025 · Guided two students working on a human-computer interaction thesis"
       }
     ],
     "certifications": [
-      "International English Language Testing System (IELTS) - Band 7.5",
+      "International English Language Testing System (IELTS) - Band 7.5 (L8.0, R8.0, W6.5, S6.5)",
       "Deep Learning Specialization (Coursera)",
       "Natural Language Processing Specialization (Coursera)",
+      "Codeforces Specialist — max rating 1542",
+      "University Merit Stipend, SUST (2021)",
       "First Runner Up at BUP Hackathon 2019",
       "Honorable Mention at SUST LICT TECH FEST 2019"
     ]
@@ -76,16 +86,16 @@
   "hobbies": [
     {
       "title": "Open Source Development",
-      "description": "Contributing to and maintaining open source projects",
+      "description": "Maintaining tools people actually use, from Avro on Apple Silicon to Montu Mia",
       "href": "https://github.com/KhanShaheb34"
     },
     {
       "title": "Vibe Coding",
-      "description": "Rapidly turning ideas into working products with AI tools like Claude and Codex"
+      "description": "Turning ideas into working products with Claude Code, Cursor, and a lot of voice-to-text"
     },
     {
       "title": "Technical Writing",
-      "description": "Explaining complex engineering concepts through storytelling in Bengali",
+      "description": "Explaining system design through storytelling in Bengali and English",
       "href": "https://montumia.com"
     },
     {

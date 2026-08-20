@@ -20,7 +20,7 @@ export default function WorkPage() {
             </Link>
             <h1 className="mb-4 font-bold text-3xl">Work Experience</h1>
             <p className="text-lg text-muted-foreground">
-              My professional journey spanning 4+ years in software engineering
+              My professional journey spanning 5+ years in software engineering
             </p>
           </div>
 
@@ -47,14 +47,20 @@ export default function WorkPage() {
                     </span>
                   </div>
 
-                  <Link
-                    className="text-muted text-sm"
-                    href={experience.link}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {experience.company}, {experience.location}
-                  </Link>
+                  {experience.link ? (
+                    <Link
+                      className="text-muted text-sm"
+                      href={experience.link}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {experience.company}, {experience.location}
+                    </Link>
+                  ) : (
+                    <p className="text-muted text-sm">
+                      {experience.company}, {experience.location}
+                    </p>
+                  )}
                 </div>
 
                 <p className="text-muted leading-relaxed">

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Shakirul Hasan Khan - Software Engineer & AI Developer';
+export const alt = 'Shakirul Hasan Khan - Software Engineer & Builder';
 export const size = {
   width: 1200,
   height: 630,
@@ -70,7 +70,7 @@ export default function Image() {
             fontWeight: '400',
           }}
         >
-          Software Engineer & AI Developer
+          Software Engineer & Builder
         </p>
 
         {/* Description */}
@@ -83,8 +83,8 @@ export default function Image() {
             lineHeight: 1.4,
           }}
         >
-          4+ years experience in full-stack development, AI, and open source.
-          Building AI-powered applications with React, NextJS, and Rust.
+          5+ years shipping products, AI systems, and tools. Author of Montu
+          Mia's System Design.
         </p>
       </div>
 

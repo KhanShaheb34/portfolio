@@ -5,7 +5,7 @@ const posts = [
     title: "Montu Mia's System Design",
     date: '2026-01-01',
     excerpt:
-      'A weekly system design book making complex concepts simple for everyone. 2,000+ subscribers, 20,000+ readers.',
+      'A system design book told as a story. Bengali-first, now in English too. 3,000+ subscribers, 30,000+ readers.',
     tags: ['System Design', 'Bengali', 'Newsletter', 'Book'],
     author: 'Shakirul Hasan Khan',
     readingTime: 'Weekly',

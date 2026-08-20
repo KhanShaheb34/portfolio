@@ -3,8 +3,9 @@
     "title": "Montu Mia's System Design",
     "slug": "montu-mia",
     "badge": "BOOK",
-    "description": "Making complex system design concepts simple for everyone. 2,000+ subscribers, 20,000+ readers.",
-    "longDescription": "A weekly system design book published as a LinkedIn newsletter and website, explaining complex system design fundamentals in Bengali through storytelling. Follows the journey of a character named Montu Mia building a video platform, covering topics like scaling, load balancers, networking protocols, caching, and CDNs. Built with a full-stack infrastructure including automated email newsletters, dynamic OG image generation, and a documentation site.",
+    "featured": true,
+    "description": "System design as a story. Bengali-first, now in English too. 3,000+ subscribers, 30,000+ readers, 147 GitHub stars.",
+    "longDescription": "A system design book published as a website and LinkedIn newsletter, explaining fundamentals through the story of Montu Mia trying to keep a video platform alive. Chapters cover scaling, load balancers, networking, caching, CDNs, and the trade-offs nobody puts on the first slide. The site is bilingual (Bengali default, English under /en), with automated email newsletters, dynamic OG images, and a Fumadocs/MDX reading experience.",
     "technologies": [
       "Next.js",
       "MDX",
@@ -15,11 +16,11 @@
       "TypeScript"
     ],
     "features": [
-      "Weekly system design chapters in Bengali",
+      "Story-driven system design chapters in Bengali and English",
       "Automated email newsletter delivery via AWS SES",
       "Dynamic OG image generation for social sharing",
-      "Interactive documentation site with dark/light themes",
-      "Subscriber management and analytics"
+      "Documentation-style reading site with dark/light themes",
+      "Per-chapter translation with Bengali fallback"
     ],
     "github": "https://github.com/KhanShaheb34/montu-mia",
     "demo": null,
@@ -28,14 +29,72 @@
     "challenges": [
       "Building an automated newsletter pipeline with AWS SES and React Email",
       "Generating dynamic Open Graph images for each chapter",
-      "Making complex system design concepts accessible through Bengali storytelling",
-      "Building a documentation site with Fumadocs and MDX"
+      "Keeping tone, humor, and character intact when translating with LLMs — then editing by hand",
+      "Making a documentation site feel like a book"
     ],
     "impact": [
-      "2,000+ subscribers across website and LinkedIn newsletter",
-      "20,000+ readers reached online",
-      "Making system design education accessible in Bengali"
+      "3,000+ subscribers across email and LinkedIn",
+      "30,000+ readers and 100,000+ page views",
+      "147 GitHub stars for a Bengali-first educational project",
+      "English translation underway so the stories can travel further"
     ],
+    "status": "active"
+  },
+
+  "trak": {
+    "title": "trak.sh",
+    "slug": "trak",
+    "badge": "ANALYTICS",
+    "featured": true,
+    "description": "Per-issue link analytics for newsletter writers. See which stories in a send actually got clicks — plus file drops with expiring links.",
+    "longDescription": "I write a newsletter. After every issue I wanted to know which stories actually landed — not which individual URL got a click, but which piece of the issue pulled weight. No shortener answered that, so I built one. trak.sh is a link analytics product with campaign grouping, a generous free tier, a REST API, and Drops for sharing private files with expiring download links. I use it every week on Montu Mia.",
+    "technologies": ["Next.js", "TypeScript", "REST API"],
+    "features": [
+      "Per-issue / per-campaign link analytics for newsletters",
+      "No-signup shortening on the free tier",
+      "Drops: private file sharing with expiring download links",
+      "REST API, UTM presets, tags, QR codes, and public stats pages",
+      "Custom domains and CSV export on Pro"
+    ],
+    "github": null,
+    "demo": null,
+    "live": "https://www.trak.sh",
+    "images": [],
+    "challenges": [
+      "Designing analytics around issues and campaigns instead of isolated URLs",
+      "Shipping a usable free tier without making the product feel unfinished",
+      "Adding private file sharing (Drops) on top of a link-shortener core"
+    ],
+    "impact": [
+      "In production and used weekly on my own newsletter",
+      "Free forever plan plus a $6/month Pro tier"
+    ],
+    "status": "active"
+  },
+
+  "type-win": {
+    "title": "type.win",
+    "slug": "type-win",
+    "badge": "GAME",
+    "featured": true,
+    "description": "A retro typing arcade — Word Fall, Type Race, and a daily quote. Type fast. Type furious.",
+    "longDescription": "type.win is an arcade-style typing game I built because most typing tests feel like forms. Word Fall rains words from the sky. Type Race is a WPM race against other people. There's a daily quote everyone shares. Keyboard-first, slightly ridiculous, best on a desktop.",
+    "technologies": ["TanStack Start", "TypeScript"],
+    "features": [
+      "Word Fall — type incoming words to survive",
+      "Type Race — live WPM races against other people",
+      "Daily quote — one shared run every UTC day",
+      "Keyboard-first arcade UI with leaderboards and profiles"
+    ],
+    "github": null,
+    "demo": null,
+    "live": "https://type.win",
+    "images": [],
+    "challenges": [
+      "Making a typing game feel like an arcade cabinet instead of a test",
+      "Building real-time races that stay fair and snappy"
+    ],
+    "impact": ["A public typing arcade at type.win"],
     "status": "active"
   },
 
@@ -43,8 +102,9 @@
     "title": "Ramble",
     "slug": "ramble",
     "badge": "AI TOOL",
-    "description": "Your network, pooled-in. An app to transcribe meetings, extract commitments, and take notes using voice with AI.",
-    "longDescription": "Ramble is an application to transcribe meetings, get overheard commitments, and follow up from meetings — taking notes using voice with the help of AI. It helps teams capture, organize, and act on meeting insights automatically.",
+    "featured": true,
+    "description": "Your network, pooled-in. Search who-knows-what, transcribe meetings, and follow up on commitments with AI.",
+    "longDescription": "Ramble is a private network-intelligence product. It builds dossiers from people you already know, lets you chat over that data, transcribes meetings, pulls out overheard commitments, and helps you actually follow up. The public pitch is 'who-knows-what'; the daily use is not losing the thread after a call.",
     "technologies": [
       "React",
       "Next.js",
@@ -52,28 +112,57 @@
       "Python",
       "Flask",
       "LLMs",
+      "RAG",
       "Playwright"
     ],
     "features": [
+      "RAG over your own contacts, notes, and conversations",
       "Real-time meeting transcription",
-      "Automatic commitment and action item extraction",
+      "Automatic commitment and action-item extraction",
       "Voice-powered note taking",
-      "Contact management with RAG-powered search"
+      "Private dossiers for people in your network"
     ],
     "github": null,
     "demo": null,
     "live": "https://ramble.ai/",
     "images": [],
     "challenges": [
-      "Built a conversational platform enabling users to search and engage with contacts using RAG and LLM technologies.",
-      "Developed a feature for document-based conversations and summary generation leveraging Python-based tools.",
-      "Designed and implemented a rich text editor with real-time collaboration using PlateJS and PubNub.",
-      "Built and tested a web application with NextJS, TypeScript, and Playwright for enhanced user experience."
+      "Searching a private network without leaking it",
+      "Document conversations and summaries across multiple LLMs",
+      "Real-time collaborative editing with PlateJS and PubNub",
+      "Making meeting follow-ups feel automatic instead of like another app to maintain"
     ],
     "impact": [
-      "Improved meeting productivity for teams",
-      "Reduced manual note-taking overhead",
-      "Better follow-up on commitments"
+      "In production at ramble.ai as a network-intelligence product",
+      "Used for both meeting follow-up and 'who should I ask' search"
+    ],
+    "status": "active"
+  },
+
+  "claudebar": {
+    "title": "ClaudeBar",
+    "slug": "claudebar",
+    "badge": "MACOS APP",
+    "featured": true,
+    "description": "A macOS menubar app that shows Claude Code usage, stats, and model breakdown at a glance.",
+    "longDescription": "ClaudeBar lives in the Mac menu bar and tells you how you've been using Claude Code — usage, stats, and which models you've been burning. I also published the menubar skill behind it: a Claude Code skill for spinning up single-file SwiftUI menubar apps.",
+    "technologies": ["Swift", "SwiftUI", "macOS"],
+    "features": [
+      "Menu bar usage stats for Claude Code",
+      "Model breakdown at a glance",
+      "Companion Claude Code skill for single-file menubar apps"
+    ],
+    "github": "https://github.com/KhanShaheb34/claudebar",
+    "demo": null,
+    "live": "https://trak.sh/menubar",
+    "images": [],
+    "challenges": [
+      "Packing useful usage stats into a menubar without turning it into another dashboard",
+      "Turning the pattern into a reusable Claude Code skill"
+    ],
+    "impact": [
+      "A tiny tool I actually glance at while working",
+      "The menubar skill is published for other people to reuse"
     ],
     "status": "active"
   },
@@ -82,32 +171,28 @@
     "title": "Avro Silicon",
     "slug": "avro-silicon",
     "badge": "MACOS APP",
-    "description": "Avro phonetic keyboard modernized for Apple Silicon Macs with native performance",
-    "longDescription": "Avro Silicon is a modernized version of the popular Avro phonetic Bengali keyboard, rebuilt for Apple Silicon (M-series) Macs. It brings native performance and compatibility to the most widely used Bengali phonetic typing tool on macOS.",
-    "technologies": [
-      "Swift",
-      "Objective-C",
-      "macOS",
-      "Input Method Kit"
-    ],
+    "featured": true,
+    "description": "Avro phonetic keyboard modernized for Apple Silicon Macs after macOS warned the original would break.",
+    "longDescription": "I type Bengali in Avro every day. The macOS build hadn't been updated in years, didn't support Apple Silicon, and the system started warning it would die. I don't write Objective-C or InputMethodKit for a living — I teamed up with Claude Code, rebuilt it for arm64, ripped out legacy dependencies, and fixed a suggestion-accumulation bug that made typing lag. I didn't dump an AI-heavy PR on the original maintainer. The fork builds from source today.",
+    "technologies": ["Swift", "Objective-C", "macOS", "Input Method Kit"],
     "features": [
-      "Native Apple Silicon support",
+      "Native Apple Silicon (arm64) support",
       "Phonetic Bengali typing",
       "System-level keyboard integration",
-      "Optimized for M-series Mac performance"
+      "Unicode normalization, expanded tests, and CI"
     ],
     "github": "https://github.com/KhanShaheb34/iAvro",
     "demo": null,
     "live": null,
     "images": [],
     "challenges": [
-      "Modernizing legacy Objective-C codebase for Apple Silicon",
-      "Working with macOS Input Method Kit for system-level keyboard integration",
-      "Ensuring compatibility across macOS versions"
+      "Modernizing a legacy Objective-C input method without breaking daily typing",
+      "Replacing CocoaPods, RegexKitLite, and FMDB with system frameworks",
+      "Being honest about AI-generated code instead of dumping it on an upstream maintainer"
     ],
     "impact": [
-      "Enabling Bengali typing on modern Macs",
-      "Serving the Bengali-speaking macOS user community"
+      "Keeps Bengali phonetic typing alive on M-series Macs",
+      "Public fork with build instructions while signing/notarization is still an open ask"
     ],
     "status": "active"
   },
@@ -116,30 +201,31 @@
     "title": "Vocables",
     "slug": "vocables",
     "badge": "AI TOOL",
-    "description": "AI-powered vocabulary learning platform that helps you build and retain new words",
-    "longDescription": "Vocables is an AI-powered vocabulary learning platform designed to help users build and retain new words effectively. It leverages AI to create personalized learning experiences and help users expand their vocabulary.",
+    "featured": true,
+    "description": "AI-powered vocabulary practice for IELTS, GRE, TOEFL, and SAT — suggestions, quizzes, and a word collection you actually review.",
+    "longDescription": "Vocables is a vibe-coded vocabulary product for exam prep. It suggests words at your level, quizzes you, and lets you save and review a personal collection. Built with Next.js, Clerk, Polar, and the Vercel AI SDK.",
     "technologies": [
       "Next.js",
       "TypeScript",
-      "AI",
-      "LLMs"
+      "Clerk",
+      "Polar",
+      "Vercel AI SDK"
     ],
     "features": [
-      "AI-powered word learning",
-      "Personalized vocabulary building",
-      "Interactive learning experience"
+      "AI word suggestions tailored to level and exam",
+      "IELTS, GRE, TOEFL, and SAT focus",
+      "Interactive quizzes",
+      "Save, review, and track progress"
     ],
     "github": null,
     "demo": null,
     "live": "https://www.vocables.xyz/",
     "images": [],
     "challenges": [
-      "Designing effective AI-driven vocabulary learning flows",
-      "Building engaging and retention-focused learning experiences"
+      "Making vocab practice feel like a product instead of a flashcard dump",
+      "Wiring AI suggestions to a specific exam goal"
     ],
-    "impact": [
-      "Helping users expand their vocabulary with AI assistance"
-    ],
+    "impact": ["A live vocabulary product at vocables.xyz"],
     "status": "active"
   },
 
@@ -147,58 +233,24 @@
     "title": "Profreach",
     "slug": "profreach",
     "badge": "WEB APP",
-    "description": "Professor outreach platform to help students connect with professors for higher studies",
-    "longDescription": "Profreach is a platform designed to streamline the process of reaching out to professors for higher studies. It helps students find, organize, and manage their outreach to potential academic advisors.",
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "React"
-    ],
+    "featured": true,
+    "description": "A professor outreach tracker for students applying to higher studies.",
+    "longDescription": "Profreach is a small tool for a painful process: finding professors, writing to them, and not losing track of who you emailed three weeks ago. I built it because the spreadsheet version of this always falls apart.",
+    "technologies": ["Next.js", "TypeScript", "React"],
     "features": [
       "Professor discovery and search",
       "Outreach management and tracking",
       "Organized communication workflows"
     ],
-    "github": null,
+    "github": "https://github.com/KhanShaheb34/profreach",
     "demo": null,
     "live": "https://profreach.shakirul.dev/",
     "images": [],
     "challenges": [
-      "Building an intuitive interface for managing professor outreach",
-      "Organizing and tracking communication across multiple professors"
+      "Keeping outreach state simple enough that someone will actually use it",
+      "Tracking many parallel conversations without turning into a CRM"
     ],
-    "impact": [
-      "Simplifying the professor outreach process for students pursuing higher studies"
-    ],
-    "status": "active"
-  },
-
-  "trak": {
-    "title": "trak",
-    "slug": "trak",
-    "badge": "CLI TOOL",
-    "description": "A simple, fast analytics tool built with Rust for lightweight traffic tracking",
-    "longDescription": "trak is a lightweight analytics tool built in Rust, designed for developers who want simple, fast, and privacy-respecting traffic tracking without the overhead of complex analytics platforms.",
-    "technologies": [
-      "Rust",
-      "CLI"
-    ],
-    "features": [
-      "Lightweight traffic tracking",
-      "Fast Rust-powered performance",
-      "Simple setup and usage"
-    ],
-    "github": "https://github.com/KhanShaheb34/trak",
-    "demo": null,
-    "live": null,
-    "images": [],
-    "challenges": [
-      "Building a performant analytics tool in Rust",
-      "Designing a minimal yet useful analytics interface"
-    ],
-    "impact": [
-      "Providing a lightweight alternative to bloated analytics tools"
-    ],
+    "impact": ["A working outreach tracker at profreach.shakirul.dev"],
     "status": "active"
   },
 
@@ -206,18 +258,14 @@
     "title": "Coterm",
     "slug": "coterm",
     "badge": "CLI TOOL",
-    "description": "Copilot for your terminal built with Rust, Vercel edge functions, and OpenAI API",
-    "longDescription": "Coterm is a terminal copilot that bridges the gap between natural language and command-line interfaces. Built with Rust for performance and integrated with OpenAI's API, it allows developers to describe what they want to do in plain English and receive the exact command they need.",
-    "technologies": [
-      "Rust",
-      "OpenAI API",
-      "Vercel Edge Functions",
-      "CLI"
-    ],
+    "featured": false,
+    "description": "Copilot for your terminal — natural language to CLI commands, built with Rust, Vercel edge functions, and OpenAI.",
+    "longDescription": "Coterm sits between 'I know what I want' and 'I forgot the flags'. Describe the task in English, get a command, revise it, and run it with one key. Built in Rust with a Vercel edge function in front of OpenAI, plus guards for commands that can ruin your week.",
+    "technologies": ["Rust", "OpenAI API", "Vercel Edge Functions", "CLI"],
     "features": [
       "Natural language to CLI command generation",
       "Command revision and refinement",
-      "Safety measures and dangerous command detection",
+      "Dangerous-command detection",
       "One-key execution with confirmation prompts"
     ],
     "github": "https://github.com/KhanShaheb34/coterm",
@@ -225,14 +273,14 @@
     "demo": null,
     "images": [],
     "challenges": [
-      "Generate CLI commands using natural language",
-      "Revise generated command",
-      "Run command using one key press",
-      "Vercel edge function to connect to OpenAI API"
+      "Generating CLI commands from natural language without being reckless",
+      "Revising a generated command in-place",
+      "Running a command with one key press after confirmation",
+      "Keeping the OpenAI call on a Vercel edge function"
     ],
     "impact": [
-      "10-15 minutes daily time savings for users",
-      "Learning tool for junior developers"
+      "A learning tool for junior developers who freeze at the prompt",
+      "Public releases on GitHub"
     ],
     "status": "completed"
   },
@@ -241,8 +289,9 @@
     "title": "Re:sume",
     "slug": "resume",
     "badge": "AI TOOL",
-    "description": "Web application to create and enhance resumes using AI with PDF generation and OpenAI integration",
-    "longDescription": "Re:sume is an AI-powered resume builder that helps professionals create compelling resumes. It uses advanced AI to enhance content, suggest improvements, and generate polished PDF outputs tailored for specific job applications.",
+    "featured": false,
+    "description": "AI resume builder with PDF generation and OpenAI content enhancement.",
+    "longDescription": "Re:sume was an AI-powered resume builder: create a resume, store versions, enhance the writing with GPT, and export a PDF. Built at Re:cruit as a full-stack Next.js app on PostgreSQL and Prisma.",
     "technologies": [
       "Next.js",
       "React",
@@ -262,9 +311,9 @@
     "live": null,
     "images": [],
     "challenges": [
-      "AI prompt engineering for resume content",
-      "PDF layout and formatting",
-      "User experience optimization"
+      "Prompting for resume content that doesn't sound like a robot wrote it",
+      "PDF layout that survives other people's life stories",
+      "A simple enough editor that people finish a resume"
     ],
     "impact": ["Helped users create professional resumes"],
     "status": "completed"
@@ -274,9 +323,17 @@
     "title": "Bochon",
     "slug": "bochon",
     "badge": "WEB APP",
-    "description": "Bengali speech-to-text model comparison platform developed for Bengali.ai",
-    "longDescription": "Bochon is a comprehensive performance dashboard developed for Bengali.ai to showcase and compare various Bengali Speech-to-Text models. It provides detailed analytics, benchmarks, and interactive demonstrations of different ASR models.",
-    "technologies": ["TypeScript", "React", "Chakra UI", "Python", "Docker", "Nginx"],
+    "featured": false,
+    "description": "Bengali speech-to-text model comparison platform, built for Bengali.AI.",
+    "longDescription": "Bochon is a performance dashboard for Bengali.AI to show and compare Bengali speech-to-text models. Analytics, benchmarks, and interactive demos so researchers can see which ASR actually works.",
+    "technologies": [
+      "TypeScript",
+      "React",
+      "Chakra UI",
+      "Python",
+      "Docker",
+      "Nginx"
+    ],
     "features": [
       "Model performance comparison",
       "Interactive speech recognition demos",
@@ -288,14 +345,14 @@
     "live": null,
     "images": [],
     "challenges": [
-      "Real-time audio processing",
-      "Model performance visualization",
-      "Responsive design for complex data"
+      "Real-time audio processing in the browser",
+      "Visualizing model performance without lying with charts",
+      "A layout that still works when the data is messy"
     ],
     "impact": [
       "Showcased Bengali ASR model capabilities",
-      "Facilitated model comparison and selection",
-      "Contributed to Bengali.ai research efforts"
+      "Made model comparison less of a spreadsheet",
+      "Contributed to Bengali.AI research tooling"
     ],
     "status": "completed"
   }

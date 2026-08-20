@@ -14,6 +14,7 @@ export type Project = {
   challenges: string[];
   impact: string[];
   status: 'active' | 'completed' | 'archived';
+  featured?: boolean;
 };
 
 export interface ProjectWithSlug extends Project {
@@ -43,4 +44,8 @@ export function getProjectBySlug(slug: string): ProjectWithSlug | null {
 
 export function getProjectSlugs(): string[] {
   return Object.keys(projectsData);
+}
+
+export function getFeaturedProjects(): ProjectWithSlug[] {
+  return getAllProjects().filter((project) => project.featured === true);
 }
