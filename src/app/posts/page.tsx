@@ -1,5 +1,15 @@
 import Link from 'next/link';
-import { getAllPosts } from '@/lib/blog';
+import { type BlogPostMeta, getAllPosts } from '@/lib/blog';
+
+function postCta(kind: BlogPostMeta['kind']) {
+  if (kind === 'book') {
+    return 'Read the book';
+  }
+  if (kind === 'video') {
+    return 'Watch';
+  }
+  return 'Read';
+}
 
 export default function PostsPage() {
   const posts = getAllPosts();
@@ -14,14 +24,13 @@ export default function PostsPage() {
             href="/"
             prefetch={true}
           >
-            ← Back to Portfolio
+            ← Home
           </Link>
 
           <div className="space-y-4">
             <h1 className="font-normal text-4xl">Posts</h1>
             <p className="text-lg text-muted">
-              Technical deep-dives, software engineering insights, and lessons
-              learned from building scalable applications.
+              A book, a talk, and a couple of posts.
             </p>
           </div>
         </header>
@@ -39,8 +48,6 @@ export default function PostsPage() {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      {post.kind === 'book' && '\u{1F4D4} '}
-                      {post.kind === 'video' && '▶︎ '}
                       {post.title}
                     </a>
                   ) : (
@@ -49,8 +56,6 @@ export default function PostsPage() {
                       href={`/posts/${post.slug}`}
                       prefetch={true}
                     >
-                      {post.kind === 'book' && '\u{1F4D4} '}
-                      {post.kind === 'video' && '▶︎ '}
                       {post.title}
                     </Link>
                   )}
@@ -91,11 +96,7 @@ export default function PostsPage() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  {post.kind === 'book'
-                    ? 'Read the book'
-                    : post.kind === 'video'
-                      ? 'Watch video'
-                      : 'Read more'} →
+                  {postCta(post.kind)}
                 </a>
               ) : (
                 <Link
@@ -103,7 +104,7 @@ export default function PostsPage() {
                   href={`/posts/${post.slug}`}
                   prefetch={true}
                 >
-                  Read more →
+                  Read
                 </Link>
               )}
             </article>
@@ -112,7 +113,7 @@ export default function PostsPage() {
 
         {posts.length === 0 && (
           <div className="py-16 text-center">
-            <p className="text-lg text-muted">No posts yet. Check back soon!</p>
+            <p className="text-lg text-muted">Nothing here yet.</p>
           </div>
         )}
       </div>

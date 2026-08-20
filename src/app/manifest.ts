@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Shakirul Hasan Khan | Software Engineer & Builder',
+    name: 'Shakirul Hasan Khan',
     short_name: 'Shakirul Khan',
     description:
-      "Software engineer and founder with 5+ years shipping full-stack products, AI systems, and tools. Author of Montu Mia's System Design. Building at Ramble and Thinking Lab.",
+      "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
     start_url: '/',
     display: 'standalone',
     background_color: '#141210',

@@ -19,7 +19,7 @@ const structuredData = {
   name: 'Shakirul Hasan Khan',
   jobTitle: 'Software Engineer',
   description:
-    "Software engineer and founder with 5+ years shipping full-stack products, AI systems, and tools. Author of Montu Mia's System Design with 30,000+ readers. Building at Ramble and Thinking Lab.",
+    "Software from Bangladesh. I own Peaches at Ramble, help run Thinking Lab, and write Montu Mia's System Design. 20,000 people have read the book.",
   url: 'https://shakirul.dev',
   sameAs: [
     'https://github.com/KhanShaheb34',
@@ -48,13 +48,13 @@ const structuredData = {
   worksFor: [
     {
       '@type': 'Organization',
-      name: 'Thinking Lab',
-      url: 'https://thinkinglab.info',
+      name: 'Ramble',
+      url: 'https://www.ramble.ai/',
     },
     {
       '@type': 'Organization',
-      name: 'Ramble',
-      url: 'https://ramble.ai',
+      name: 'Thinking Lab',
+      url: 'https://thinkinglab.info',
     },
   ],
 };
@@ -185,7 +185,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="mb-2 text-md">Certifications & Awards</h3>
+                  <h3 className="mb-2 text-md">Certificates and awards</h3>
                   <div className="space-y-2">
                     {portfolioData.academic.certifications.map(
                       (cert, index) => (
@@ -201,7 +201,7 @@ export default function Home() {
 
             <WavyLine />
 
-            <Section title="WORK EXPERIENCE">
+            <Section title="WORK">
               <div className="space-y-6">
                 {experiencesEntries.map(([slug, experience]) => (
                   <ExperienceCard
@@ -222,7 +222,7 @@ export default function Home() {
 
           {/* Column 4: WRITING & TALKS */}
           <Column>
-            <Section title="WRITING & TALKS">
+            <Section title="WRITING">
               <div className="space-y-4">
                 {posts.map((post, index) => (
                   <PostCard

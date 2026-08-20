@@ -16,11 +16,12 @@ export default function WorkPage() {
               className="mb-6 inline-block text-muted-foreground text-sm transition-colors hover:text-foreground"
               href="/"
             >
-              ← Back to Portfolio
+              ← Home
             </Link>
-            <h1 className="mb-4 font-bold text-3xl">Work Experience</h1>
+            <h1 className="mb-4 font-bold text-3xl">Work</h1>
             <p className="text-lg text-muted-foreground">
-              My professional journey spanning 5+ years in software engineering
+              Ramble is the day job. Then a company in Sylhet, a completed
+              founding role, teaching, and the older jobs.
             </p>
           </div>
 
@@ -91,7 +92,7 @@ export default function WorkPage() {
                     href={`/work/${slug}`}
                     prefetch={true}
                   >
-                    View Details →
+                    More
                   </Link>
                 </div>
               </article>

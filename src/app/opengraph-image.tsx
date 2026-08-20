@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Shakirul Hasan Khan - Software Engineer & Builder';
+export const alt = 'Shakirul Hasan Khan, software engineer';
 export const size = {
   width: 1200,
   height: 630,
@@ -70,7 +70,7 @@ export default function Image() {
             fontWeight: '400',
           }}
         >
-          Software Engineer & Builder
+          Software engineer
         </p>
 
         {/* Description */}
@@ -83,8 +83,7 @@ export default function Image() {
             lineHeight: 1.4,
           }}
         >
-          5+ years shipping products, AI systems, and tools. Author of Montu
-          Mia's System Design.
+          I own Peaches at Ramble. I write Montu Mia's System Design.
         </p>
       </div>
 

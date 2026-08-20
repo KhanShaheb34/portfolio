@@ -18,7 +18,7 @@ export default function AboutPage() {
             href="/"
             prefetch={true}
           >
-            ← Back to Portfolio
+            ← Home
           </Link>
 
           <div className="space-y-4">
@@ -55,9 +55,7 @@ export default function AboutPage() {
 
           {/* Experience */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">
-              Professional Experience
-            </h2>
+            <h2 className="mb-6 font-normal text-2xl">Work</h2>
             <div className="space-y-6">
               {experiences.map(([slug, experience]) => (
                 <div
@@ -104,9 +102,7 @@ export default function AboutPage() {
 
           {/* Research & Publications */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">
-              Research & Publications
-            </h2>
+            <h2 className="mb-6 font-normal text-2xl">Paper</h2>
             <div className="space-y-4">
               {academic.research.map((research, index) => (
                 <div
@@ -156,7 +152,7 @@ export default function AboutPage() {
           {/* Certifications */}
           <section>
             <h2 className="mb-6 font-normal text-2xl">
-              Certifications & Awards
+              Certificates and awards
             </h2>
             <div className="grid gap-4 md:grid-cols-2">
               {academic.certifications.map((cert, index) => (
@@ -172,7 +168,7 @@ export default function AboutPage() {
 
           {/* Hobbies & Interests */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">Hobbies & Interests</h2>
+            <h2 className="mb-6 font-normal text-2xl">Hobbies</h2>
             <div className="grid gap-6 md:grid-cols-2">
               {hobbies.map((hobby, index) => (
                 <div className="space-y-2" key={index}>
@@ -187,13 +183,12 @@ export default function AboutPage() {
 
           {/* Contact */}
           <section>
-            <h2 className="mb-6 font-normal text-2xl">Get In Touch</h2>
+            <h2 className="mb-6 font-normal text-2xl">Say hi</h2>
             <div className="space-y-4">
               <p className="text-lg text-muted leading-relaxed">
-                I'm usually building something — a product, a chapter of Montu
+                I'm usually building something. A product, a chapter of Montu
                 Mia, or a tool I needed the week before. If you want to talk
-                about a project, a collaboration, or system design in Bengali,
-                say hi.
+                about a project or system design in Bengali, say hi.
               </p>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
@@ -221,7 +216,7 @@ export default function AboutPage() {
               href="/"
               prefetch={true}
             >
-              ← Back to Portfolio
+              ← Home
             </Link>
 
             <div className="flex space-x-6">
@@ -230,14 +225,14 @@ export default function AboutPage() {
                 href="/posts"
                 prefetch={true}
               >
-                Read My Blog
+                Posts
               </Link>
               <Link
                 className="text-muted transition-colors hover:text-foreground"
                 href="/projects"
                 prefetch={true}
               >
-                View Projects
+                Projects
               </Link>
             </div>
           </div>
@@ -249,20 +244,20 @@ export default function AboutPage() {
 
 export function generateMetadata() {
   return {
-    title: 'About Shakirul Hasan Khan | Software Engineer & Builder',
+    title: 'About Shakirul Hasan Khan',
     description:
-      "Software engineer and founder with 5+ years shipping full-stack products, AI systems, and tools. Author of Montu Mia's System Design. Building at Ramble and Thinking Lab.",
+      "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
     openGraph: {
       title: 'About Shakirul Hasan Khan',
       description:
-        "Software engineer and founder. Author of Montu Mia's System Design. Building at Ramble and Thinking Lab.",
+        "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
       type: 'profile',
     },
     twitter: {
       card: 'summary_large_image',
       title: 'About Shakirul Hasan Khan',
       description:
-        'Software engineer and founder with 5+ years shipping products, AI systems, and tools.',
+        "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
     },
   };
 }

@@ -1,10 +1,10 @@
 {
   "intro": {
     "paragraphs": [
-      "Hi, I'm Shakirul Hasan Khan — a software engineer and builder from Bangladesh. I've spent 5+ years shipping full-stack products, AI features, and tools I actually wanted to exist.",
-      "I currently engineer Ramble, an AI network-intelligence product, and I'm on the founding team at Thinking Lab in Sylhet, where we're building HealthERP and custom software for ambitious businesses. In 2025 I founded Ponno, an AI sales agent for Facebook-first merchants.",
-      "I also write Montu Mia's System Design, a Bengali-first (now also English) storytelling series that sneaks system design into a character's slightly chaotic life. 3,000+ subscribers, 30,000+ readers, 147 GitHub stars, and Montu still hasn't shipped to production.",
-      "I work mostly in TypeScript, React, Next.js, Python, and Rust. Always building something slightly too ambitious."
+      "Hi, I'm Shakirul Hasan Khan. I write software in Bangladesh. A little over five years of it, web, backend, Mac, and iPhone.",
+      "I work at Ramble. I own Peaches, an AI meeting agent. Python on the server, TypeScript and React in the browser, Swift on Mac and iPhone. Wake it, join the calendar event, keep a session, take notes. Internal beta. No outside users yet. In Sylhet I'm also on the founding team at Thinking Lab. Small software company. HealthERP is the first product, still being built.",
+      "I write Montu Mia's System Design. Montu tries to keep a video site from falling over, and you pick up load balancers without a textbook. Bengali first. English exists because someone in Turkey asked. 2,500 newsletter subscribers, 20,000 readers, 100,000 monthly impressions. Montu still has not shipped to production.",
+      "TypeScript, Python, Swift, React, Next.js. Rust when the tool wants to be small."
     ]
   },
   "socialLinks": [
@@ -35,72 +35,82 @@
     },
     {
       "icon": "github",
-      "text": "Source Code",
+      "text": "Source code",
       "href": "https://github.com/KhanShaheb34/portfolio"
     }
   ],
   "interests": [
     {
-      "title": "AI Product Engineering",
-      "description": "RAG, LLMs, tool-calling agents, Vercel AI SDK"
+      "title": "AI products",
+      "description": "Meeting agents, RAG, tool calling, LLMs"
     },
     {
-      "title": "Full-Stack Product Work",
-      "description": "React, Next.js, TypeScript, Node.js"
+      "title": "Web and native",
+      "description": "React, Next.js, TypeScript, Swift, SwiftUI"
     },
     {
-      "title": "Developer Tools",
-      "description": "Rust, Swift, CLIs, and macOS menubar apps"
+      "title": "Small tools",
+      "description": "Rust CLIs, Swift menubar apps, the thing I needed that week"
     }
   ],
   "academic": {
     "education": {
       "degree": "B.Sc. (Engg.) Software Engineering",
       "institution": "Shahjalal University of Science & Technology",
-      "details": "CGPA: 3.67/4.00 | 2018–2023"
+      "details": "CGPA 3.66 / 4.00, Feb 2018 to Jan 2023. Last four semesters averaged 3.93."
     },
     "research": [
       {
-        "title": "BnPC: A Gold Standard Corpus for Paraphrase Detection in Bangla",
-        "description": "BUCC @ LREC-COLING 2024. 8,787 human-annotated sentence pairs from 23 Bangladeshi news outlets. Fine-tuned BanglaBERT reached a weighted F1 of 87.91. Dataset and code are public.",
+        "title": "BnPC: A Gold Standard Corpus for Paraphrase Detection in Bangla, and its Evaluation",
+        "description": "BUCC at LREC-COLING 2024. 8,787 human-annotated sentence pairs from 23 Bangladeshi news outlets. Fine-tuned BanglaBERT hit a weighted F1 of 87.91. Dataset and code are public.",
         "url": "https://aclanthology.org/2024.bucc-1.8/"
       }
     ],
     "teaching": [
       {
-        "title": "Undergraduate Thesis Mentor",
+        "title": "Workshop instructor",
+        "institution": "Interactive Cares",
+        "details": "2025 to 2026. Python and system design."
+      },
+      {
+        "title": "Guest speaker and workshop instructor",
+        "institution": "Department of Software Engineering, SUST",
+        "details": "2024 to 2026."
+      },
+      {
+        "title": "Undergrad thesis mentor",
         "institution": "IICT, Shahjalal University of Science & Technology",
-        "details": "2025 · Guided two students working on a human-computer interaction thesis"
+        "details": "2025. Two students, a human-computer interaction thesis."
       }
     ],
     "certifications": [
-      "International English Language Testing System (IELTS) - Band 7.5 (L8.0, R8.0, W6.5, S6.5)",
-      "Deep Learning Specialization (Coursera)",
-      "Natural Language Processing Specialization (Coursera)",
-      "Codeforces Specialist — max rating 1542",
-      "University Merit Stipend, SUST (2021)",
-      "First Runner Up at BUP Hackathon 2019",
-      "Honorable Mention at SUST LICT TECH FEST 2019"
+      "IELTS 7.5. Listening 8.0, reading 8.0, writing 6.5, speaking 6.5",
+      "Deep Learning Specialization, Coursera",
+      "Natural Language Processing Specialization, Coursera",
+      "Codeforces Specialist, max rating 1542",
+      "University merit stipend, SUST, 2021",
+      "First runner up, BUP Hackathon 2019",
+      "Honorable mention, SUST LICT TECH FEST 2019"
     ]
   },
   "hobbies": [
     {
-      "title": "Open Source Development",
-      "description": "Maintaining tools people actually use, from Avro on Apple Silicon to Montu Mia",
+      "title": "Open source",
+      "description": "Avro on Apple Silicon, Montu Mia, whatever is blocking me this week",
       "href": "https://github.com/KhanShaheb34"
     },
     {
-      "title": "Vibe Coding",
-      "description": "Turning ideas into working products with Claude Code, Cursor, and a lot of voice-to-text"
+      "title": "Vibe coding",
+      "description": "I talk to Claude Code and Cursor more than I type. Wispr Flow when my hands are tired."
     },
     {
-      "title": "Technical Writing",
-      "description": "Explaining system design through storytelling in Bengali and English",
+      "title": "Writing",
+      "description": "System design as a story, in Bengali, then English",
       "href": "https://montumia.com"
     },
     {
       "title": "Photography",
-      "description": "Street and travel photography",
+      "description": "Street photos, travel, and ambigrams when I remember to draw them",
       "href": "https://www.instagram.com/_khanshaheb/"
     }
   ]

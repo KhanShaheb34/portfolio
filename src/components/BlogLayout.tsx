@@ -19,7 +19,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
             href="/"
             prefetch={true}
           >
-            ← Back to Portfolio
+            ← Home
           </Link>
 
           <div className="space-y-4">
@@ -67,7 +67,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
               href="/"
               prefetch={true}
             >
-              ← Back to Portfolio
+              ← Home
             </Link>
 
             <div className="flex items-center space-x-4">

@@ -1,29 +1,48 @@
 {
+  "ramble": {
+    "company": "Ramble",
+    "link": "https://www.ramble.ai/",
+    "position": "Software Engineer",
+    "location": "Remote, United States",
+    "duration": "Mar 2023 to present",
+    "type": "Full-time",
+    "description": "I own Peaches, Ramble's meeting agent. Python on the server, TypeScript and React on the web, Swift on Mac and iPhone. Internal beta. No outside users yet.",
+    "longDescription": "Peaches sits in the meeting. You wake it, it joins from the calendar, it keeps a session, it writes notes and checklists. I own that product. Python services, the web client, the Mac app, the iPhone app. Other engineers review and test. Nobody outside the company uses it yet.",
+    "responsibilities": [
+      "Owned Peaches end to end: Python backend, TypeScript and React web client, native Swift on macOS and iPhone",
+      "Built the voice loop: wake and sleep, transcript buffering, session context, tools that write notes and checklists",
+      "Ran meeting-bot lifecycle and calendar auto-join: durable persistence, short-lived credentials, verified webhooks, background reconciliation",
+      "Shipped cross-device control from macOS: presence, acknowledgements, failure-state feedback",
+      "Shipped the iPhone app: on-device transcription, session history, editable notes, bounded real-time audio"
+    ],
+    "technologies": ["Python", "TypeScript", "React", "Swift", "SwiftUI"],
+    "achievements": [
+      "Took Peaches from a prototype to an internal beta on Mac, iPhone, and web",
+      "Calendar auto-join can run without someone watching the bot",
+      "Native apps, web, and backend share one session model"
+    ],
+    "status": "active"
+  },
+
   "thinking-lab": {
     "company": "Thinking Lab",
     "link": "https://thinkinglab.info",
     "position": "Founding Engineer",
     "location": "Sylhet, Bangladesh",
-    "duration": "2026 - Present",
+    "duration": "2026 to present",
     "type": "Founding",
-    "description": "Co-founding an independent software company that builds HealthERP and custom systems for ambitious businesses.",
-    "longDescription": "Thinking Lab is a small independent software company based in Sylhet. I'm one of three people on the founding team — spanning industry and academia — building dependable digital systems and products of our own. Our first product is HealthERP, a hospital management system meant to connect the clinical, administrative, and financial work that keeps a hospital moving.",
+    "description": "Three-person software company in Sylhet. First product is HealthERP, a hospital system. We also take custom software work.",
+    "longDescription": "Thinking Lab is me, Mehedi Hasan Rumi, and Fazle Rabbi Rakib. Small company, Sylhet. We build software for operations that off-the-shelf tools don't fit. HealthERP is the first product: patients, appointments, pharmacy, billing, lab, admin, in one place. The site is up. The product is still being built.",
     "responsibilities": [
-      "Co-founded the company with a three-person team across academia and industry",
-      "Building HealthERP, a hospital operations system covering patients, appointments, pharmacy, billing, laboratory, and administration",
-      "Helping shape product, engineering, and delivery for custom business software",
-      "Staying close to messy real-world workflows instead of shipping generic dashboards"
+      "Co-founded the company with a three-person team",
+      "Building HealthERP, covering patients, appointments, pharmacy, billing, laboratory, and administration",
+      "Talking to hospitals about the actual workflow before we draw a screen",
+      "Writing custom software for businesses whose ops live in too many tools"
     ],
-    "technologies": [
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Product Design",
-      "Systems Design"
-    ],
+    "technologies": ["TypeScript", "React", "Next.js"],
     "achievements": [
-      "Launched thinkinglab.info and positioned HealthERP as the founding product",
-      "Helping define a senior, hands-on engineering and delivery practice from day one"
+      "Shipped thinkinglab.info",
+      "HealthERP is the founding product and is in active development"
     ],
     "status": "active"
   },
@@ -31,75 +50,30 @@
   "ponno": {
     "company": "Ponno",
     "link": "",
-    "position": "Founder & Lead Engineer",
+    "position": "Founding Engineer",
     "location": "Dhaka, Bangladesh",
-    "duration": "2025 - Present",
+    "duration": "2025 to 2026",
     "type": "Founding",
-    "description": "Founded an AI sales agent for Facebook-first merchants: a dashboard for products and orders, plus a RAG chatbot that sells on Messenger.",
-    "longDescription": "Ponno started from a simple observation: a lot of Bangladeshi commerce still happens on Facebook pages, and shop owners spend their evenings answering the same product questions. I founded the company, hired and mentored two engineers, and built an MVP that lets merchants manage a catalog while an AI agent handles product queries and order-taking in Messenger.",
+    "description": "Founding engineer on a three-person team. RAG over product and order data, tool-calling agents, the first architecture. Work finished in 2026.",
+    "longDescription": "Ponno needed a way to turn messy buyer messages into catalog lookups and orders. I was the founding engineer on a team of three. We built retrieval on pgVector and ChromaDB, and tool-calling with the Vercel AI SDK so the agent could take the next step instead of only chatting. I left after the architecture and the first working path were in place.",
     "responsibilities": [
-      "Built and managed a team of 2 engineers, ran code reviews, and mentored for on-time deliveries",
-      "Shipped a React/Next.js dashboard for merchants to create businesses and manage products and orders",
-      "Built a RAG-powered Facebook Messenger chatbot with tool-calling and vector search for product queries and order placement",
-      "Led customer development, finalized the feature set, ran demos, and gathered 10+ early leads to test product-market fit"
+      "Built a retrieval layer on pgVector and ChromaDB that maps messy intent onto product and order data",
+      "Made tool-calling reliable when schemas drifted, context ran out, or the model invented a parameter",
+      "Set code review and architecture habits for a three-person engineering team"
     ],
     "technologies": [
       "TypeScript",
-      "React",
       "Next.js",
-      "Node.js",
       "PostgreSQL",
+      "pgVector",
       "ChromaDB",
-      "Vercel AI SDK",
-      "Clerk",
-      "LLMs",
-      "GitHub Actions"
+      "Vercel AI SDK"
     ],
     "achievements": [
-      "Took an AI sales agent from idea to a working Messenger-integrated MVP",
-      "Validated early demand with 10+ merchant leads from live demos",
-      "Built and mentored a two-engineer team through on-time deliveries"
+      "Left a working retrieval and tool-calling path, not a slide deck",
+      "Three-person team, with review and architecture in place"
     ],
-    "status": "active"
-  },
-
-  "ramble": {
-    "company": "Ramble",
-    "link": "https://ramble.ai",
-    "position": "Software Engineer",
-    "location": "United States (Remote)",
-    "duration": "2023 - Present",
-    "type": "Full-time",
-    "description": "Building Ramble — an AI product for searching your network, transcribing meetings, and turning conversations into something you can actually follow up on.",
-    "longDescription": "At Ramble I work on a private network-intelligence product: dossiers for people you know, RAG over your own data, meeting transcription, and follow-ups that don't fall through. The work sits at the uncomfortable intersection of LLMs, real-time collaboration, and a product that has to feel trustworthy with very personal information.",
-    "responsibilities": [
-      "Built a conversational platform so people can search and engage with contacts using RAG and LLMs",
-      "Developed document-based conversations and summary generation with Python tooling across multiple model providers",
-      "Designed and implemented a rich text editor with commenting, mentioning, and highlighting, plus real-time multi-user sync via PlateJS and PubNub",
-      "Built and tested the web app with Next.js, TypeScript, and Playwright",
-      "Shipped voice-powered note taking, commitment extraction, and follow-up workflows from meetings"
-    ],
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Python",
-      "Flask",
-      "PostgreSQL",
-      "PlateJS",
-      "PubNub",
-      "LLMs",
-      "RAG",
-      "Instructor",
-      "Pydantic",
-      "Playwright"
-    ],
-    "achievements": [
-      "Turned a meeting-notes idea into a searchable who-knows-what network product",
-      "Shipped real-time collaborative editing with multi-user synchronization",
-      "Built RAG-powered contact search over private relationship data"
-    ],
-    "status": "active"
+    "status": "completed"
   },
 
   "edgep-instructor": {
@@ -107,28 +81,20 @@
     "link": "https://edge.gov.bd/",
     "position": "Guest Instructor",
     "location": "Bangladesh",
-    "duration": "2024 - 2025",
+    "duration": "2024 to 2025",
     "type": "Contract",
-    "description": "Taught Python and data science to 100+ students at three universities, as an industry expert on a World Bank-backed ICT Division program.",
-    "longDescription": "As an industry expert for EDGE (ICT Division of Bangladesh, World Bank-backed), I taught Python programming and machine learning to undergraduate students at Shahjalal University of Science and Technology, Jagannath University, and Stamford University Bangladesh — including in the same classroom where I attended my first programming class.",
+    "description": "Taught Python and a bit of machine learning to more than 100 students at three universities.",
+    "longDescription": "EDGE is an ICT Division program, World Bank money. I taught Python, pandas, NumPy, scikit-learn, and a first pass at regression and clustering. Students from SUST, Jagannath, and Stamford. One of the rooms was the same one where I sat my first programming class.",
     "responsibilities": [
-      "Delivered lectures on Python fundamentals including pandas, NumPy, and scikit-learn",
-      "Taught machine learning concepts including regression, clustering, and classification",
-      "Demonstrated how to build small user interfaces with Flask",
-      "Taught more than 100 undergraduate students across three universities"
+      "Lectures on Python, pandas, NumPy, and scikit-learn",
+      "Regression, clustering, and classification, at undergrad pace",
+      "A small Flask UI so the models weren't just notebooks",
+      "More than 100 students across three universities"
     ],
-    "technologies": [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "Scikit-learn",
-      "Flask",
-      "Machine Learning"
-    ],
+    "technologies": ["Python", "Pandas", "NumPy", "Scikit-learn", "Flask"],
     "achievements": [
-      "Taught 100+ students at three major universities in Bangladesh",
-      "Contributed to a government-backed digital skills initiative",
-      "Covered both programming fundamentals and applied ML in one curriculum"
+      "100+ students, three campuses",
+      "Taught in the room where I learned to code"
     ],
     "status": "completed"
   },
@@ -137,17 +103,17 @@
     "company": "Traders Connect",
     "link": "https://tradersconnect.com/",
     "position": "Contract iOS Developer",
-    "location": "United Kingdom (Remote)",
-    "duration": "2023 - 2024",
+    "location": "Remote, United Kingdom",
+    "duration": "2023 to 2024",
     "type": "Contract",
-    "description": "Built native Swift modules, a reusable React Native component library, and a 20+ screen mobile app for a large-scale trading platform.",
-    "longDescription": "On contract I helped stand up the mobile and front-end foundation for an upcoming large-scale trading platform — native Swift talking to gRPC, a reusable React Native design system, and a full app with more than 20 screens.",
+    "description": "Native Swift talking to gRPC, a React Native component library, and a 20+ screen trading app.",
+    "longDescription": "Contract work on a trading product that was still finding its feet. I wrote Swift modules so React Native could talk to a gRPC server, built a reusable component library, and shipped a mobile app with more than 20 screens. OAuth for login.",
     "responsibilities": [
-      "Wrote native Swift modules to connect a React Native app to a gRPC server",
-      "Built a reusable React Native component library with styled-components",
-      "Engineered a cross-platform mobile app with over 20 screens",
-      "Implemented OAuth for authentication in the React Native app",
-      "Helped lay down the foundational front-end infrastructure for the web product"
+      "Native Swift modules bridging React Native to a gRPC server",
+      "Reusable React Native components with styled-components",
+      "Mobile app, 20+ screens",
+      "OAuth login",
+      "Early front-end setup for the web app"
     ],
     "technologies": [
       "React Native",
@@ -159,10 +125,8 @@
       "JavaScript"
     ],
     "achievements": [
-      "Shipped a 20+ screen mobile application",
-      "Created a reusable cross-platform component library",
-      "Integrated native Swift modules with React Native over gRPC",
-      "Implemented secure OAuth authentication"
+      "20+ screen app shipped",
+      "Swift and React Native talking over gRPC without a mess of glue"
     ],
     "status": "completed"
   },
@@ -171,16 +135,16 @@
     "company": "Re:cruit",
     "link": "https://recruit.so/",
     "position": "Software Engineer",
-    "location": "United States (Remote)",
-    "duration": "2022 - 2023",
+    "location": "Remote, United States",
+    "duration": "2022 to 2023",
     "type": "Full-time",
-    "description": "Built AI-assisted resume tooling, test suites, and auth for Re:cruit's early product before the work evolved into Ramble.",
-    "longDescription": "Re:cruit is where I started with this team. I built a full-stack resume product with Next.js, PostgreSQL, and OpenAI, wrote Playwright and Jest suites, and helped with authentication and internal data tools. That work later grew into Ramble.",
+    "description": "The job that turned into Ramble. I built the AI resume product, the tests, and the login.",
+    "longDescription": "This is where I started with this team. Next.js, Postgres, Prisma, OpenAI for resume text, Playwright and Jest, Magic Link for auth. A Python corpus tester on the side. That product line became Ramble.",
     "responsibilities": [
-      "Built a resume-building application with Next.js, TypeScript, Prisma, and PostgreSQL, using OpenAI for content generation",
-      "Designed comprehensive test suites with Jest and Playwright for Next.js apps",
-      "Implemented authentication with Magic Link",
-      "Built Python tools for language-corpus testing and data analysis"
+      "Resume builder in Next.js, TypeScript, Prisma, Postgres, with OpenAI for the writing",
+      "Jest and Playwright suites",
+      "Magic Link auth",
+      "Python tools for corpus testing"
     ],
     "technologies": [
       "Next.js",
@@ -195,9 +159,8 @@
       "MagicLink"
     ],
     "achievements": [
-      "Shipped an AI-enhanced resume builder used as a core early product",
-      "Put real end-to-end coverage around a Next.js application",
-      "Laid groundwork that later became Ramble"
+      "Resume product people could actually finish",
+      "End-to-end tests that actually ran"
     ],
     "status": "completed"
   },
@@ -207,16 +170,16 @@
     "link": "https://kaz.com.bd/",
     "position": "Associate Software Engineer",
     "location": "Dhaka, Bangladesh",
-    "duration": "2021 - 2022",
+    "duration": "2021 to 2022",
     "type": "Full-time",
-    "description": "Led design and development of complex React apps — including a 40+ page dual-UI product, a React 18 upgrade, and a Single-SPA micro-frontend merge.",
-    "longDescription": "At Kaz Software I worked on large React applications: designing dozens of pages, migrating React 16 to 18, merging four apps into a Single-SPA micro-frontend, and adding Cypress coverage. A lot of the boring-but-important work that makes a product actually shippable.",
+    "description": "40+ pages, two UIs, a React 16 to 18 upgrade, and four apps mashed into Single-SPA.",
+    "longDescription": "Kaz was a lot of React. I designed over 40 pages for an app with two different interfaces, moved two codebases from React 16 to 18, merged four apps into one Single-SPA shell, put Docker around deploys, and wrote Cypress tests. Unromantic work. The kind that ships.",
     "responsibilities": [
-      "Led the design of over 40 pages for a complex web application with two distinct UIs, using React, TypeScript, SWR, Redux Toolkit, RSuite, and SCSS",
-      "Upgraded two web applications from React 16 to React 18",
-      "Merged four separate React applications into a unified micro-frontend with Single-SPA",
-      "Containerized applications with Docker to improve deployment",
-      "Wrote end-to-end tests with Cypress"
+      "40+ pages, two UIs, React, TypeScript, SWR, Redux Toolkit, RSuite, SCSS",
+      "React 16 to 18 on two apps",
+      "Four React apps into one Single-SPA micro-frontend",
+      "Docker for deploys",
+      "Cypress end-to-end tests"
     ],
     "technologies": [
       "React",
@@ -231,10 +194,8 @@
       "REST API"
     ],
     "achievements": [
-      "Designed and implemented 40+ pages for a dual-interface product",
-      "Led React 16 to 18 migrations",
-      "Consolidated four apps into one micro-frontend platform",
-      "Added Cypress end-to-end coverage"
+      "40+ pages live on a dual-interface product",
+      "Four apps, one shell"
     ],
     "status": "completed"
   },
@@ -243,27 +204,18 @@
     "company": "Bengali.AI",
     "link": "https://www.bengali.ai/",
     "position": "Contract Software Engineer",
-    "location": "Dhaka, Bangladesh",
-    "duration": "2020 - 2021",
+    "location": "Remote, Bangladesh",
+    "duration": "2020 to 2021",
     "type": "Contract",
-    "description": "Built web apps for Bengali language technology, including a TTS model benchmarking dashboard wired to Python models over WebSocket.",
-    "longDescription": "At Bengali.AI I helped put Bengali speech and language models in front of people. I built a React benchmarking app for Bengali text-to-speech models and a Flask/WebSocket layer so the models could talk to the browser in something close to real time.",
+    "description": "A React dashboard for comparing Bengali text-to-speech models, wired to Python over WebSocket.",
+    "longDescription": "Bengali.AI needed a way to put speech models in front of people. I built a React app that could benchmark Bengali TTS models, and a Flask server that pushed audio and scores over WebSocket so you didn't wait on a full page reload.",
     "responsibilities": [
-      "Developed a React application for benchmarking Bengali text-to-speech models",
-      "Created a Python Flask wrapper to connect machine-learning models to the web app over WebSocket"
+      "React app for comparing Bengali TTS models",
+      "Flask wrapper so the models could talk to the browser over WebSocket"
     ],
-    "technologies": [
-      "React",
-      "Python",
-      "Flask",
-      "WebSocket",
-      "Machine Learning",
-      "Bengali NLP"
-    ],
+    "technologies": ["React", "Python", "Flask", "WebSocket", "Bengali NLP"],
     "achievements": [
-      "Shipped a benchmarking platform for Bengali TTS models",
-      "Integrated ML models with a web UI over WebSocket",
-      "Contributed to Bengali language technology in the open"
+      "Researchers could click a model and hear it, in the browser"
     ],
     "status": "completed"
   }

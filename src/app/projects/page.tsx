@@ -15,14 +15,13 @@ export default function ProjectsPage() {
             href="/"
             prefetch={true}
           >
-            ← Back to Portfolio
+            ← Home
           </Link>
 
           <div className="space-y-4">
             <h1 className="font-normal text-4xl">Projects</h1>
             <p className="text-lg text-muted">
-              Things I've shipped — books, products, games, and a few
-              experiments that earned their place.
+              Books, products, games, and a few experiments that earned a page.
             </p>
           </div>
         </header>
@@ -89,7 +88,7 @@ export default function ProjectsPage() {
                   href={`/projects/${project.slug}`}
                   prefetch={true}
                 >
-                  View Details →
+                  More
                 </Link>
 
                 {project.github && (
@@ -131,9 +130,7 @@ export default function ProjectsPage() {
 
         {projects.length === 0 && (
           <div className="py-16 text-center">
-            <p className="text-lg text-muted">
-              No projects yet. Check back soon!
-            </p>
+            <p className="text-lg text-muted">Nothing here yet.</p>
           </div>
         )}
       </div>

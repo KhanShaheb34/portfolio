@@ -5,7 +5,7 @@ const posts = [
     title: "Montu Mia's System Design",
     date: '2026-01-01',
     excerpt:
-      'A system design book told as a story. Bengali-first, now in English too. 3,000+ subscribers, 30,000+ readers.',
+      'System design as a story. Bengali first, English second. 2,500 subscribers, 20,000 readers, 100,000 monthly impressions.',
     tags: ['System Design', 'Bengali', 'Newsletter', 'Book'],
     author: 'Shakirul Hasan Khan',
     readingTime: 'Weekly',
@@ -17,7 +17,7 @@ const posts = [
     title: 'I confused myself thinking about Load Balancers',
     date: '2025-11-25',
     excerpt:
-      'A journey from confusion to clarity about how Load Balancers and DNS work together to route user traffic efficiently.',
+      'I mixed up load balancers and DNS. This is me drawing the path until it made sense.',
     tags: [
       'System Design',
       'Load Balancer',
@@ -34,7 +34,7 @@ const posts = [
     title: 'Visualizing Complex Concepts with Mermaid Diagrams',
     date: '2025-11-15',
     excerpt:
-      'Explore the power of Mermaid diagrams for creating beautiful flowcharts, sequence diagrams, and more directly in your blog posts',
+      'Mermaid diagrams in an MDX post. Flowcharts and sequence diagrams without leaving the file.',
     tags: ['diagrams', 'visualization', 'documentation', 'mermaid'],
     author: 'Shakirul Hasan Khan',
     readingTime: '8 min read',
@@ -46,7 +46,7 @@ const posts = [
     title: 'Why Should You Not Use px?',
     date: '2024-01-10',
     excerpt:
-      'Exploring Responsive Design: Embracing Flexible CSS Units for a Better Web Experience',
+      "px ignores the user's font size. rem and em don't. That's the whole argument.",
     tags: ['css', 'ui', 'design', 'guidelines'],
     author: 'Shakirul Hasan Khan',
     readingTime: '10 min read',
@@ -57,7 +57,7 @@ const posts = [
     title: 'Instagram System Breakdown: How they handle 2B users?',
     date: '2025-11-16',
     excerpt:
-      'Deep dive into how Instagram designs, scales, and operates their systems to serve billions of users reliably.',
+      'A 1 hour 40 minute talk on how Instagram serves about 2 billion people.',
     tags: ['system-design', 'scalability', 'distributed-systems', 'case-study'],
     author: 'Shakirul Hasan Khan',
     readingTime: '1h 40m',

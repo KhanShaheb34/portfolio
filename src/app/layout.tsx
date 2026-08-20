@@ -12,20 +12,21 @@ const firaMono = Fira_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Shakirul Hasan Khan | Software Engineer & Builder',
+  title: 'Shakirul Hasan Khan',
   description:
-    "Software engineer and founder with 5+ years shipping full-stack products, AI systems, and tools. Author of Montu Mia's System Design. Currently building at Ramble and Thinking Lab.",
+    "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
   keywords: [
     'Shakirul Hasan Khan',
     'Software Engineer',
-    'Thinking Lab',
     'Ramble',
+    'Peaches',
+    'Thinking Lab',
     'Montu Mia',
     'React',
     'Next.js',
     'TypeScript',
-    'Rust',
-    'Full-Stack Developer',
+    'Python',
+    'Swift',
   ],
   authors: [{ name: 'Shakirul Hasan Khan' }],
   creator: 'Shakirul Hasan Khan',
@@ -34,24 +35,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://shakirul.dev',
-    title: 'Shakirul Hasan Khan | Software Engineer & Builder',
+    title: 'Shakirul Hasan Khan',
     description:
-      "Software engineer and founder with 5+ years shipping full-stack products, AI systems, and tools. Author of Montu Mia's System Design.",
-    siteName: 'Shakirul Hasan Khan Portfolio',
+      "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
+    siteName: 'Shakirul Hasan Khan',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Shakirul Hasan Khan - Software Engineer & Builder',
+        alt: 'Shakirul Hasan Khan, software engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shakirul Hasan Khan | Software Engineer & Builder',
+    title: 'Shakirul Hasan Khan',
     description:
-      "Software engineer and founder. Author of Montu Mia's System Design. Building at Ramble and Thinking Lab.",
+      "Software engineer in Bangladesh. I own Peaches at Ramble and write Montu Mia's System Design.",
     creator: '@_khanshaheb',
   },
   robots: {
