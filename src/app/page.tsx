@@ -19,7 +19,7 @@ const structuredData = {
   name: 'Shakirul Hasan Khan',
   jobTitle: 'Software Engineer',
   description:
-    "Software from Bangladesh. I work at Ramble, I'm starting Thinking Lab with friends, and I write Montu Mia's System Design. 20,000 people have read the book.",
+    "Software engineer from Bangladesh. I work at Ramble, write Montu Mia's System Design, and I'm starting Thinking Lab in Sylhet.",
   url: 'https://shakirul.dev',
   sameAs: [
     'https://github.com/KhanShaheb34',
