@@ -2,6 +2,7 @@ import Link from 'next/link';
 import InnerPage from '@/components/InnerPage';
 import SectionLabel from '@/components/SectionLabel';
 import type { BlogPost } from '@/lib/blog';
+import { formatPostDate } from '@/lib/dates';
 
 type BlogLayoutProps = {
   post: BlogPost;
@@ -17,13 +18,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
         <SectionLabel as="h1" title="Posts" />
         <p className="text-md">{post.title}</p>
         <p className="text-muted text-sm">
-          <time dateTime={post.date}>
-            {new Date(post.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </time>
+          <time dateTime={post.date}>{formatPostDate(post.date)}</time>
           {' · '}
           {post.readingTime}
         </p>

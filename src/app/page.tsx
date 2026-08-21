@@ -72,7 +72,10 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         type="application/ld+json"
       />
-      <main className="relative h-screen bg-background text-foreground">
+      <main
+        className="relative h-screen bg-background text-foreground"
+        data-testid="home-shell"
+      >
         {/* Desktop: Horizontal scrolling container, Mobile: Vertical scrolling */}
         <div
           className="md:scrollbar-hide scrollbar-hide block h-full overflow-hidden overflow-y-auto md:flex md:h-full md:snap-x md:snap-mandatory md:overflow-x-auto"

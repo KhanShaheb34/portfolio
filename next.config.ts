@@ -3,8 +3,11 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  cacheComponents: true,
+  partialPrefetching: true,
   experimental: {
     mdxRs: false,
+    exposeTestingApiInProductionBuild: process.env.EXPOSE_TESTING_API === '1',
   },
   webpack: (config, { dev, isServer }) => {
     // Disable caching to resolve snapshot dependencies issue
