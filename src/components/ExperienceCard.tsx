@@ -22,6 +22,7 @@ export default function ExperienceCard({
           <Link
             className="inline-block text-md transition-colors hover:text-muted"
             href={`/work/${slug}`}
+            prefetch={true}
           >
             {position}
           </Link>

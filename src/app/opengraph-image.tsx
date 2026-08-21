@@ -1,6 +1,5 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
 export const alt = 'Shakirul Hasan Khan, software engineer';
 export const size = {
   width: 1200,
