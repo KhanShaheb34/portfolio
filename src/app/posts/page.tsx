@@ -1,122 +1,34 @@
-import Link from 'next/link';
-import { type BlogPostMeta, getAllPosts } from '@/lib/blog';
-
-function postCta(kind: BlogPostMeta['kind']) {
-  if (kind === 'book') {
-    return 'Read the book';
-  }
-  if (kind === 'video') {
-    return 'Watch';
-  }
-  return 'Read';
-}
+import InnerPage from '@/components/InnerPage';
+import PostCard from '@/components/PostCard';
+import SectionLabel from '@/components/SectionLabel';
+import { getAllPosts } from '@/lib/blog';
 
 export default function PostsPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-4xl px-8 py-16">
-        {/* Header */}
-        <header className="mb-12">
-          <Link
-            className="mb-8 inline-block text-muted transition-colors hover:text-foreground"
-            href="/"
-            prefetch={true}
-          >
-            ← Home
-          </Link>
-
-          <div className="space-y-4">
-            <h1 className="font-normal text-4xl">Posts</h1>
-            <p className="text-lg text-muted">
-              A book, a talk, and a couple of posts.
-            </p>
-          </div>
-        </header>
-
-        {/* Posts List */}
-        <div className="space-y-12">
+    <InnerPage>
+      <section className="space-y-6">
+        <SectionLabel as="h1" title="Posts" />
+        <p className="text-md text-muted">
+          A book, a talk, and a couple of posts.
+        </p>
+        <div className="space-y-6">
           {posts.map((post) => (
-            <article className="space-y-4" key={post.slug}>
-              <div className="space-y-2">
-                <h2 className="font-normal text-2xl">
-                  {post.externalUrl ? (
-                    <a
-                      className="inline-flex items-center gap-2 transition-colors hover:text-muted"
-                      href={post.externalUrl}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      {post.title}
-                    </a>
-                  ) : (
-                    <Link
-                      className="inline-flex items-center gap-2 transition-colors hover:text-muted"
-                      href={`/posts/${post.slug}`}
-                      prefetch={true}
-                    >
-                      {post.title}
-                    </Link>
-                  )}
-                </h2>
-
-                <div className="flex items-center space-x-4 text-muted text-sm">
-                  <time dateTime={post.date}>
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </time>
-                  <span>•</span>
-                  <span>{post.readingTime}</span>
-                </div>
-              </div>
-
-              <p className="text-muted leading-relaxed">{post.excerpt}</p>
-
-              {post.tags.length > 0 && (
-                <div className="flex items-center space-x-2">
-                  {post.tags.map((tag) => (
-                    <span
-                      className="rounded bg-muted px-2 py-1 text-background text-xs"
-                      key={tag}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {post.externalUrl ? (
-                <a
-                  className="inline-block text-foreground transition-colors hover:text-muted"
-                  href={post.externalUrl}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {postCta(post.kind)}
-                </a>
-              ) : (
-                <Link
-                  className="inline-block text-foreground transition-colors hover:text-muted"
-                  href={`/posts/${post.slug}`}
-                  prefetch={true}
-                >
-                  Read
-                </Link>
-              )}
-            </article>
+            <div className="space-y-2" key={post.slug}>
+              <PostCard
+                date={post.date}
+                href={post.externalUrl ?? `/posts/${post.slug}`}
+                kind={post.kind}
+                title={post.title}
+              />
+              <p className="text-muted text-sm leading-relaxed">
+                {post.excerpt}
+              </p>
+            </div>
           ))}
         </div>
-
-        {posts.length === 0 && (
-          <div className="py-16 text-center">
-            <p className="text-lg text-muted">Nothing here yet.</p>
-          </div>
-        )}
-      </div>
-    </div>
+      </section>
+    </InnerPage>
   );
 }

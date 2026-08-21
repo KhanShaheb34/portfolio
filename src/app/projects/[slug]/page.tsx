@@ -1,5 +1,9 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import InnerPage from '@/components/InnerPage';
+import ProjectImages from '@/components/ProjectImages';
+import SectionLabel from '@/components/SectionLabel';
+import WavyLine from '@/components/WavyLine';
 import { getProjectBySlug, getProjectSlugs } from '@/lib/projects';
 
 type ProjectPageProps = {
@@ -17,173 +21,112 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-4xl px-8 py-16">
-        {/* Header */}
-        <header className="mb-12">
-          <Link
-            className="mb-8 inline-block text-muted transition-colors hover:text-foreground"
-            href="/"
-            prefetch={true}
-          >
-            ← Home
-          </Link>
+    <InnerPage backHref="/projects" backLabel="← Projects">
+      <section className="space-y-4">
+        <SectionLabel as="h1" title="Projects" />
+        <div className="flex items-center space-x-2">
+          <p className="text-md">{project.title}</p>
+          <span className="rounded bg-muted px-2 py-0.5 text-background text-xs">
+            {project.badge}
+          </span>
+        </div>
+        <p className="text-muted text-sm leading-relaxed">
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-4 text-sm">
+          {project.github && (
+            <a href={project.github} rel="noopener noreferrer" target="_blank">
+              GitHub ↗
+            </a>
+          )}
+          {project.demo && (
+            <a href={project.demo} rel="noopener noreferrer" target="_blank">
+              Demo ↗
+            </a>
+          )}
+          {project.live && (
+            <a href={project.live} rel="noopener noreferrer" target="_blank">
+              Live ↗
+            </a>
+          )}
+        </div>
+        <ProjectImages images={project.images} title={project.title} />
+      </section>
 
-          <div className="space-y-4">
-            <div className="flex items-center space-x-4">
-              <h1 className="font-normal text-4xl">{project.title}</h1>
-              <span className="rounded bg-muted px-3 py-1 text-background text-sm">
-                {project.badge}
-              </span>
-              <span
-                className={`rounded px-3 py-1 text-sm ${
-                  project.status === 'active'
-                    ? 'bg-green-400/20 text-green-400'
-                    : 'bg-foreground/20 text-foreground'
-                }`}
-              >
-                {project.status === 'active' ? 'Active' : 'Completed'}
-              </span>
-            </div>
+      <WavyLine />
 
-            <p className="text-lg text-muted leading-relaxed">
-              {project.description}
-            </p>
+      <section className="space-y-4">
+        <SectionLabel as="h2" title="What it is" />
+        <p className="text-muted text-sm leading-relaxed">
+          {project.longDescription}
+        </p>
+      </section>
 
-            {/* Links */}
-            <div className="flex items-center space-x-6">
-              {project.github && (
-                <a
-                  className="flex items-center space-x-2 text-foreground transition-colors hover:text-muted"
-                  href={project.github}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span>View on GitHub</span>
-                  <span>↗</span>
-                </a>
-              )}
+      <WavyLine />
 
-              {project.demo && (
-                <a
-                  className="flex items-center space-x-2 text-foreground transition-colors hover:text-muted"
-                  href={project.demo}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span>Demo</span>
-                  <span>↗</span>
-                </a>
-              )}
+      <section className="space-y-4">
+        <SectionLabel as="h2" title="Stack" />
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <span
+              className="rounded bg-muted px-2 py-0.5 text-background text-xs"
+              key={tech}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </section>
 
-              {project.live && (
-                <a
-                  className="flex items-center space-x-2 text-foreground transition-colors hover:text-muted"
-                  href={project.live}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span>Live</span>
-                  <span>↗</span>
-                </a>
-              )}
-            </div>
-          </div>
-        </header>
+      <WavyLine />
 
-        {/* Content */}
-        <div className="space-y-12">
-          {/* Overview */}
-          <section>
-            <h2 className="mb-4 font-normal text-2xl">What it is</h2>
-            <p className="text-lg text-muted leading-relaxed">
-              {project.longDescription}
-            </p>
-          </section>
+      <section className="space-y-4">
+        <SectionLabel as="h2" title="What it does" />
+        <ul className="space-y-2">
+          {project.features.map((feature, index) => (
+            <li className="text-muted text-sm leading-relaxed" key={index}>
+              • {feature}
+            </li>
+          ))}
+        </ul>
+      </section>
 
-          {/* Technologies */}
-          <section>
-            <h2 className="mb-4 font-normal text-2xl">Stack</h2>
-            <div className="flex flex-wrap gap-3">
-              {project.technologies.map((tech) => (
-                <span
-                  className="rounded-lg bg-foreground/10 px-3 py-2 text-foreground"
-                  key={tech}
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </section>
-
-          {/* Features */}
-          <section>
-            <h2 className="mb-4 font-normal text-2xl">What it does</h2>
-            <ul className="space-y-3">
-              {project.features.map((feature, index) => (
-                <li className="flex items-start space-x-3" key={index}>
-                  <span className="mt-1 text-muted">•</span>
-                  <span className="text-muted leading-relaxed">{feature}</span>
+      {project.challenges.length > 0 && (
+        <>
+          <WavyLine />
+          <section className="space-y-4">
+            <SectionLabel as="h2" title="What was hard" />
+            <ul className="space-y-2">
+              {project.challenges.map((challenge, index) => (
+                <li className="text-muted text-sm leading-relaxed" key={index}>
+                  • {challenge}
                 </li>
               ))}
             </ul>
           </section>
+        </>
+      )}
 
-          {/* Challenges */}
-          {project.challenges.length > 0 && (
-            <section>
-              <h2 className="mb-4 font-normal text-2xl">What was hard</h2>
-              <ul className="space-y-3">
-                {project.challenges.map((challenge, index) => (
-                  <li className="flex items-start space-x-3" key={index}>
-                    <span className="mt-1 text-muted">•</span>
-                    <span className="text-muted leading-relaxed">
-                      {challenge}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
+      {project.impact.length > 0 && (
+        <>
+          <WavyLine />
+          <section className="space-y-4">
+            <SectionLabel as="h2" title="What happened" />
+            <ul className="space-y-2">
+              {project.impact.map((impact, index) => (
+                <li className="text-muted text-sm leading-relaxed" key={index}>
+                  • {impact}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </>
+      )}
 
-          {/* Impact */}
-          {project.impact.length > 0 && (
-            <section>
-              <h2 className="mb-4 font-normal text-2xl">What happened</h2>
-              <ul className="space-y-3">
-                {project.impact.map((impact, index) => (
-                  <li className="flex items-start space-x-3" key={index}>
-                    <span className="mt-1 text-muted">•</span>
-                    <span className="text-muted leading-relaxed">{impact}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-        </div>
-
-        {/* Footer */}
-        <footer className="mt-16 border-foreground/20 border-t pt-8">
-          <div className="flex items-center justify-between">
-            <Link
-              className="text-muted transition-colors hover:text-foreground"
-              href="/"
-              prefetch={true}
-            >
-              ← Home
-            </Link>
-
-            <Link
-              className="text-muted transition-colors hover:text-foreground"
-              href="/projects"
-              prefetch={true}
-            >
-              All projects
-            </Link>
-          </div>
-        </footer>
-      </div>
-    </div>
+      <Link className="text-sm" href="/" prefetch={true}>
+        Home
+      </Link>
+    </InnerPage>
   );
 }
 
@@ -204,6 +147,8 @@ export async function generateMetadata({ params }: ProjectPageProps) {
     };
   }
 
+  const firstImage = project.images[0];
+
   return {
     title: `${project.title} | Shakirul Hasan Khan`,
     description: project.description,
@@ -211,11 +156,15 @@ export async function generateMetadata({ params }: ProjectPageProps) {
       title: project.title,
       description: project.description,
       type: 'article',
+      ...(firstImage
+        ? { images: [{ url: firstImage, alt: project.title }] }
+        : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title: project.title,
       description: project.description,
+      ...(firstImage ? { images: [firstImage] } : {}),
     },
   };
 }
