@@ -25,7 +25,10 @@
     "github": "https://github.com/KhanShaheb34/montu-mia",
     "demo": null,
     "live": "https://montumia.com",
-    "images": [],
+    "images": [
+      "/projects/montu-mia/homepage.webp",
+      "/projects/montu-mia/chapter.webp"
+    ],
     "challenges": [
       "SES plus React Email without turning into a deliverability hobby",
       "OG images that still look like the chapter",
@@ -59,7 +62,7 @@
     "github": null,
     "demo": null,
     "live": "https://www.trak.sh",
-    "images": [],
+    "images": ["/projects/trak/homepage.webp"],
     "challenges": [
       "Grouping clicks by issue, not by URL",
       "A free plan that still does the job",
@@ -89,7 +92,7 @@
     "github": null,
     "demo": null,
     "live": "https://type.win",
-    "images": [],
+    "images": ["/projects/type-win/homepage.webp"],
     "challenges": [
       "Making a typing game feel like a cabinet, not a quiz",
       "Races that stay fair when the network is not"
@@ -116,7 +119,7 @@
     "github": null,
     "demo": null,
     "live": "https://www.ramble.ai/",
-    "images": [],
+    "images": ["/projects/ramble/homepage.webp"],
     "challenges": [
       "Keeping a Mac app, an iPhone client, and a web app on the same session without fighting each other",
       "Making calendar auto-join reliable when bots, webhooks, and short-lived credentials all have to agree",
@@ -146,7 +149,11 @@
     "github": "https://github.com/KhanShaheb34/claudebar",
     "demo": null,
     "live": "https://trak.sh/menubar",
-    "images": [],
+    "images": [
+      "/projects/claudebar/usage.webp",
+      "/projects/claudebar/stats.webp",
+      "/projects/claudebar/models.webp"
+    ],
     "challenges": [
       "Useful stats in a strip of pixels, not another dashboard",
       "Turning the pattern into a skill someone else can run"
@@ -208,7 +215,7 @@
     "github": null,
     "demo": null,
     "live": "https://www.vocables.xyz/",
-    "images": [],
+    "images": ["/projects/vocables/homepage.webp"],
     "challenges": [
       "A product, not a word list with a login",
       "Tying suggestions to a specific exam"
@@ -233,7 +240,7 @@
     "github": "https://github.com/KhanShaheb34/profreach",
     "demo": null,
     "live": "https://profreach.shakirul.dev/",
-    "images": [],
+    "images": ["/projects/profreach/homepage.webp"],
     "challenges": [
       "Simple enough that someone will open it twice",
       "Many threads, without becoming a CRM"
@@ -259,7 +266,7 @@
     "github": "https://github.com/KhanShaheb34/coterm",
     "live": "https://github.com/KhanShaheb34/Coterm/releases/tag/v0.2.2",
     "demo": null,
-    "images": [],
+    "images": ["/projects/coterm/demo.webp"],
     "challenges": [
       "A command that is useful and not reckless",
       "Edit in place",

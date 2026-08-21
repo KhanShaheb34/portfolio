@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import InnerPage from '@/components/InnerPage';
+import ProjectImages from '@/components/ProjectImages';
 import SectionLabel from '@/components/SectionLabel';
 import WavyLine from '@/components/WavyLine';
 import { getProjectBySlug, getProjectSlugs } from '@/lib/projects';
@@ -49,6 +50,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </a>
           )}
         </div>
+        <ProjectImages images={project.images} title={project.title} />
       </section>
 
       <WavyLine />
@@ -145,6 +147,8 @@ export async function generateMetadata({ params }: ProjectPageProps) {
     };
   }
 
+  const firstImage = project.images[0];
+
   return {
     title: `${project.title} | Shakirul Hasan Khan`,
     description: project.description,
@@ -152,11 +156,15 @@ export async function generateMetadata({ params }: ProjectPageProps) {
       title: project.title,
       description: project.description,
       type: 'article',
+      ...(firstImage
+        ? { images: [{ url: firstImage, alt: project.title }] }
+        : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title: project.title,
       description: project.description,
+      ...(firstImage ? { images: [firstImage] } : {}),
     },
   };
 }
