@@ -37,28 +37,27 @@ test.describe('instant navigations', () => {
 
     await instant(page, async () => {
       await trigger.click();
-      await expect(page.getByTestId('inner-page')).toBeVisible();
-      await expect(page.getByText("Montu Mia's System Design")).toBeVisible();
       await expect(
-        page.getByRole('heading', { name: 'Projects', exact: true })
+        page.getByRole('heading', { name: 'What it is', exact: true })
       ).toBeVisible();
     });
   });
 
-  test('home to ramble commits the work shell', async ({ page }) => {
-    await page.goto('/');
+  test('work list to ramble commits the work shell', async ({ page }) => {
+    await page.goto('/work');
     const trigger = page.locator('a[href="/work/ramble"]');
     await expect(trigger).toBeVisible();
 
     await instant(page, async () => {
       await trigger.click();
-      await expect(page.getByTestId('inner-page')).toBeVisible();
-      await expect(page.getByText('Ramble').first()).toBeVisible();
+      await expect(
+        page.getByRole('heading', { name: 'What I did', exact: true })
+      ).toBeVisible();
     });
   });
 
-  test('home to a post commits the post shell', async ({ page }) => {
-    await page.goto('/');
+  test('posts list to a post commits the post shell', async ({ page }) => {
+    await page.goto('/posts');
     const trigger = page.getByRole('link', {
       name: 'Why Should You Not Use px?',
       exact: true,
@@ -67,8 +66,9 @@ test.describe('instant navigations', () => {
 
     await instant(page, async () => {
       await trigger.click();
-      await expect(page.getByTestId('inner-page')).toBeVisible();
-      await expect(page.getByText('Why Should You Not Use px?')).toBeVisible();
+      await expect(
+        page.getByRole('heading', { name: 'The Problem with Pixels' })
+      ).toBeVisible();
     });
   });
 
@@ -81,8 +81,9 @@ test.describe('instant navigations', () => {
 
     await instant(page, async () => {
       await trigger.click();
-      await expect(page.getByTestId('inner-page')).toBeVisible();
-      await expect(page.getByText('ClaudeBar').first()).toBeVisible();
+      await expect(
+        page.getByRole('heading', { name: 'What it is', exact: true })
+      ).toBeVisible();
     });
   });
 });
