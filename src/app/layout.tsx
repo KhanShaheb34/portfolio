@@ -12,6 +12,7 @@ const firaMono = Fira_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://shakirul.com'),
   title: 'Shakirul Hasan Khan',
   description:
     "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     siteName: 'Shakirul Hasan Khan',
     images: [
       {
-        url: '/opengraph-image',
+        url: 'https://shakirul.com/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'Shakirul Hasan Khan, software engineer',
