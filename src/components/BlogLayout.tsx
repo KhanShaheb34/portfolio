@@ -10,7 +10,7 @@ type BlogLayoutProps = {
 };
 
 export default function BlogLayout({ post, children }: BlogLayoutProps) {
-  const postUrl = `https://shakirul.dev/posts/${post.slug}`;
+  const postUrl = `https://shakirul.com/posts/${post.slug}`;
 
   return (
     <InnerPage backHref="/posts" backLabel="← Posts">

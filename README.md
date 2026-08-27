@@ -1,6 +1,6 @@
 # Shakirul Hasan Khan - Portfolio
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://shakirul.dev/)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://shakirul.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-blue)](https://reactjs.org/)
@@ -8,7 +8,7 @@
 
 A modern, performant personal portfolio website showcasing my work, experience, and blog posts. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
 
-🔗 **Live Demo:** [https://shakirul.dev/](https://shakirul.dev/)
+🔗 **Live Demo:** [https://shakirul.com/](https://shakirul.com/)
 
 ## ✨ Features
 
@@ -342,7 +342,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Shakirul Hasan Khan**
 
-- Website: [https://shakirul.dev](https://shakirul.dev)
+- Website: [https://shakirul.com](https://shakirul.com)
 - GitHub: [@KhanShaheb34](https://github.com/KhanShaheb34)
 - LinkedIn: [shakirulhasan](https://linkedin.com/in/shakirulhasan)
 - Twitter: [@\_khanshaheb](https://x.com/_khanshaheb)
@@ -380,4 +380,4 @@ If you have any questions or need help with customization:
 
 ---
 
-<p align="center">Made with ❤️ by <a href="https://shakirul.dev">Shakirul Hasan Khan</a></p>
+<p align="center">Made with ❤️ by <a href="https://shakirul.com">Shakirul Hasan Khan</a></p>
