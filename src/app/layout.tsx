@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://shakirul.dev',
+    url: 'https://shakirul.com',
     title: 'Shakirul Hasan Khan',
     description:
       "Software engineer in Bangladesh. I work on Peaches at Ramble and write Montu Mia's System Design.",

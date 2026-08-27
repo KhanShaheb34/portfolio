@@ -20,7 +20,7 @@ const structuredData = {
   jobTitle: 'Software Engineer',
   description:
     "Software engineer from Bangladesh. I work at Ramble, write Montu Mia's System Design, and I'm starting Thinking Lab in Sylhet.",
-  url: 'https://shakirul.dev',
+  url: 'https://shakirul.com',
   sameAs: [
     'https://github.com/KhanShaheb34',
     'https://linkedin.com/in/shakirulhasan',
