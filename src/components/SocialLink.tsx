@@ -2,6 +2,7 @@
 
 import {
   BookOpenIcon,
+  EnvelopeIcon,
   FileTextIcon,
   GithubLogoIcon,
   GraduationCapIcon,
@@ -19,6 +20,7 @@ type SocialLinkProps = {
 };
 
 const iconMap: Record<string, typeof GithubLogoIcon> = {
+  envelope: EnvelopeIcon,
   github: GithubLogoIcon,
   linkedin: LinkedinLogoIcon,
   twitter: XLogoIcon,
@@ -30,7 +32,7 @@ const iconMap: Record<string, typeof GithubLogoIcon> = {
 
 const SocialLink = ({ icon, text, href }: SocialLinkProps) => {
   const IconComponent = iconMap[icon as keyof typeof iconMap];
-  const isExternal = href.startsWith('http');
+  const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
 
   const handleClick = () => {
     posthog.capture('social_link_clicked', {
@@ -43,15 +45,15 @@ const SocialLink = ({ icon, text, href }: SocialLinkProps) => {
     <div className="flex items-center space-x-2">
       {IconComponent && <IconComponent size={18} weight="fill" />}
       {isExternal ? (
-        <Link
+        <a
           className="transition-colors hover:text-muted"
           href={href}
           onClick={handleClick}
           rel="noopener noreferrer"
-          target="_blank"
+          target={href.startsWith('http') ? '_blank' : undefined}
         >
           {text}
-        </Link>
+        </a>
       ) : (
         <Link
           className="transition-colors hover:text-muted"
