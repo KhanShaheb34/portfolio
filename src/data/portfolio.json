@@ -9,6 +9,11 @@
   },
   "socialLinks": [
     {
+      "icon": "envelope",
+      "text": "hi@shakirul.com",
+      "href": "mailto:hi@shakirul.com"
+    },
+    {
       "icon": "github",
       "text": "GitHub",
       "href": "https://github.com/KhanShaheb34"

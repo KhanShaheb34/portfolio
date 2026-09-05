@@ -2,6 +2,7 @@
 
 import {
   BookOpenIcon,
+  EnvelopeIcon,
   FileTextIcon,
   GithubLogoIcon,
   GraduationCapIcon,
@@ -19,6 +20,7 @@ type SocialLinkProps = {
 };
 
 const iconMap: Record<string, typeof GithubLogoIcon> = {
+  envelope: EnvelopeIcon,
   github: GithubLogoIcon,
   linkedin: LinkedinLogoIcon,
   twitter: XLogoIcon,
