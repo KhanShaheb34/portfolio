@@ -162,6 +162,41 @@
     "status": "active"
   },
 
+  "gg": {
+    "title": "gg",
+    "slug": "gg",
+    "badge": "DESKTOP APP",
+    "featured": true,
+    "description": "A small, fast desktop Git client. Commit graph, worktrees, pull requests. No editor needed.",
+    "longDescription": "I kept opening VS Code just to look at the commit graph, merge a branch and push. gg does that on its own. It wraps the git you already have, opens in under a second on a 20,000-commit repo, and uses no CPU while it sits there. Every worktree of a repo stays in view with what changed in each, which helps when several branches, or several agents, are at work at once.",
+    "technologies": ["Rust", "Tauri", "Svelte", "TypeScript", "git"],
+    "features": [
+      "Commit graph with branch, remote and tag labels",
+      "All worktrees of a repo in one panel, with their changes",
+      "Pull requests next to the graph",
+      "Commit, merge and push without an editor",
+      "macOS, Windows and Linux builds; Homebrew cask"
+    ],
+    "github": "https://github.com/KhanShaheb34/gg",
+    "demo": null,
+    "live": "https://gg.shakirul.com",
+    "images": [
+      "/projects/gg/graph.webp",
+      "/projects/gg/commit-panel.webp",
+      "/projects/gg/pull-requests.webp"
+    ],
+    "challenges": [
+      "Opening a 20,000-commit graph in under a second",
+      "Zero CPU when idle, so it can stay open all day",
+      "Shipping unsigned on macOS without scaring people off"
+    ],
+    "impact": [
+      "I leave it open beside my terminal",
+      "v0.3.0 out on macOS, Windows and Linux"
+    ],
+    "status": "active"
+  },
+
   "avro-silicon": {
     "title": "Avro Silicon",
     "slug": "avro-silicon",
